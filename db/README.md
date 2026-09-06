@@ -17,6 +17,55 @@ DATABASE_URL=postgresql://tracker:tracker@localhost:5432/igt_tracker
 
 For local Docker development, use the repository Docker Compose configuration.
 
+For GitHub Codespaces, the repository `.devcontainer/devcontainer.json` uses the root `docker-compose.yml` with PostgreSQL 16. The Codespace development container and database share a network namespace, so the same `DATABASE_URL` contract is available on `localhost:5432`.
+
+### Codespaces bootstrap
+
+1. Rebuild or create a Codespace from the repository after the `.devcontainer` configuration is present.
+2. Confirm the database is reachable:
+
+```bash
+pg_isready -h localhost -p 5432 -U tracker -d igt_tracker
+```
+
+3. Confirm the environment variable is present:
+
+```bash
+printf '%s\n' "$DATABASE_URL"
+```
+
+Expected value:
+
+```text
+postgresql://tracker:tracker@localhost:5432/igt_tracker
+```
+
+4. Install the development dependencies if the post-create command has not already run:
+
+```bash
+python -m pip install -r requirements-dev.txt
+```
+
+5. Apply the existing migrations without modifying them:
+
+```bash
+python scripts/db_migrate.py
+```
+
+6. Load the existing canonical taxonomy seed:
+
+```bash
+python scripts/db_seed.py
+```
+
+7. Run the existing integration test:
+
+```bash
+python -m pytest tests/test_database_integration.py -q
+```
+
+The Codespace database is disposable development infrastructure. It does not contain research observation acquisition logic and it must not be treated as a substitute for canonical repository state.
+
 ## Migrations
 
 Migrations live in `db/migrations/` and are applied in lexical version order:

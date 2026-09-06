@@ -1,0 +1,11 @@
+{
+  "name": "India Growth & Transformation Tracker",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces",
+  "forwardPorts": [5432],
+  "containerEnv": {
+    "DATABASE_URL": "postgresql://tracker:tracker@localhost:5432/igt_tracker"
+  },
+  "postCreateCommand": "python -m pip install -r requirements-dev.txt"
+}
