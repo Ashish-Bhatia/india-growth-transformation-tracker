@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://india-growth-transformation-tracker.github.io/schemas/dataset-vintage-registry.schema.json",
+  "title": "India Growth & Transformation Tracker Dataset Vintage Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["registry_version", "schema_version", "status", "vintages"],
+  "properties": {
+    "registry_version": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "status": {"type": "string", "enum": ["planning", "active"]},
+    "vintages": {"type": "array", "items": {"$ref": "#/$defs/vintage"}}
+  },
+  "$defs": {
+    "vintage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["vintage_id", "dataset_id", "version", "acquisition_status"],
+      "properties": {
+        "vintage_id": {"type": "string", "pattern": "^VNT-[A-Z0-9-]+$"},
+        "dataset_id": {"type": "string", "pattern": "^DS-[A-Z0-9-]+$"},
+        "version": {"type": "string", "minLength": 1},
+        "release_date": {"type": ["string", "null"], "format": "date"},
+        "retrieval_date": {"type": ["string", "null"], "format": "date-time"},
+        "file_hash": {"type": ["string", "null"], "pattern": "^[a-fA-F0-9]{64}$"},
+        "snapshot_id": {"type": ["string", "null"]},
+        "acquisition_status": {"type": "string", "enum": ["pending_acquisition", "acquired", "superseded"]}
+      }
+    }
+  }
+}
