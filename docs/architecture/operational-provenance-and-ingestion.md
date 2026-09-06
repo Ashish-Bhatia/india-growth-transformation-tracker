@@ -16,9 +16,9 @@ The existing database remains the system of record. JSON/YAML manifests describe
 
 ## 2. Registry boundary
 
-Source Registry and Master Indicator Registry records remain unseeded until authoritative record-level discovery is completed. An ingestion run may discover candidate sources, but discovery does not silently create authoritative registry records.
+The Source Registry and Master Indicator Registry are now authoritative seeded registry layers. Their records are created only after the applicable source metadata, indicator definition, source mapping, methodology and required metadata are verified.
 
-A candidate source becomes a canonical Source Registry record only after source metadata is verified. An indicator becomes active only after its definition, source mapping, methodology and required metadata are verified.
+An ingestion run may discover candidate sources or indicators, but discovery does not silently create authoritative registry records. Existing registry records remain separate from acquisition events and observation vintages.
 
 ## 3. Source acquisition convention
 
@@ -287,9 +287,7 @@ Human approval is mandatory for:
 
 This phase does not:
 
-- seed Source Registry records
-- seed Indicator Registry records
-- create substantive sector observations
+- create substantive sector observations outside registered indicators
 - resolve policy materiality labels
 - resolve analytical government-term windows
 - resolve attribution confidence mapping
