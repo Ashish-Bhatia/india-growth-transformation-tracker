@@ -1,20 +1,14 @@
 # Next Chat
 
 ## Current position
-Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 verified records. The Dataset Registry has 9 authoritative dataset records and the Indicator Registry has 7 minimum authoritative Manufacturing indicators. The first IIP observation vintage has been acquired, validated and ingested for `IND-MFG-IIP-001`.
+Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 verified records. The Dataset Registry has 9 authoritative dataset records and the Indicator Registry has 7 minimum authoritative Manufacturing indicators. `IND-MFG-IIP-001` now has two preserved release-state vintages and 41 canonical observations.
 
 ## Verified repository state before this continuity update
-- Verified substantive repository HEAD: `c3cbb9c3dcd5fe7f598c0661823cbdb1cf374b52`.
-- First IIP vintage registration commit: `afcc0c7a7d41af1e489b0959795049f2d68b8813`.
-- First IIP observation ingestion commit: `46bf1ad40c88134b916888a70d13b7c912fdccf4`.
-- IIP ingestion test commit: `f9575d9c5defc1401311720d8f1dc50657ff4e8e`.
-- Project-state update commit: `4cbf78091881401bfa0853112b82e93de4f0a079`.
-- Research ledger update commit: `d1e4ad96c4986df17f2c860133a8686a83c0b682`.
-- Issues register update commit: `1538e1b43dc976c080eda5245f61cf2ca6d2d421`.
-- Decisions log update commit: `c3cbb9c3dcd5fe7f598c0661823cbdb1cf374b52`.
-- The continuity-file update itself will advance HEAD by one commit. Verify the actual repository HEAD before relying on this file.
-- No GitHub Actions workflow run is exposed for the current ingestion commits. CI status is `no run`. Do not infer success or rerun CI merely to obtain a status.
-- Historical CI run `34060700876` remains terminal `failure` from stale Source Registry test expectations. No rerun was performed.
+- Verified substantive repository HEAD: `7021fb8d2ea4b10abe8dbcf979ef78e566d43135`.
+- First IIP vintage registration and ingestion were completed earlier and remain preserved.
+- August 2026 IIP vintage registration, source reference, locators, staging, validation, manifest, canonical observations, indicator health update, test update, decision-log update, ledger update and project-state update are now completed.
+- This continuity-file update will advance HEAD. Verify the actual repository HEAD before relying on this file.
+- GitHub Actions status for the final HEAD has not yet been verified. Report it literally after inspection. Do not infer success and do not rerun merely to obtain a status.
 
 ## Completed
 - PostgreSQL schema and migration foundation.
@@ -25,31 +19,34 @@ Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 veri
 - 7 authoritative Manufacturing Indicator Registry records.
 - Manufacturing observation-ingestion plan.
 - Dataset Vintage Registry contract and acquisition targets.
-- First IIP vintage `VNT-MOSPI-IIP-2022-23` registered with release date 2026-06-01.
-- Official source reference preserved for the first new IIP 2022-23-base release.
-- Source snapshot `SNP-MOSPI-IIP-20260601-001` and source locators registered.
-- Validation report recorded as `passed_with_flags`, with `methodology_change` as the only anomaly flag.
-- 37 canonical monthly observations loaded for `IND-MFG-IIP-001`, April 2023 through April 2026.
-- April 2026 remains `provisional` because the source identifies it as a quick estimate.
-- Annual-index and April-growth reconciliation checks passed.
-- Targeted IIP ingestion test executed: `1 passed`.
+- First IIP vintage `VNT-MOSPI-IIP-2022-23`, release date 2026-06-01, preserved unchanged.
+- First IIP snapshot `SNP-MOSPI-IIP-20260601-001` and locators registered.
+- First vintage validation passed with methodology-change flag.
+- 37 first-vintage observations loaded for April 2023-April 2026.
+- Official 28 August 2026 IIP release assessed as a new release-state vintage of the existing 2022-23-base dataset, not a new methodology/base-year series.
+- Second vintage `VNT-MOSPI-IIP-2022-23-20260828` registered.
+- Second snapshot `SNP-MOSPI-IIP-20260828-001` and three locators registered.
+- Four release-state observations loaded for April-July 2026: April 118.7 revised, May 122.2, June 125.3 revised, July 127.4 provisional.
+- First vintage April 2026 value 119.3 remains unchanged.
+- Second vintage validation passed with revision and provisional flags.
+- Indicator health updated to `Watch` without changing the indicator definition.
+- No SHA-256 fabricated for the second release because direct binary retrieval was unavailable.
+- Targeted IIP test updated for two vintages. Execution still requires verification after the final repository change.
 
 ## IIP controls
 - Base year is 2022-23=100.
-- No 2011-12 observations were spliced into the current series.
-- Published manufacturing annual indices reconcile to 107.1 for 2023-24, 113.8 for 2024-25 and 119.4 for 2025-26.
-- April 2026 manufacturing index is 119.3 and the published year-on-year growth is 6.2%.
-- The first new-series release carries a methodology/base-year change. This remains explicitly flagged.
-- Direct binary retrieval of the official PDF was unavailable in the execution environment, so no SHA-256 was claimed. The permitted official source reference is preserved.
+- Do not splice the superseded 2011-12 series into the current indicator.
+- Preserve every release-state vintage and revision.
+- Treat quick estimates as provisional.
+- Treat revisions as new release-state observations, never as overwrites of prior vintage evidence.
 
 ## Exact next executable task
-1. Inspect the actual repository state and verify the current HEAD after this continuity update.
-2. Review the first IIP ingestion commit and all changed files.
-3. Ensure registry health/freshness metadata reflects the now-populated IIP indicator without changing the indicator definition.
-4. Verify the canonical IIP observation layer and validation manifest remain internally consistent.
-5. Check whether the next official IIP release should become a new vintage or a revision of the existing current series. Do not overwrite the first vintage.
-6. Only then acquire the next authoritative Manufacturing dataset vintage.
-7. Do not begin full Manufacturing policy research, attribution or scoring.
+1. Inspect the actual repository at the final HEAD and verify all changed files from the August IIP ingestion sequence.
+2. Run or otherwise verify the applicable targeted IIP ingestion test. Record the literal result.
+3. Verify the final GitHub Actions workflow status for the final HEAD. If no run is exposed, record `no run`.
+4. Verify the 41 canonical observations, two vintage IDs, source locators, manifests and validation reports are internally consistent.
+5. Verify `IND-MFG-IIP-001` health is `Watch` and its definition/methodology remain unchanged.
+6. Only after these checks, identify the next authoritative Manufacturing acquisition target. Do not start policy research, attribution or scoring.
 
 ## Research boundary
 The pilot chain is:
@@ -57,4 +54,4 @@ Source → Dataset → Vintage → Snapshot → Locator → Raw reference → Va
 No layer should be skipped. Observed change and attributed change remain separate. Source tier remains separate from data quality, evidence grade and causal strength.
 
 ## What not to repeat
-Do not repeat initialization audit, database design, migration framework design, taxonomy design, provenance architecture, registry contract design, the existing Source Registry records, old-HEAD CI absence investigation, pilot-sector selection, methodology-document creation, Dataset Registry establishment, Indicator Registry establishment, existing registry tests, or the first IIP acquisition/validation already completed.
+Do not repeat initialization audit, database design, migration framework design, taxonomy design, provenance architecture, registry contract design, the existing Source Registry records, old-HEAD CI absence investigation, pilot-sector selection, methodology-document creation, Dataset Registry establishment, Indicator Registry establishment, existing registry tests, first IIP acquisition/validation, or the August IIP vintage determination and ingestion.
