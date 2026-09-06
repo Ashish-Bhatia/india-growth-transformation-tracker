@@ -1,60 +1,53 @@
 # Project State
 
-Version: 0.12.0-asi-2023-24-ingestion-verified
+Version: 0.13.0-nas-2026-ingestion
 State date: 2026-09-07
 
 ## Current phase
-Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry and Indicator Registry establishment, with ASI 2023-24 acquired and ingested and two preserved validated IIP release-state vintages retained for Manufacturing. Manufacturing (`MFG`) remains the first pilot sector. The Source Registry contains 12 verified records. The Dataset Registry contains 9 authoritative dataset records and the Indicator Registry contains 7 minimum authoritative Manufacturing indicators.
+Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry and Indicator Registry establishment, with ASI 2023-24 and NAS 2026 acquired vintages represented in the provenance layer and registered Manufacturing observations ingested. Manufacturing (`MFG`) remains the first pilot sector.
 
-## Verified repository state
-- Prior verified implementation HEAD: `050847f3e4ad87fab09680a314d933da0974b707`.
-- `050847f3e4ad87fab09680a314d933da0974b707` is the verified test commit containing `tests/test_asi_ingestion.py`.
-- The targeted ASI test was not independently executed because the available execution environment could not access the GitHub repository filesystem. A direct `git clone` attempt failed with network name-resolution failure. No test pass is claimed.
-- GitHub Actions workflow runs for `050847f3e4ad87fab09680a314d933da0974b707`: `no run`.
-- Commit status checks for `050847f3e4ad87fab09680a314d933da0974b707`: none exposed.
+## Verified repository state before this implementation commit
+- Verified HEAD: `23c26f60a818bd20d74f216fbdebbf3af714c037`.
+- Latest targeted ASI test commit: `050847f3e4ad87fab09680a314d933da0974b707`.
+- Targeted ASI test execution remains `not independently executed` because the available execution environment could not access the repository filesystem.
+- GitHub Actions for the targeted ASI test commit: `no run`. No status checks were exposed.
 
-## Completed and verified by repository inspection
-- All 15 Project Source documents reviewed for initialization.
-- PostgreSQL schema migration framework, controlled vocabularies, canonical taxonomy seed, migration/seed runners and validation infrastructure implemented.
-- Machine-readable Source Registry, Dataset Registry, Indicator Registry and provenance/ingestion contracts implemented.
-- Source Registry: 12 verified authoritative records.
-- Dataset Registry: 9 authoritative Manufacturing records.
-- Indicator Registry: 7 authoritative Manufacturing records.
-- First IIP vintage `VNT-MOSPI-IIP-2022-23` preserved unchanged.
-- Second IIP release-state vintage `VNT-MOSPI-IIP-2022-23-20260828` preserved.
-- `IND-MFG-IIP-001` retains 41 canonical observations across the two IIP vintages according to the repository continuity record and targeted test contract. Full test execution remains unverified.
-- ASI dataset `DS-MOSPI-ASI-001` and vintage `VNT-MOSPI-ASI-2023-24` registered.
-- ASI release date preserved as 2025-08-27 and reference period as April 2023-March 2024.
-- ASI snapshot `SNP-MOSPI-ASI-20250827-001`, source reference and source locators preserved.
-- ASI validation report records `passed_with_flags` with `registered_manufacturing_coverage_limit`.
-- ASI ingestion manifest records retrieved status, lineage and validation flag.
-- `IND-MFG-ASI-GVA-001`: All-India value 245833605 ₹ lakh, source-defined.
-- `IND-MFG-ASI-EMP-001`: All-India value 19589131 persons.
-- ASI registered organised manufacturing coverage limitation is explicitly preserved. ASI GVA is not total manufacturing GVA, and ASI persons engaged are not total manufacturing employment.
-- `tests/test_asi_ingestion.py` is present and checks ASI vintage metadata, manifest, validation report, both ASI observations and preservation of the 41 IIP observations across both vintage IDs.
+## Completed
+- PostgreSQL schema and migration foundation.
+- Source Registry, Dataset Registry, Indicator Registry and provenance/ingestion contracts.
+- Manufacturing pilot selection.
+- Two preserved IIP release-state vintages and 41 canonical IIP observations.
+- ASI 2023-24 provenance, vintage, snapshot, locators, manifest, validation report and two observations.
+- ASI registered-organised-manufacturing coverage limitation preserved.
+- Dataset-level ASI status convention resolved: dataset `ingestion_status` remains `registered_only`; acquisition is represented by the acquired vintage state.
+- NAS 2026 publication release registered as `VNT-MOSPI-NAS-2026-08-31` with snapshot `SNP-MOSPI-NAS-20260831-001` and acquisition manifest `ACQ-MOSPI-NAS-2026`.
+- NAS validation report passed with `methodology_change` flag.
+- Registered NAS Manufacturing indicators ingested: 3 real manufacturing GVA growth observations and 4 manufacturing share-of-GVA observations.
+- NAS current-series boundary preserved at base year 2022-23. No splice with the superseded 2011-12 series.
+- Latest NAS annual observation 2025-26 remains provisional.
+- NAS indicator health moved to `Watch`.
 
-## ASI verification boundary
-Repository inspection verified the test source and all ASI fixture/metadata paths referenced by the test. The targeted test itself was not independently executed. Therefore the ASI ingestion is repository-verified by inspection, but its automated test result remains `not independently executed`.
+## Verification boundary
+- Repository files are being modified through the GitHub repository interface because the local execution environment cannot access the repository filesystem.
+- NAS source, vintage, snapshot, locators, manifest, validation report and canonical observations are repository objects created from the verified official-source evidence chain.
+- Direct binary artifact hash is not claimed because the execution environment did not provide permitted binary retrieval.
+- Targeted NAS test source is included in this commit but its runtime result is not independently executed unless a repository-capable execution environment becomes available.
+- CI for the new final HEAD must be checked after the commit. Do not rerun merely to obtain a preferred result.
 
-## IIP preservation verification boundary
-The repository contains the two IIP vintage IDs and the canonical IIP observation file referenced by the ASI test. The test contract explicitly requires 41 rows and both vintage IDs. Because the targeted test could not be executed, this chat does not claim an independent runtime count check. No historical IIP observation was modified by the ASI test commit, which only added `tests/test_asi_ingestion.py`.
-
-## Important methodological controls
-- IIP uses the current 2022-23 base series and must not be silently spliced with the superseded 2011-12 series.
-- Every IIP release-state vintage and revision must remain separately traceable.
-- The June 1 vintage is immutable historical evidence. Later revisions do not overwrite it.
-- ASI measures registered organised manufacturing and must not be presented as total manufacturing employment or GVA without qualification.
-- PLFS 2025 changed sampling design. Cross-vintage comparability requires explicit treatment.
-- UNIDO peer comparison remains constrained by the unresolved final international peer-basket methodology.
-- No score methodology has been applied.
-- No policy evaluation, attribution or causal conclusion has been loaded from the IIP or ASI ingestion.
+## Methodological controls
+- NAS current series uses base year 2022-23 and must remain distinct from the superseded 2011-12-base series.
+- National Accounts estimates are revision-prone. Vintage and observation finality are preserved.
+- `IND-MFG-GVA-GROWTH-001` uses source-defined annual real manufacturing GVA growth. No mixed-vintage recomputation.
+- `IND-MFG-GVA-SHARE-001` uses the same current-series manufacturing share definition and source-reported values.
+- ASI remains registered organised manufacturing only.
+- No policy evaluation, attribution, counterfactual analysis or scoring has been introduced.
 
 ## In progress
-- Preserve and monitor current IIP release-state vintages for the next official revision.
-- Continue with the next Manufacturing acquisition target only after current lineage and validation records remain consistent.
+- Preserve and monitor IIP, ASI and NAS release-state vintages for future revisions.
+- Continue the minimum Manufacturing acquisition sequence only for already registered indicators and datasets.
 
 ## Pending
-- Additional Manufacturing dataset vintage acquisition and observation ingestion.
+- Additional Manufacturing dataset acquisition and observation ingestion.
 - Manufacturing policy inventory and evaluation.
 - State manufacturing analysis.
 - International peer methodology and comparison.
@@ -71,17 +64,11 @@ The repository contains the two IIP vintage IDs and the canonical IIP observatio
 - ISSUE-INIT-006: API and website implementation contracts.
 - ISSUE-DB-001: authoritative domain registry.
 - ISSUE-DB-002: international country registry expansion.
-- ISSUE-REG-001: indicator-side registry seed dependency should now be reviewed against the seeded records.
+- ISSUE-REG-001: indicator-side registry seed dependency should continue to be reviewed as new indicators are considered.
 - ISSUE-DATA-IIP-001: current-series break and historical comparability treatment.
 - ISSUE-DATA-IIP-002: binary artifact retrieval limitation and future hash capture.
 - Final public data/content licensing treatment per source.
 - Final approved international peer basket methodology.
 
-## Research gaps
-- No substantive Manufacturing policy research has been loaded.
-- No policy evaluation records have been completed.
-- No attribution records have been completed.
-- No public score has been calculated.
-
 ## Immediate next action
-Identify the next authoritative Manufacturing acquisition target from the existing Dataset Registry and Project Sources, then acquire and validate it using the established Source → Dataset → Vintage → Snapshot → Locator → Validation → Observation lineage. Do not begin policy research, attribution or scoring.
+Verify the final repository HEAD and changed files for the NAS ingestion commit, inspect the targeted NAS test source, record its literal execution result if a repository-capable execution environment exists, verify GitHub Actions literally, and confirm continuity files match actual repository state. Then identify the next authoritative Manufacturing acquisition target. Do not begin policy research, attribution or scoring.

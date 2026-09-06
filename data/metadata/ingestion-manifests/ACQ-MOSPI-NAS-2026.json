@@ -1,0 +1,34 @@
+{
+  "acquisition_ref": "ACQ-MOSPI-NAS-2026",
+  "acquisition": {
+    "mode": "manual",
+    "status": "retrieved",
+    "source": "SRC-MOSPI-NAS",
+    "dataset": "DS-MOSPI-NAS-001",
+    "vintage": "VNT-MOSPI-NAS-2026-08-31",
+    "snapshot": "SNP-MOSPI-NAS-20260831-001",
+    "retrieval_date": "2026-09-07",
+    "artifact_hash": null,
+    "notes": "Official MoSPI NAS-2026 publication release state registered. Binary publication hash is not claimed because direct binary artifact retrieval was unavailable in the execution environment."
+  },
+  "lineage": {
+    "source": "SRC-MOSPI-NAS",
+    "dataset": "DS-MOSPI-NAS-001",
+    "snapshot": "SNP-MOSPI-NAS-20260831-001",
+    "locator_ids": [
+      "LOC-MOSPI-NAS-20260831-PUBLICATION",
+      "LOC-MOSPI-NAS-20260831-MFG-GVA",
+      "LOC-MOSPI-NAS-20260831-METHODOLOGY"
+    ],
+    "vintage": "VNT-MOSPI-NAS-2026-08-31"
+  },
+  "validation": {
+    "status": "passed_with_flags",
+    "anomalies": ["methodology_change"],
+    "notes": "Current 2022-23-base National Accounts series is retained as a distinct methodology vintage. Manufacturing growth and share values are source-defined current-series observations and are not mixed with the superseded 2011-12-base series."
+  },
+  "transformation": {
+    "status": "source_defined_only",
+    "notes": "No cross-vintage splicing or unsupported derivation. Registered growth values and source-reported manufacturing GVA shares are ingested as published."
+  }
+}

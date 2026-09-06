@@ -1,6 +1,6 @@
 # Research Ledger
 
-No substantive policy or causal sector research has been verified as completed. The Manufacturing pilot now contains verified repository-level ASI 2023-24 and IIP ingestion records. Automated ASI test execution remains unverified.
+No substantive policy or causal sector research has been verified as completed. The Manufacturing pilot contains repository-verified IIP, ASI and NAS descriptive data ingestion records. Automated targeted test execution remains unverified where the repository filesystem is unavailable.
 
 ## Initialization record
 
@@ -77,14 +77,13 @@ No substantive policy or causal sector research has been verified as completed. 
 - Vintage: `VNT-MOSPI-IIP-2022-23-20260828`
 - Official release: 2026-08-28, Quick Estimates for July 2026.
 - Determination: new release-state vintage of the existing 2022-23-base dataset, not a new base-year or indicator-definition vintage.
-- Evidence: the release retains base 2022-23, states that June 2026 incorporates updated production data, and labels July 2026 a quick estimate. It reports manufacturing indices of 118.7 for April 2026, 122.2 for May 2026, 125.3 for June 2026 and 127.4 for July 2026.
-- Revision handling: April 2026 is preserved as 119.3 in the June 1 vintage and recorded as 118.7 in the August 28 vintage. June 2026 is recorded as 125.3 in the August vintage. May 2026 is added. July 2026 is provisional.
+- Evidence: the release retains base 2022-23, states that June 2026 incorporates updated production data, and labels July 2026 a quick estimate.
+- Revision handling: April 2026 is preserved as 119.3 in the June 1 vintage and recorded as 118.7 in the August 28 vintage. May 2026 is added. July 2026 is provisional.
 - Snapshot: `SNP-MOSPI-IIP-20260828-001`.
-- Locators: `LOC-MOSPI-IIP-20260828-STATEMENT-I`, `LOC-MOSPI-IIP-20260828-STATEMENT-IIA`, `LOC-MOSPI-IIP-20260828-STATEMENT-IV`.
 - Acquisition: official release reference preserved. Direct binary artifact retrieval was unavailable, so no SHA-256 was claimed.
 - Validation: passed with flags for prior-observation revisions and July 2026 quick estimate.
 - Observation layer: four new release-state observations for April-July 2026. Canonical observation count is now 41 across two preserved vintages.
-- Indicator health: `Watch`, because the latest observation is provisional and the series remains revision-prone.
+- Indicator health: `Watch`.
 - Evidence status: descriptive data evidence only. No policy, attribution or scoring conclusion was introduced.
 - Last verified: 2026-09-07
 
@@ -103,8 +102,28 @@ No substantive policy or causal sector research has been verified as completed. 
 - Validation report: `DS-MOSPI-ASI-001-VNT-MOSPI-ASI-2023-24`, status `passed_with_flags`, with `registered_manufacturing_coverage_limit` recorded.
 - Observation layer: `IND-MFG-ASI-GVA-001` = 245833605 ₹ lakh, source-defined; `IND-MFG-ASI-EMP-001` = 19589131 persons. Both are All-India, observed, quality grade A, and linked to the ASI vintage and dataset.
 - Coverage control: ASI GVA is not total manufacturing GVA; ASI persons engaged are not total manufacturing employment.
-- Preservation control: validation explicitly records that no IIP observation was modified or overwritten.
-- Targeted test: `tests/test_asi_ingestion.py` was inspected at the verified test commit and checks the ASI lineage plus the 41 IIP observations across both vintages. It was not independently executed because the available execution environment could not access the repository filesystem; direct clone failed due network name-resolution failure. Result: `not independently executed`.
+- Dataset status decision: `DS-MOSPI-ASI-001` remains dataset-level `registered_only`; acquisition is represented by `VNT-MOSPI-ASI-2023-24` as `acquired`.
+- Targeted test: `tests/test_asi_ingestion.py` was inspected at the verified test commit and checks the ASI lineage plus the 41 IIP observations across both vintages. It was not independently executed because the available execution environment could not access the repository filesystem. Result: `not independently executed`.
 - CI: no workflow run exposed for the test commit; status recorded literally as `no run`.
 - Evidence status: descriptive data evidence only. No policy, attribution or scoring conclusion was introduced.
+- Last verified: 2026-09-07
+
+## NAS 2026 ingestion record
+
+- Research ID: DATA-MFG-NAS-001
+- Question: Can the current National Accounts Statistics release be acquired, validated and loaded only for already registered Manufacturing GVA indicators while preserving the 2022-23 methodology boundary?
+- Sector: Manufacturing (`MFG`)
+- Dataset: `DS-MOSPI-NAS-001`
+- Vintage: `VNT-MOSPI-NAS-2026-08-31`
+- Official release: 2026-08-31, National Accounts Statistics - 2026 publication.
+- Snapshot: `SNP-MOSPI-NAS-20260831-001`.
+- Acquisition manifest: `ACQ-MOSPI-NAS-2026`, status `retrieved`.
+- Validation report: `DS-MOSPI-NAS-001-VNT-MOSPI-NAS-2026-08-31`, status `passed_with_flags`, flag `methodology_change`.
+- Source locators: official MoSPI NAS publication page, official current-series manufacturing GVA release, and MoSPI FAQ/methodology reference.
+- Registered observations ingested: `IND-MFG-GVA-GROWTH-001` for 2023-24 = 12.7%, 2024-25 = 9.3%, 2025-26 = 10.7%; `IND-MFG-GVA-SHARE-001` for 2022-23 = 14.7%, 2023-24 = 14.7%, 2024-25 = 14.5%, 2025-26 = 14.8%.
+- Observation finality: 2024-25 records are marked revised; 2025-26 records are marked provisional. No value is presented as final where the source identifies a provisional estimate.
+- Methodology control: current 2022-23-base series retained separately from the superseded 2011-12-base series. No cross-vintage splice or unsupported calculation was introduced.
+- Indicator health: both NAS Manufacturing indicators moved from `Missing` to `Watch` because current observations are present but the series remains revision-prone and the latest annual observation is provisional.
+- Dataset status: `DS-MOSPI-NAS-001` remains `registered_only` at dataset level; the acquired state is represented by the vintage record.
+- Evidence status: descriptive data evidence only. No policy, attribution, counterfactual or scoring conclusion was introduced.
 - Last verified: 2026-09-07

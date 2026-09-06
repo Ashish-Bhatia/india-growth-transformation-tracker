@@ -1,0 +1,26 @@
+{
+  "source_id": "SRC-MOSPI-NAS",
+  "snapshot_id": "SNP-MOSPI-NAS-20260831-001",
+  "release_date": "2026-08-31",
+  "retrieval_date": "2026-09-07",
+  "locators": [
+    {
+      "locator_id": "LOC-MOSPI-NAS-20260831-PUBLICATION",
+      "reference": "National Accounts Statistics - 2026 publication",
+      "url": "https://www.mospi.gov.in/publication/national-accounts-statistics-2025-26",
+      "detail": "Official MoSPI publication page for National Accounts Statistics - 2026, released 31 August 2026."
+    },
+    {
+      "locator_id": "LOC-MOSPI-NAS-20260831-MFG-GVA",
+      "reference": "Manufacturing GVA time series, current 2022-23-base National Accounts series",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2298236&lang=1&reg=1",
+      "detail": "Official PIB release reproduces the current-series manufacturing GVA growth and share values for 2022-23 through 2025-26 and identifies the 2022-23 base. Used as an independent release-state cross-check for the registered NAS indicators."
+    },
+    {
+      "locator_id": "LOC-MOSPI-NAS-20260831-METHODOLOGY",
+      "reference": "Updated National Accounts series methodology, 2022-23 base",
+      "url": "https://www.mospi.gov.in/faq",
+      "detail": "MoSPI FAQ records the current 2022-23 base and National Accounts revision treatment; manufacturing under the updated series incorporates the revised methodology."
+    }
+  ]
+}

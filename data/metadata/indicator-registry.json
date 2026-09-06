@@ -23,7 +23,7 @@
       "calculation_method": "Use the source-defined annual real manufacturing GVA growth rate. Do not recompute from mixed-vintage levels without recording the vintage and base series.",
       "methodology_version": "IND-MFG-REG-1.0",
       "update_class": "U5",
-      "health_status": "Missing",
+      "health_status": "Watch",
       "source_mapping": [{"source_id": "SRC-MOSPI-NAS", "dataset_id": "DS-MOSPI-NAS-001", "priority": 1, "relationship": "primary", "effective_date": "2026-09-07", "end_date": null}],
       "version_history": [{"version": "1.0", "definition": "Annual percentage change in real manufacturing GVA using the current National Accounts series.", "numerator": "current-period real manufacturing GVA minus prior-period real manufacturing GVA", "denominator": "prior-period real manufacturing GVA", "methodology": "MoSPI National Accounts methodology, current base 2022-23", "base_year": "2022-23", "effective_date": "2026-09-07", "source_id": "SRC-MOSPI-NAS", "comparability_status": "Use source-defined current-series back-series and preserve revisions."}]
     },
@@ -46,7 +46,7 @@
       "calculation_method": "Manufacturing GVA / total GVA * 100, using the same NAS vintage, price basis and reference period for numerator and denominator.",
       "methodology_version": "IND-MFG-REG-1.0",
       "update_class": "U5",
-      "health_status": "Missing",
+      "health_status": "Watch",
       "source_mapping": [{"source_id": "SRC-MOSPI-NAS", "dataset_id": "DS-MOSPI-NAS-001", "priority": 1, "relationship": "primary", "effective_date": "2026-09-07", "end_date": null}],
       "version_history": [{"version": "1.0", "definition": "Manufacturing GVA divided by total GVA for the same period and price basis.", "numerator": "manufacturing GVA", "denominator": "total GVA", "methodology": "Derived from MoSPI National Accounts series.", "base_year": "2022-23 for constant-price variants", "effective_date": "2026-09-07", "source_id": "SRC-MOSPI-NAS", "comparability_status": "Derived metric; preserve NAS revisions and price basis."}]
     },
@@ -140,7 +140,7 @@
       "update_class": "U5",
       "health_status": "Missing",
       "source_mapping": [{"source_id": "SRC-MOSPI-PLFS", "dataset_id": "DS-MOSPI-PLFS-001", "priority": 1, "relationship": "primary", "effective_date": "2026-09-07", "end_date": null}],
-      "version_history": [{"version": "1.0", "definition": "PLFS worker share associated with manufacturing industry divisions 10-33 under NIC 2008.", "numerator": "workers in manufacturing divisions 10-33 under the specified PLFS concept", "denominator": "workers in the same PLFS universe", "methodology": "PLFS annual survey concepts, NIC 2008 industry classification for the historical series.", "base_year": null, "effective_date": "2026-09-07", "source_id": "SRC-MOSPI-PLFS", "comparability_status": "Review the 2025 sampling-design change before comparing post-2025 estimates with earlier annual estimates."}]
+      "version_history": [{"version": "1.0", "definition": "PLFS worker share associated with manufacturing industry divisions 10-33 under the specified PLFS concept.", "numerator": "workers in manufacturing divisions 10-33 under the specified PLFS concept", "denominator": "workers in the same PLFS universe", "methodology": "PLFS annual survey concepts, NIC 2008 industry classification for the historical series.", "base_year": null, "effective_date": "2026-09-07", "source_id": "SRC-MOSPI-PLFS", "comparability_status": "Review the 2025 sampling-design change before comparing post-2025 estimates with earlier annual estimates."}]
     },
     {
       "indicator_id": "IND-MFG-UNIDO-MVA-001",

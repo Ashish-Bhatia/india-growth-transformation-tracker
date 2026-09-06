@@ -1,0 +1,30 @@
+{
+  "dataset_id": "DS-MOSPI-NAS-001",
+  "vintage_id": "VNT-MOSPI-NAS-2026-08-31",
+  "validation_status": "passed_with_flags",
+  "flags": ["methodology_change"],
+  "release_validation": {
+    "release_date": "2026-08-31",
+    "reference_periods": ["2022-23", "2023-24", "2024-25", "2025-26"],
+    "base_year": "2022-23",
+    "source_series": "current National Accounts series"
+  },
+  "indicator_validation": {
+    "IND-MFG-GVA-GROWTH-001": {
+      "values_checked": [12.7, 9.3, 10.7],
+      "periods": ["2023-24", "2024-25", "2025-26"],
+      "status": "passed",
+      "basis": "Official current-series manufacturing GVA growth values reproduced in the 12 August 2026 PIB release, sourced to the 5 June 2026 MoSPI GDP release."
+    },
+    "IND-MFG-GVA-SHARE-001": {
+      "values_checked": [14.7, 14.7, 14.5, 14.8],
+      "periods": ["2022-23", "2023-24", "2024-25", "2025-26"],
+      "status": "passed",
+      "basis": "Official current-series manufacturing share of total GVA values reproduced in the 12 August 2026 PIB release."
+    }
+  },
+  "comparability": {
+    "status": "qualified",
+    "note": "The current NAS series uses base year 2022-23 and revised methodology. It must not be silently spliced with the superseded 2011-12-base series."
+  }
+}

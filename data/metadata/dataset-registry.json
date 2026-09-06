@@ -40,13 +40,13 @@
       "revision_policy": "National Accounts estimates are subject to revisions as improved and more comprehensive information becomes available.",
       "latest_observation": "2025-26",
       "ingestion_status": "registered_only",
-      "validation_status": "metadata_verified",
-      "current_version": "NAS-2025-26",
+      "validation_status": "validated_vintage",
+      "current_version": "NAS-2026",
       "access_location": "https://www.mospi.gov.in/publication/national-accounts-statistics-2025-26",
       "licence": "Official public data; redistribution subject to applicable MoSPI dissemination terms.",
       "update_schedule": "annual publication with quarterly estimates and releases",
       "status": "active",
-      "provenance": {"verification_status": "verified", "verified_at": "2026-09-07", "verification_basis": "MoSPI National Accounts publication identifies GDP, GVA and industry statistics; official FAQ records the 2022-23 base and revision treatment.", "verification_reference": "https://www.mospi.gov.in/publication/national-accounts-statistics-2025-26"}
+      "provenance": {"verification_status": "verified", "verified_at": "2026-09-07", "verification_basis": "MoSPI announced the National Accounts Statistics - 2026 publication on 31 August 2026. The current 2022-23-base series and manufacturing growth/share values were independently cross-checked against official MoSPI/PIB material.", "verification_reference": "https://www.mospi.gov.in/publication/national-accounts-statistics-2025-26"}
     },
     {
       "dataset_id": "DS-MOSPI-IIP-001",
@@ -175,7 +175,7 @@
       "validation_status": "metadata_verified",
       "current_version": "DBIE-LIVE",
       "access_location": "https://data.rbi.org.in/",
-      "licence": "Official public data; source-specific reproduction terms apply.",
+      "licence": "Official public data; source-specific terms apply.",
       "update_schedule": "series-dependent",
       "status": "active",
       "provenance": {"verification_status": "verified", "verified_at": "2026-09-07", "verification_basis": "RBI identifies DBIE as its data warehouse and provides time-series publications and downloadable statistical series; series-specific notes govern interpretation.", "verification_reference": "https://dbieold.rbi.org.in/DBIE/"}

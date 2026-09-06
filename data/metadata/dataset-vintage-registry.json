@@ -34,6 +34,16 @@
       "acquisition_status": "pending_acquisition"
     },
     {
+      "vintage_id": "VNT-MOSPI-NAS-2026-08-31",
+      "dataset_id": "DS-MOSPI-NAS-001",
+      "version": "NAS-2026",
+      "release_date": "2026-08-31",
+      "retrieval_date": "2026-09-07T00:00:00Z",
+      "file_hash": null,
+      "snapshot_id": "SNP-MOSPI-NAS-20260831-001",
+      "acquisition_status": "acquired"
+    },
+    {
       "vintage_id": "VNT-MOSPI-ASI-2023-24",
       "dataset_id": "DS-MOSPI-ASI-001",
       "version": "ASI-2023-24",
