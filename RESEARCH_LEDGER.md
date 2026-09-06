@@ -18,7 +18,7 @@ No substantive sector or policy research has been verified as completed in the P
 ## Database foundation record
 
 - Research ID: DB-001
-- Question: Has the canonical PostgreSQL analytical foundation been implemented from the Project Sources?
+- Question: Has the canonical PostgreSQL analytical foundation been implemented and execution-validated from the Project Sources?
 - Sector: Project-wide
 - Policy: None
 - Date opened: 2026-09-07
@@ -30,5 +30,5 @@ No substantive sector or policy research has been verified as completed in the P
 - Provenance: Sources, datasets, source snapshots, source locators, vintages, observation revisions, audit events and public provenance view implemented.
 - Scoring: Configurable schema implemented; no final weights, normalization or composite formulas seeded.
 - Research status: No substantive sector research or verified observations added.
-- Validation status: Static tests are repository-local; PostgreSQL integration is configured for GitHub Actions but has not been executed in this runtime.
+- Validation: GitHub Actions workflow run 34057565918 executed against PostgreSQL 16 and completed successfully. Static migration tests, migrations, seed loading and database integration tests all passed.
 - Last verified: 2026-09-07
