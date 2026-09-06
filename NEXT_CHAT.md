@@ -1,14 +1,14 @@
 # Next Chat
 
 ## Current position
-Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 verified records. The Dataset Registry has 9 authoritative dataset records and the Indicator Registry has 7 minimum authoritative Manufacturing indicators. `IND-MFG-IIP-001` now has two preserved release-state vintages and 41 canonical observations.
+Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 verified records. The Dataset Registry has 9 authoritative dataset records and the Indicator Registry has 7 minimum authoritative Manufacturing indicators. ASI 2023-24 is registered and ingested. `IND-MFG-IIP-001` retains two preserved release-state vintages and 41 canonical observations.
 
-## Verified repository state before this continuity update
-- Verified substantive repository HEAD: `7021fb8d2ea4b10abe8dbcf979ef78e566d43135`.
-- First IIP vintage registration and ingestion were completed earlier and remain preserved.
-- August 2026 IIP vintage registration, source reference, locators, staging, validation, manifest, canonical observations, indicator health update, test update, decision-log update, ledger update and project-state update are now completed.
-- This continuity-file update will advance HEAD. Verify the actual repository HEAD before relying on this file.
-- GitHub Actions status for the final HEAD has not yet been verified. Report it literally after inspection. Do not infer success and do not rerun merely to obtain a status.
+## Verified repository state
+- Prior verified implementation/test HEAD: `050847f3e4ad87fab09680a314d933da0974b707`.
+- Continuity updates advanced the repository after that verified test commit. The current HEAD must be inspected before relying on this file.
+- `tests/test_asi_ingestion.py` is present at the prior verified test commit and checks ASI lineage plus preservation of the 41 IIP observations across both vintage IDs.
+- Targeted ASI test execution was not independently possible because the available environment could not access the repository filesystem. Direct `git clone` failed with network name-resolution failure. Do not claim a test pass.
+- GitHub Actions status for the prior verified test commit: `no run`. Commit status checks exposed: none.
 
 ## Completed
 - PostgreSQL schema and migration foundation.
@@ -20,38 +20,57 @@ Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 veri
 - Manufacturing observation-ingestion plan.
 - Dataset Vintage Registry contract and acquisition targets.
 - First IIP vintage `VNT-MOSPI-IIP-2022-23`, release date 2026-06-01, preserved unchanged.
-- First IIP snapshot `SNP-MOSPI-IIP-20260601-001` and locators registered.
-- First vintage validation passed with methodology-change flag.
-- 37 first-vintage observations loaded for April 2023-April 2026.
-- Official 28 August 2026 IIP release assessed as a new release-state vintage of the existing 2022-23-base dataset, not a new methodology/base-year series.
-- Second vintage `VNT-MOSPI-IIP-2022-23-20260828` registered.
-- Second snapshot `SNP-MOSPI-IIP-20260828-001` and three locators registered.
-- Four release-state observations loaded for April-July 2026: April 118.7 revised, May 122.2, June 125.3 revised, July 127.4 provisional.
-- First vintage April 2026 value 119.3 remains unchanged.
-- Second vintage validation passed with revision and provisional flags.
-- Indicator health updated to `Watch` without changing the indicator definition.
-- No SHA-256 fabricated for the second release because direct binary retrieval was unavailable.
-- Targeted IIP test updated for two vintages. Execution still requires verification after the final repository change.
+- Second IIP release-state vintage `VNT-MOSPI-IIP-2022-23-20260828`, preserved separately.
+- 41 canonical IIP observations across the two preserved vintages according to repository state and the ASI targeted-test contract.
+- ASI dataset `DS-MOSPI-ASI-001` and vintage `VNT-MOSPI-ASI-2023-24` registered.
+- ASI release date 2025-08-27 and reference period April 2023-March 2024 preserved.
+- ASI snapshot `SNP-MOSPI-ASI-20250827-001`, source reference and locators preserved.
+- ASI validation report status `passed_with_flags`, with `registered_manufacturing_coverage_limit` recorded.
+- ASI ingestion manifest status `retrieved` with complete lineage and validation flag.
+- `IND-MFG-ASI-GVA-001` loaded at 245833605 ₹ lakh, source-defined.
+- `IND-MFG-ASI-EMP-001` loaded at 19589131 persons.
+- ASI registered-organised-manufacturing coverage limitation preserved.
+- Continuity files updated to record the verification boundary.
 
-## IIP controls
-- Base year is 2022-23=100.
-- Do not splice the superseded 2011-12 series into the current indicator.
-- Preserve every release-state vintage and revision.
-- Treat quick estimates as provisional.
-- Treat revisions as new release-state observations, never as overwrites of prior vintage evidence.
+## Verification boundary
+- ASI metadata, manifest, validation report, both ASI observations and the targeted test source were inspected at the verified repository state.
+- The automated ASI test result remains `not independently executed`.
+- The test contract requires exactly 41 IIP rows and both IIP vintage IDs. No independent runtime test of this contract was completed in this environment.
+- The ASI test commit itself added only `tests/test_asi_ingestion.py`, so it did not alter canonical IIP data.
+- No policy evaluation, attribution, counterfactual conclusion or score was introduced.
 
 ## Exact next executable task
-1. Inspect the actual repository at the final HEAD and verify all changed files from the August IIP ingestion sequence.
-2. Run or otherwise verify the applicable targeted IIP ingestion test. Record the literal result.
-3. Verify the final GitHub Actions workflow status for the final HEAD. If no run is exposed, record `no run`.
-4. Verify the 41 canonical observations, two vintage IDs, source locators, manifests and validation reports are internally consistent.
-5. Verify `IND-MFG-IIP-001` health is `Watch` and its definition/methodology remain unchanged.
-6. Only after these checks, identify the next authoritative Manufacturing acquisition target. Do not start policy research, attribution or scoring.
+1. Inspect the actual current repository HEAD and verify the four continuity-file commits and final changed files.
+2. If a repository-capable execution environment is available, run `tests/test_asi_ingestion.py` against the actual current HEAD and record the literal result. If execution remains unavailable, record `not independently executed`.
+3. Verify the ASI observations, vintage, snapshot, locators, manifest and validation report remain internally consistent.
+4. Verify the 41 IIP observations and both preserved vintage IDs remain intact, with no historical overwrite.
+5. Verify current GitHub Actions status literally. If no workflow run is exposed, record `no run`. Do not rerun merely to obtain a status.
+6. After verification, identify the next authoritative Manufacturing acquisition target from the existing Dataset Registry and Project Sources. Do not start policy research, attribution or scoring.
 
-## Research boundary
-The pilot chain is:
-Source → Dataset → Vintage → Snapshot → Locator → Raw reference → Validation → Staged observation → Canonical observation → Indicator → Evidence → Policy → Attribution → Sector analysis → Score → Publication.
-No layer should be skipped. Observed change and attributed change remain separate. Source tier remains separate from data quality, evidence grade and causal strength.
+## Required Project Sources
+- Research Charter
+- Research Methodology
+- Evidence & Source Standard
+- Attribution Framework
+- Scoring Framework
+- Data Governance & Versioning
+- Indicator Framework
+- Master Indicator Registry
+- Master Research Taxonomy and Data Model
+- Master Database Schema & Entity Relationship Model
+- Source & Data Acquisition Architecture
+- Research Execution Protocol & Sector Onboarding Framework
+- Policy Evaluation Framework
+- External Conditions & Counterfactual Framework
+- GitHub Repository Specification
 
 ## What not to repeat
-Do not repeat initialization audit, database design, migration framework design, taxonomy design, provenance architecture, registry contract design, the existing Source Registry records, old-HEAD CI absence investigation, pilot-sector selection, methodology-document creation, Dataset Registry establishment, Indicator Registry establishment, existing registry tests, first IIP acquisition/validation, or the August IIP vintage determination and ingestion.
+Do not repeat initialization, database design, taxonomy, provenance architecture, Source Registry establishment, Dataset Registry establishment, Indicator Registry establishment, Manufacturing pilot selection, first IIP acquisition, first IIP validation, August 2026 IIP vintage determination, August IIP ingestion, or ASI source discovery and acquisition.
+
+## Completion criteria for this phase
+- ASI source, dataset, vintage, snapshot, provenance, validation and registered observations remain verified.
+- Targeted ASI test result is recorded literally, without claiming execution if unavailable.
+- CI status is recorded literally.
+- 41 IIP observations and both release-state vintages remain preserved.
+- Continuity files match actual repository state.
+- No unsupported policy, attribution, counterfactual or scoring conclusion is introduced.
