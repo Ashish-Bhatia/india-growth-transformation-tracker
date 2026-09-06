@@ -1,7 +1,7 @@
 # Next Chat
 
 ## Current position
-Registry-layer implementation is complete and awaiting execution validation as of 2026-09-07.
+Registry layer is execution-validated as of 2026-09-07. The project is now at the operational provenance and ingestion-conventions phase.
 
 ## Completed
 - Versioned PostgreSQL migrations.
@@ -18,6 +18,7 @@ Registry-layer implementation is complete and awaiting execution validation as o
 - Machine-readable Master Indicator Registry JSON Schema and registry document.
 - Registry structural tests and CI coverage.
 - Registry seed-boundary documentation.
+- CI run 34058734002 successfully executed registry tests, PostgreSQL 16 migration, seed loading and database integration tests.
 
 ## Registry seed status
 Both registries are intentionally empty. The Project Sources define the required metadata structures, source hierarchy and indicator families, but do not provide complete authoritative record-level registries with source mappings. No fabricated records were added.
@@ -35,5 +36,18 @@ Both registries are intentionally empty. The Project Sources define the required
 ## Research boundary
 No substantive sector research, policy evaluation, verified observations or public scores have been added.
 
-## Next executable task after registry validation
-Implement operational provenance and ingestion conventions using the existing source, dataset, snapshot, locator, vintage and observation structures. Define raw-to-clean-to-derived lineage, acquisition metadata, source-change handling, release calendars, validation states and reproducible ingestion contracts. Do not begin substantive sector research until the provenance chain and ingestion conventions are operational.
+## Next executable task
+Implement operational provenance and ingestion conventions using the existing source, dataset, snapshot, locator, vintage and observation structures. Define:
+
+1. source acquisition record conventions
+2. raw, clean and derived layer lineage
+3. dataset and vintage registration
+4. snapshot and hash conventions
+5. source locator conventions
+6. transformation and calculation provenance
+7. release-calendar and freshness metadata
+8. source-change and methodology-change handling
+9. validation and anomaly states
+10. reproducible ingestion contracts and tests.
+
+Do not begin substantive sector research until the database, Source Registry, Indicator Registry, provenance chain and ingestion conventions are operational.
