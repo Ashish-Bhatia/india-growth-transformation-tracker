@@ -67,3 +67,24 @@ No substantive policy or causal sector research has been verified as completed. 
 - Evidence status: descriptive data evidence only. No policy, attribution or scoring conclusion was introduced.
 - Local targeted test: `tests/test_iip_ingestion.py`, 1 passed.
 - Last verified: 2026-09-07
+
+## IIP August-2026 release-state vintage record
+
+- Research ID: DATA-MFG-IIP-002
+- Question: Does the official 28 August 2026 IIP release represent a new methodology vintage or a revised release-state of the existing 2022-23-base series, and can its revisions be ingested without altering the first vintage?
+- Sector: Manufacturing (`MFG`)
+- Indicator: `IND-MFG-IIP-001`
+- Dataset: `DS-MOSPI-IIP-001`
+- Vintage: `VNT-MOSPI-IIP-2022-23-20260828`
+- Official release: 2026-08-28, Quick Estimates for July 2026.
+- Determination: new release-state vintage of the existing 2022-23-base dataset, not a new base-year or indicator-definition vintage.
+- Evidence: the release retains base 2022-23, states that June 2026 incorporates updated production data, and labels July 2026 a quick estimate. It reports manufacturing indices of 118.7 for April 2026, 122.2 for May 2026, 125.3 for June 2026 and 127.4 for July 2026.
+- Revision handling: April 2026 is preserved as 119.3 in the June 1 vintage and recorded as 118.7 in the August 28 vintage. June 2026 is recorded as 125.3 in the August vintage. May 2026 is added. July 2026 is provisional.
+- Snapshot: `SNP-MOSPI-IIP-20260828-001`.
+- Locators: `LOC-MOSPI-IIP-20260828-STATEMENT-I`, `LOC-MOSPI-IIP-20260828-STATEMENT-IIA`, `LOC-MOSPI-IIP-20260828-STATEMENT-IV`.
+- Acquisition: official release reference preserved. Direct binary artifact retrieval was unavailable, so no SHA-256 was claimed.
+- Validation: passed with flags for prior-observation revisions and July 2026 quick estimate.
+- Observation layer: four new release-state observations for April-July 2026. Canonical observation count is now 41 across two preserved vintages.
+- Indicator health: `Watch`, because the latest observation is provisional and the series remains revision-prone.
+- Evidence status: descriptive data evidence only. No policy, attribution or scoring conclusion was introduced.
+- Last verified: 2026-09-07
