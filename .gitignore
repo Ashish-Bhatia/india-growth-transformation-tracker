@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+
+# Local databases and runtime files
+*.sqlite
+*.sqlite3
+*.db
+postgres-data/
+
+# Secrets and credentials
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Generated analytical outputs
+reports/generated/
