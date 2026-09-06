@@ -1,0 +1,22 @@
+{
+  "dataset_id": "DS-MOSPI-IIP-001",
+  "vintage_id": "VNT-MOSPI-IIP-2022-23-20260828",
+  "validation_version": "1.0",
+  "status": "passed_with_flags",
+  "checks": {
+    "base_year": {"status": "passed", "expected": "2022-23=100"},
+    "unit": {"status": "passed", "expected": "index, 2022-23=100"},
+    "frequency": {"status": "passed", "expected": "MONTHLY"},
+    "geography": {"status": "passed", "expected": "INDIA"},
+    "observation_count": {"status": "passed", "observed": 4},
+    "duplicate_observations": {"status": "passed", "observed": 0},
+    "periods": {"status": "passed", "observed": ["2026-04", "2026-05", "2026-06", "2026-07"]},
+    "april_2026_revision": {"status": "passed", "previous_value": 119.3, "current_value": 118.7},
+    "june_2026_revision": {"status": "passed", "previous_quick_estimate": 123.3, "current_final_revision": 125.3},
+    "july_2026_quick_estimate": {"status": "passed", "value": 127.4, "status_classification": "provisional"},
+    "published_july_growth_reconciliation": {"status": "passed", "manufacturing_growth_percent": 7.3}
+  },
+  "flags": ["revision_of_prior_observations", "july_2026_quick_estimate"],
+  "review_required": true,
+  "notes": "This is a new release-state vintage of the existing 2022-23-base IIP dataset, not a new methodology/base-year series. The August 28 release adds July 2026 and revises June 2026; it also carries the current April 2026 value of 118.7, replacing the 119.3 value in the June 1 first-release vintage. The June 1 vintage remains unchanged."
+}
