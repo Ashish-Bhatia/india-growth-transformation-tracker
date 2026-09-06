@@ -47,7 +47,7 @@ def test_dataset_registry_contains_only_verified_authoritative_records():
 
 def test_indicator_registry_contains_only_authoritatively_verified_records():
     registry = load_json(REGISTRY / "indicator-registry.json")
-    assert registry["registry_version"] == "1.1.0"
+    assert registry["registry_version"] == "1.1.1"
     assert registry["schema_version"] == "1.0"
     assert registry["authority"] == "Master Indicator Registry v1.0"
     assert registry["seed_status"] == "authoritative_seeded"
