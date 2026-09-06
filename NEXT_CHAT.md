@@ -1,7 +1,7 @@
 # Next Chat
 
 ## Current position
-Database foundation is execution-validated as of 2026-09-07. The next phase is registry-layer implementation.
+Registry-layer implementation is complete and awaiting execution validation as of 2026-09-07.
 
 ## Completed
 - Versioned PostgreSQL migrations.
@@ -14,6 +14,13 @@ Database foundation is execution-validated as of 2026-09-07. The next phase is r
 - Static and integration test coverage.
 - GitHub Actions PostgreSQL validation workflow.
 - CI run 34057565918 successfully executed PostgreSQL 16, clean migration, canonical seed loading, static tests and database integration tests.
+- Machine-readable Source Registry JSON Schema and registry document.
+- Machine-readable Master Indicator Registry JSON Schema and registry document.
+- Registry structural tests and CI coverage.
+- Registry seed-boundary documentation.
+
+## Registry seed status
+Both registries are intentionally empty. The Project Sources define the required metadata structures, source hierarchy and indicator families, but do not provide complete authoritative record-level registries with source mappings. No fabricated records were added.
 
 ## Open controls
 - ISSUE-INIT-001: materiality descriptions.
@@ -23,9 +30,10 @@ Database foundation is execution-validated as of 2026-09-07. The next phase is r
 - ISSUE-INIT-006: API and website implementation contracts.
 - ISSUE-DB-001: authoritative domain registry.
 - ISSUE-DB-002: international country registry.
+- ISSUE-REG-001: authoritative record-level source and indicator registry seed dependency.
 
 ## Research boundary
 No substantive sector research, policy evaluation, verified observations or public scores have been added.
 
-## Next executable task
-Implement the machine-readable Source Registry and Master Indicator Registry structures, using only authoritative registry content already present in the Project Sources. Do not invent indicator records or source metadata. Preserve source tier separately from evidence grade and causal strength. Do not begin substantive sector research.
+## Next executable task after registry validation
+Implement operational provenance and ingestion conventions using the existing source, dataset, snapshot, locator, vintage and observation structures. Define raw-to-clean-to-derived lineage, acquisition metadata, source-change handling, release calendars, validation states and reproducible ingestion contracts. Do not begin substantive sector research until the provenance chain and ingestion conventions are operational.
