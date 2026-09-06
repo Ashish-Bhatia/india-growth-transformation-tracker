@@ -1,14 +1,16 @@
 # Next Chat
 
 ## Current position
-Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and validation is CLOSED at the dataset-ingestion boundary. The project is ready for a separate decision on the next Manufacturing research action after continuity state is verified.
+Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and validation is CLOSED at the dataset-ingestion boundary. The next research stage is Manufacturing baseline establishment.
 
 ## Verified repository state
 - Repository: `Ashish-Bhatia/india-growth-transformation-tracker`.
-- Current main HEAD before this reconciliation: `dbc690b22de747a01520eb52cdc43cc1f77bdfd5`.
-- PLFS acquisition / CI-tested commit: `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`.
-- Latest verified CI: Database Validation #35, run `34066759564`, terminal `success`, on `8a79fc7...`.
-- Current HEAD CI: `NO RUN / NOT VERIFIED`. Do not infer success from Database Validation #35.
+- Current main HEAD: `0d6b4d55c26d54b49ff0aef93ed69878cd7c4fd0`.
+- Latest continuity correction commit: `docs: correct continuity HEAD in project state`.
+- The preceding reconciliation HEAD was `567a74db8ae8388e9b63275b360751787188d753`.
+- Exact current HEAD CI: `NO RUN / NOT VERIFIED` unless an exact-SHA workflow run is later verified.
+- Latest verified dataset CI: Database Validation #35, run `34066759564`, terminal `success`, tested SHA `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`.
+- Do not infer CI success for continuity documentation commits from Database Validation #35.
 
 ## PLFS boundary
 - Dataset-ingestion validation boundary: CLOSED.
@@ -26,26 +28,37 @@ Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and valid
 - No causal, attribution, policy-effectiveness, counterfactual or scoring conclusion has been introduced from PLFS observations.
 
 ## Continuity status
-- This file and `PROJECT_STATE.md` have been reconciled to the verified repository state.
-- `RESEARCH_LEDGER.md` preserves the earlier PLFS-blocked history and supersedes it with the later PLFS acquisition and validation record.
-- `DECISIONS_LOG.md` records the PLFS acquisition/validation event and qualifies the earlier ASI execution wording.
-- `ISSUES_REGISTER.md` distinguishes resolved CI/provenance implementation issues from genuinely open methodological and archival limitations.
+- `PROJECT_STATE.md` has been corrected to the actual repository HEAD at the time of its correction commit.
+- This file is being updated to record the new continuity correction commit. Its resulting SHA must be verified before relying on it.
+- `RESEARCH_LEDGER.md`, `DECISIONS_LOG.md` and `ISSUES_REGISTER.md` must remain consistent with the actual current HEAD and historical validation state.
 
 ## What not to repeat
-Do not repeat the Codespace infrastructure audit, NAS acquisition, IIP acquisition, ASI acquisition, PLFS dataset registration, `IND-MFG-PLFS-SHARE-001` registration, PLFS source discovery, or the PLFS ingestion validation already passed by Database Validation #35 unless new evidence requires reopening a boundary.
+Do not repeat the Codespace infrastructure audit, NAS acquisition, IIP acquisition, ASI acquisition, PLFS dataset registration, `IND-MFG-PLFS-SHARE-001` registration, PLFS source discovery, PLFS ingestion validation, or the prior continuity reconciliation except where needed to correct verified HEAD references.
 
 ## Open analytical dependencies
-- Manufacturing analytical readiness is not complete.
-- Approved international peer-basket methodology remains unresolved.
-- Domain seed remains deferred pending an authoritative domain registry.
-- Materiality labels remain unresolved.
-- Government-term analytical boundaries remain unresolved.
-- Attribution-confidence taxonomy remains unresolved.
-- Final scoring weights, normalization and composite formulas remain unresolved.
-- IIP, NAS, ASI and PLFS methodology/artifact limitations remain explicit.
+- Manufacturing baseline specification and indicator-gap mapping.
+- PLFS 2025 comparability treatment.
+- IIP methodology/base-year break.
+- NAS methodology boundary.
+- Binary artifact preservation limitations.
+- Materiality labels.
+- Government-term analytical boundaries.
+- Attribution-confidence taxonomy.
+- Final scoring weights, normalization and composite formulas.
+- Domain seed.
+- International peer-basket methodology.
 
-## Next project-chat boundary
-The next project chat should not restart onboarding or repeat completed acquisition/validation work. It should first verify this reconciled continuity state against actual `main`, then select the next Manufacturing research action under the approved Research Execution Protocol, Indicator Framework, Sector Research Blueprint and Source/Data Acquisition Architecture. Do not begin attribution, scoring or causal evaluation prematurely.
+## Exact next research action
+1. Verify the actual current main HEAD and all five continuity records.
+2. Inspect the governing Project Sources.
+3. Define the Manufacturing baseline research specification before acquiring additional data.
+4. Map required baseline dimensions to already registered indicators.
+5. Identify genuine indicator and data gaps.
+6. Verify any candidate indicator through the approved registry workflow before adding it.
+7. Identify authoritative sources for missing baseline dimensions.
+8. Preserve IIP, NAS and PLFS methodology boundaries and revision status.
+9. Only after the specification and mappings are established, proceed to approved historical data acquisition and validation.
+10. Perform descriptive analysis before attribution, counterfactual analysis, policy evaluation or scoring.
 
 ## Required Project Sources
 Research Charter; Research Methodology; Evidence & Source Standard; Attribution Framework; Scoring Framework; Data Governance & Versioning; Indicator Framework; Master Indicator Registry; Master Research Taxonomy and Data Model; Master Database Schema & Entity Relationship Model; Source & Data Acquisition Architecture; Research Execution Protocol & Sector Onboarding Framework; Sector Research Blueprint; Policy Evaluation Framework; External Conditions & Counterfactual Framework; GitHub Repository Specification.
