@@ -2,7 +2,7 @@
   "name": "India Growth & Transformation Tracker",
   "dockerComposeFile": "../docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspaces",
+  "workspaceFolder": "/workspaces/india-growth-transformation-tracker",
   "forwardPorts": [5432],
   "containerEnv": {
     "DATABASE_URL": "postgresql://tracker:tracker@localhost:5432/igt_tracker"
