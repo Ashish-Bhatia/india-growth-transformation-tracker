@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Apply versioned PostgreSQL migrations in lexical order.
 
-Migrations are transactional. A failed migration rolls back its own transaction.
-Applied migrations are immutable and tracked in public.schema_migrations.
+Each migration owns its transaction. A failed migration is rolled back before
+its version is recorded. Applied migration files are immutable by convention.
 """
 from __future__ import annotations
 
@@ -63,14 +63,17 @@ def main() -> None:
                 continue
             sql = path.read_text(encoding="utf-8")
             try:
-                with conn.transaction():
-                    conn.execute(sql)
-                    conn.execute(
-                        "INSERT INTO public.schema_migrations(version) VALUES (%s)",
-                        (path.name,),
-                    )
-            except Exception:
-                raise RuntimeError(f"Migration failed and was rolled back: {path.name}")
+                conn.execute(sql)
+                conn.commit()
+            except Exception as exc:
+                conn.rollback()
+                raise RuntimeError(f"Migration failed and was rolled back: {path.name}") from exc
+
+            conn.execute(
+                "INSERT INTO public.schema_migrations(version) VALUES (%s)",
+                (path.name,),
+            )
+            conn.commit()
             print(f"applied {path.name}")
 
 
