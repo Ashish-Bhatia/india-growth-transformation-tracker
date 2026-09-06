@@ -1,6 +1,6 @@
 # Research Ledger
 
-No substantive sector or policy research has been verified as completed in the Project Sources as of 2026-09-07.
+No substantive policy or causal sector research has been verified as completed. The first verified data-ingestion record for the Manufacturing pilot is now complete.
 
 ## Initialization record
 
@@ -29,7 +29,7 @@ No substantive sector or policy research has been verified as completed in the P
 - International geography: Country model implemented; India seeded; broader country registry deferred.
 - Provenance: Sources, datasets, source snapshots, source locators, vintages, observation revisions, audit events and public provenance view implemented.
 - Scoring: Configurable schema implemented; no final weights, normalization or composite formulas seeded.
-- Research status: No substantive sector research or verified observations added.
+- Research status: No substantive sector research or verified observations added at this stage.
 - Validation: GitHub Actions workflow run 34057565918 executed against PostgreSQL 16 and completed successfully. Static migration tests, migrations, seed loading and database integration tests all passed.
 - Last verified: 2026-09-07
 
@@ -47,4 +47,23 @@ No substantive sector or policy research has been verified as completed in the P
 - Seed boundary: no source or indicator records were invented. Project Sources specify required metadata and indicator families, but do not provide complete authoritative record-level registries with source mappings.
 - Validation: GitHub Actions run 34058734002 completed successfully. Registry tests, PostgreSQL migration, seed loading and database integration tests all passed against PostgreSQL 16.
 - Status: Registry layer execution-validated.
+- Last verified: 2026-09-07
+
+## IIP first-vintage ingestion record
+
+- Research ID: DATA-MFG-IIP-001
+- Question: Can the first authoritative Manufacturing IIP vintage be acquired, validated and loaded while preserving the required source, vintage, snapshot and observation lineage?
+- Sector: Manufacturing (`MFG`)
+- Indicator: `IND-MFG-IIP-001`
+- Dataset: `DS-MOSPI-IIP-001`
+- Vintage: `VNT-MOSPI-IIP-2022-23`
+- Official release: 2026-06-01, first press release of the new IIP series with base year 2022-23.
+- Acquisition: official MoSPI source reference preserved. Direct binary retrieval was unavailable in the execution environment, so no SHA-256 was claimed.
+- Snapshot: `SNP-MOSPI-IIP-20260601-001`.
+- Locators: `LOC-MOSPI-IIP-20260601-STATEMENT-I` and `LOC-MOSPI-IIP-20260601-STATEMENT-IIA`.
+- Observation layer: 37 monthly observations from April 2023 through April 2026.
+- Validation: passed with `methodology_change` flag. Base year, unit, frequency, geography, duplicate count, missing periods, annual indices and April 2026 growth reconciled successfully.
+- April 2026: source identifies the observation as a quick estimate; canonical status is `provisional`.
+- Evidence status: descriptive data evidence only. No policy, attribution or scoring conclusion was introduced.
+- Local targeted test: `tests/test_iip_ingestion.py`, 1 passed.
 - Last verified: 2026-09-07
