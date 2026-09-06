@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.1.0",
+  "registry_version": "1.1.1",
   "schema_version": "1.0",
   "authority": "Master Indicator Registry v1.0",
   "seed_status": "authoritative_seeded",
@@ -69,9 +69,9 @@
       "calculation_method": "Use the MoSPI published manufacturing sector IIP index. Preserve quick estimate, revised and final vintages separately.",
       "methodology_version": "IND-MFG-REG-1.0",
       "update_class": "U3",
-      "health_status": "Missing",
+      "health_status": "Watch",
       "source_mapping": [{"source_id": "SRC-MOSPI-IIP", "dataset_id": "DS-MOSPI-IIP-001", "priority": 1, "relationship": "primary", "effective_date": "2026-09-07", "end_date": null}],
-      "version_history": [{"version": "1.0", "definition": "Manufacturing sector IIP under the new 2022-23 base series.", "numerator": null, "denominator": null, "methodology": "MoSPI IIP new series, base 2022-23, NIC 2008 classification.", "base_year": "2022-23", "effective_date": "2026-09-07", "source_id": "SRC-MOSPI-IIP", "comparability_status": "Do not silently splice with the superseded 2011-12 series."}]
+      "version_history": [{"version": "1.0", "definition": "Manufacturing sector IIP under the new 2022-23 base series.", "numerator": null, "denominator": null, "methodology": "MoSPI IIP new series, base 2022-23, NIC 2008 classification.", "base_year": "2022-23", "effective_date": "2026-09-07", "source_id": "SRC-MOSPI-IIP", "comparability_status": "Do not silently splice with the superseded 2011-12 series. Latest observation is provisional and prior observations are subject to revision."}]
     },
     {
       "indicator_id": "IND-MFG-ASI-GVA-001",
