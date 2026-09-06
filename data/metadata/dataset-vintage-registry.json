@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.0.0",
+  "registry_version": "1.1.0",
   "schema_version": "1.0",
   "status": "active",
   "vintages": [
@@ -11,6 +11,16 @@
       "retrieval_date": "2026-09-06T21:46:22Z",
       "file_hash": null,
       "snapshot_id": "SNP-MOSPI-IIP-20260601-001",
+      "acquisition_status": "acquired"
+    },
+    {
+      "vintage_id": "VNT-MOSPI-IIP-2022-23-20260828",
+      "dataset_id": "DS-MOSPI-IIP-001",
+      "version": "IIP-2022-23-20260828",
+      "release_date": "2026-08-28",
+      "retrieval_date": "2026-09-07T00:00:00Z",
+      "file_hash": null,
+      "snapshot_id": "SNP-MOSPI-IIP-20260828-001",
       "acquisition_status": "acquired"
     },
     {
