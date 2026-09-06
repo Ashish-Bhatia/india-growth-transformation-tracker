@@ -1,6 +1,6 @@
 # Research Ledger
 
-No substantive policy or causal sector research has been verified as completed. The first verified data-ingestion record for the Manufacturing pilot is now complete.
+No substantive policy or causal sector research has been verified as completed. The Manufacturing pilot now contains verified repository-level ASI 2023-24 and IIP ingestion records. Automated ASI test execution remains unverified.
 
 ## Initialization record
 
@@ -29,7 +29,6 @@ No substantive policy or causal sector research has been verified as completed. 
 - International geography: Country model implemented; India seeded; broader country registry deferred.
 - Provenance: Sources, datasets, source snapshots, source locators, vintages, observation revisions, audit events and public provenance view implemented.
 - Scoring: Configurable schema implemented; no final weights, normalization or composite formulas seeded.
-- Research status: No substantive sector research or verified observations added at this stage.
 - Validation: GitHub Actions workflow run 34057565918 executed against PostgreSQL 16 and completed successfully. Static migration tests, migrations, seed loading and database integration tests all passed.
 - Last verified: 2026-09-07
 
@@ -44,7 +43,7 @@ No substantive policy or causal sector research has been verified as completed. 
 - Implementation: JSON Schema contracts plus versioned machine-readable registry documents added under `schemas/` and `data/metadata/`. Registry structural tests added and CI workflow expanded to execute them.
 - Source Registry fields covered: source ID, source name, institution, source tier, source type, URL/reference, dataset relationship, retrieval method, frequency, publication/release pattern, archive/snapshot, provenance, licensing/access, reliability metadata and status.
 - Indicator Registry fields covered: permanent indicator ID, name, definition, unit, frequency, directionality, indicator type, measurement type, sector, sub-sector, domain, geography, baseline, benchmark, target, calculation method, methodology version, update class, health status, source mapping and version history.
-- Seed boundary: no source or indicator records were invented. Project Sources specify required metadata and indicator families, but do not provide complete authoritative record-level registries with source mappings.
+- Seed boundary: no source or indicator records were invented. Project Sources specify required metadata and indicator families, but do not provide complete record-level registries with source mappings.
 - Validation: GitHub Actions run 34058734002 completed successfully. Registry tests, PostgreSQL migration, seed loading and database integration tests all passed against PostgreSQL 16.
 - Status: Registry layer execution-validated.
 - Last verified: 2026-09-07
@@ -86,5 +85,26 @@ No substantive policy or causal sector research has been verified as completed. 
 - Validation: passed with flags for prior-observation revisions and July 2026 quick estimate.
 - Observation layer: four new release-state observations for April-July 2026. Canonical observation count is now 41 across two preserved vintages.
 - Indicator health: `Watch`, because the latest observation is provisional and the series remains revision-prone.
+- Evidence status: descriptive data evidence only. No policy, attribution or scoring conclusion was introduced.
+- Last verified: 2026-09-07
+
+## ASI 2023-24 ingestion record
+
+- Research ID: DATA-MFG-ASI-001
+- Question: Can the official ASI 2023-24 release be registered, validated and loaded for the registered Manufacturing ASI indicators while preserving the registered-organised-manufacturing coverage limitation?
+- Sector: Manufacturing (`MFG`)
+- Dataset: `DS-MOSPI-ASI-001`
+- Vintage: `VNT-MOSPI-ASI-2023-24`
+- Official release date: 2025-08-27.
+- Reference period: April 2023-March 2024.
+- Snapshot: `SNP-MOSPI-ASI-20250827-001`.
+- Source locators: `LOC-MOSPI-ASI-20250827-PRESS-NOTE-TABLE-1`, `LOC-MOSPI-ASI-20250827-SUMMARY-ALL-INDIA`, `LOC-MOSPI-ASI-20250827-SUMMARY-STATE-GVA`.
+- Acquisition manifest: `ACQ-MOSPI-ASI-2023-24`, retrieved status, lineage and validation status `passed_with_flags`.
+- Validation report: `DS-MOSPI-ASI-001-VNT-MOSPI-ASI-2023-24`, status `passed_with_flags`, with `registered_manufacturing_coverage_limit` recorded.
+- Observation layer: `IND-MFG-ASI-GVA-001` = 245833605 ₹ lakh, source-defined; `IND-MFG-ASI-EMP-001` = 19589131 persons. Both are All-India, observed, quality grade A, and linked to the ASI vintage and dataset.
+- Coverage control: ASI GVA is not total manufacturing GVA; ASI persons engaged are not total manufacturing employment.
+- Preservation control: validation explicitly records that no IIP observation was modified or overwritten.
+- Targeted test: `tests/test_asi_ingestion.py` was inspected at the verified test commit and checks the ASI lineage plus the 41 IIP observations across both vintages. It was not independently executed because the available execution environment could not access the repository filesystem; direct clone failed due network name-resolution failure. Result: `not independently executed`.
+- CI: no workflow run exposed for the test commit; status recorded literally as `no run`.
 - Evidence status: descriptive data evidence only. No policy, attribution or scoring conclusion was introduced.
 - Last verified: 2026-09-07
