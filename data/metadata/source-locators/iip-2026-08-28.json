@@ -1,0 +1,25 @@
+{
+  "source_id": "SRC-MOSPI-IIP",
+  "snapshot_id": "SNP-MOSPI-IIP-20260828-001",
+  "release_date": "2026-08-28",
+  "locators": [
+    {
+      "locator_id": "LOC-MOSPI-IIP-20260828-STATEMENT-I",
+      "reference": "Statement I: Index of Industrial Production - Sectoral",
+      "url": "https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=48&relid=294030",
+      "detail": "Manufacturing monthly sector index and revision status"
+    },
+    {
+      "locator_id": "LOC-MOSPI-IIP-20260828-STATEMENT-IIA",
+      "reference": "Statement II A: Index of Industrial Production - Manufacturing at NIC 2 digit",
+      "url": "https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=48&relid=294030",
+      "detail": "Manufacturing sector and NIC 2-digit July 2026 index"
+    },
+    {
+      "locator_id": "LOC-MOSPI-IIP-20260828-STATEMENT-IV",
+      "reference": "Statement IV: Monthly Index of Industrial Production",
+      "url": "https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=48&relid=294030",
+      "detail": "Monthly manufacturing index including revised June 2026 and July 2026"
+    }
+  ]
+}
