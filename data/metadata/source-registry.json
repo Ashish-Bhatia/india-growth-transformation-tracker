@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.1.0",
+  "registry_version": "1.2.0",
   "schema_version": "1.0",
   "authority": "Source & Data Acquisition Architecture",
   "seed_status": "authoritative_seeded",
@@ -16,22 +16,9 @@
       "frequency": "annual and quarterly",
       "publication_release_pattern": "annual National Accounts Statistics publication with quarterly GDP estimates and releases",
       "archive_snapshot": null,
-      "provenance": {
-        "discovery_method": "official MoSPI website search",
-        "discovered_at": "2026-09-07",
-        "verification_status": "verified",
-        "verification_basis": "official MoSPI National Accounts Statistics page identifies NAS as the framework for GDP, GVA and GSDP"
-      },
-      "licensing_access": {
-        "access": "public",
-        "redistribution": "source-specific terms to be checked before redistribution",
-        "access_notes": "official Government of India source"
-      },
-      "reliability_metadata": {
-        "authority": "primary official Indian statistical source",
-        "reliability_status": "high",
-        "verification_date": "2026-09-07"
-      },
+      "provenance": {"discovery_method": "official MoSPI website search", "discovered_at": "2026-09-07", "verification_status": "verified", "verification_basis": "official MoSPI National Accounts Statistics page identifies NAS as the framework for GDP, GVA and GSDP"},
+      "licensing_access": {"access": "public", "redistribution": "source-specific terms to be checked before redistribution", "access_notes": "official Government of India source"},
+      "reliability_metadata": {"authority": "primary official Indian statistical source", "reliability_status": "high", "verification_date": "2026-09-07"},
       "status": "active"
     },
     {
@@ -46,22 +33,9 @@
       "frequency": "monthly, quarterly and annual",
       "publication_release_pattern": "monthly bulletins, quarterly bulletins and annual survey outputs",
       "archive_snapshot": null,
-      "provenance": {
-        "discovery_method": "official MoSPI PLFS product page",
-        "discovered_at": "2026-09-07",
-        "verification_status": "verified",
-        "verification_basis": "official MoSPI page identifies PLFS and its dashboard/database, with current monthly releases"
-      },
-      "licensing_access": {
-        "access": "public",
-        "redistribution": "source-specific terms to be checked before redistribution",
-        "access_notes": "official Government of India source"
-      },
-      "reliability_metadata": {
-        "authority": "primary official Indian statistical source",
-        "reliability_status": "high",
-        "verification_date": "2026-09-07"
-      },
+      "provenance": {"discovery_method": "official MoSPI PLFS product page", "discovered_at": "2026-09-07", "verification_status": "verified", "verification_basis": "official MoSPI page identifies PLFS and its dashboard/database, with current monthly releases"},
+      "licensing_access": {"access": "public", "redistribution": "source-specific terms to be checked before redistribution", "access_notes": "official Government of India source"},
+      "reliability_metadata": {"authority": "primary official Indian statistical source", "reliability_status": "high", "verification_date": "2026-09-07"},
       "status": "active"
     },
     {
@@ -76,22 +50,9 @@
       "frequency": "monthly",
       "publication_release_pattern": "monthly CPI release",
       "archive_snapshot": null,
-      "provenance": {
-        "discovery_method": "official MoSPI CPI product page",
-        "discovered_at": "2026-09-07",
-        "verification_status": "verified",
-        "verification_basis": "official MoSPI CPI portal identifies CPI as the official consumer price measure and provides database/metadata"
-      },
-      "licensing_access": {
-        "access": "public",
-        "redistribution": "source-specific terms to be checked before redistribution",
-        "access_notes": "official Government of India source"
-      },
-      "reliability_metadata": {
-        "authority": "primary official Indian statistical source",
-        "reliability_status": "high",
-        "verification_date": "2026-09-07"
-      },
+      "provenance": {"discovery_method": "official MoSPI CPI product page", "discovered_at": "2026-09-07", "verification_status": "verified", "verification_basis": "official MoSPI CPI portal identifies CPI as the official consumer price measure and provides database/metadata"},
+      "licensing_access": {"access": "public", "redistribution": "source-specific terms to be checked before redistribution", "access_notes": "official Government of India source"},
+      "reliability_metadata": {"authority": "primary official Indian statistical source", "reliability_status": "high", "verification_date": "2026-09-07"},
       "status": "active"
     },
     {
@@ -106,22 +67,9 @@
       "frequency": "monthly",
       "publication_release_pattern": "monthly IIP release",
       "archive_snapshot": null,
-      "provenance": {
-        "discovery_method": "official MoSPI IIP product page and metadata portal",
-        "discovered_at": "2026-09-07",
-        "verification_status": "verified",
-        "verification_basis": "official MoSPI portal identifies IIP as a monthly compiled and published indicator covering mining, manufacturing and electricity"
-      },
-      "licensing_access": {
-        "access": "public",
-        "redistribution": "source-specific terms to be checked before redistribution",
-        "access_notes": "official Government of India source"
-      },
-      "reliability_metadata": {
-        "authority": "primary official Indian statistical source",
-        "reliability_status": "high",
-        "verification_date": "2026-09-07"
-      },
+      "provenance": {"discovery_method": "official MoSPI IIP product page and metadata portal", "discovered_at": "2026-09-07", "verification_status": "verified", "verification_basis": "official MoSPI portal identifies IIP as a monthly compiled and published indicator covering mining, manufacturing and electricity"},
+      "licensing_access": {"access": "public", "redistribution": "source-specific terms to be checked before redistribution", "access_notes": "official Government of India source"},
+      "reliability_metadata": {"authority": "primary official Indian industrial statistics source", "reliability_status": "high", "verification_date": "2026-09-07"},
       "status": "active"
     },
     {
@@ -136,22 +84,9 @@
       "frequency": "series-dependent",
       "publication_release_pattern": "series-dependent releases and updates",
       "archive_snapshot": null,
-      "provenance": {
-        "discovery_method": "official RBI DBIE portal reference",
-        "discovered_at": "2026-09-07",
-        "verification_status": "verified",
-        "verification_basis": "RBI's official privacy page identifies data.rbi.org.in as the Database on Indian Economy"
-      },
-      "licensing_access": {
-        "access": "public portal",
-        "redistribution": "source-specific terms to be checked before redistribution",
-        "access_notes": "official Reserve Bank of India source"
-      },
-      "reliability_metadata": {
-        "authority": "primary official Indian central bank source",
-        "reliability_status": "high",
-        "verification_date": "2026-09-07"
-      },
+      "provenance": {"discovery_method": "official RBI DBIE portal reference", "discovered_at": "2026-09-07", "verification_status": "verified", "verification_basis": "RBI's official privacy page identifies data.rbi.org.in as the Database on Indian Economy"},
+      "licensing_access": {"access": "public portal", "redistribution": "source-specific terms to be checked before redistribution", "access_notes": "official Reserve Bank of India source"},
+      "reliability_metadata": {"authority": "primary official Indian central bank source", "reliability_status": "high", "verification_date": "2026-09-07"},
       "status": "active"
     },
     {
@@ -166,22 +101,9 @@
       "frequency": "annual",
       "publication_release_pattern": "annual Union Budget and associated fiscal documents",
       "archive_snapshot": null,
-      "provenance": {
-        "discovery_method": "official India Budget portal",
-        "discovered_at": "2026-09-07",
-        "verification_status": "verified",
-        "verification_basis": "official portal provides Union Budget, Demands for Grants, Economic Survey and prior budget archives"
-      },
-      "licensing_access": {
-        "access": "public",
-        "redistribution": "source-specific terms to be checked before redistribution",
-        "access_notes": "official Government of India source"
-      },
-      "reliability_metadata": {
-        "authority": "primary official Indian government source",
-        "reliability_status": "high",
-        "verification_date": "2026-09-07"
-      },
+      "provenance": {"discovery_method": "official India Budget portal", "discovered_at": "2026-09-07", "verification_status": "verified", "verification_basis": "official portal provides Union Budget, Demands for Grants, Economic Survey and prior budget archives"},
+      "licensing_access": {"access": "public", "redistribution": "source-specific terms to be checked before redistribution", "access_notes": "official Government of India source"},
+      "reliability_metadata": {"authority": "primary official Indian government source", "reliability_status": "high", "verification_date": "2026-09-07"},
       "status": "active"
     },
     {
@@ -196,22 +118,9 @@
       "frequency": "monthly and annual",
       "publication_release_pattern": "monthly updates with annual trade statistics",
       "archive_snapshot": null,
-      "provenance": {
-        "discovery_method": "official Department of Commerce page",
-        "discovered_at": "2026-09-07",
-        "verification_status": "verified",
-        "verification_basis": "official page states that annual export/import data are available and the data bank is updated monthly from DGCI&S data"
-      },
-      "licensing_access": {
-        "access": "public",
-        "redistribution": "source-specific terms to be checked before redistribution",
-        "access_notes": "official Government of India source"
-      },
-      "reliability_metadata": {
-        "authority": "primary official Indian trade statistics source",
-        "reliability_status": "high",
-        "verification_date": "2026-09-07"
-      },
+      "provenance": {"discovery_method": "official Department of Commerce page", "discovered_at": "2026-09-07", "verification_status": "verified", "verification_basis": "official page states that annual export/import data are available and the data bank is updated monthly from DGCI&S data"},
+      "licensing_access": {"access": "public", "redistribution": "source-specific terms to be checked before redistribution", "access_notes": "official Government of India source"},
+      "reliability_metadata": {"authority": "primary official Indian trade statistics source", "reliability_status": "high", "verification_date": "2026-09-07"},
       "status": "active"
     },
     {
@@ -226,22 +135,9 @@
       "frequency": "annual",
       "publication_release_pattern": "annual electricity statistics and general review publications",
       "archive_snapshot": null,
-      "provenance": {
-        "discovery_method": "official CEA publication page",
-        "discovered_at": "2026-09-07",
-        "verification_status": "verified",
-        "verification_basis": "official CEA page lists All India Electricity Statistics and General Review publications"
-      },
-      "licensing_access": {
-        "access": "public",
-        "redistribution": "source-specific terms to be checked before redistribution",
-        "access_notes": "official Government of India source"
-      },
-      "reliability_metadata": {
-        "authority": "primary official Indian electricity statistics source",
-        "reliability_status": "high",
-        "verification_date": "2026-09-07"
-      },
+      "provenance": {"discovery_method": "official CEA publication page", "discovered_at": "2026-09-07", "verification_status": "verified", "verification_basis": "official CEA page lists All India Electricity Statistics and General Review publications"},
+      "licensing_access": {"access": "public", "redistribution": "source-specific terms to be checked before redistribution", "access_notes": "official Government of India source"},
+      "reliability_metadata": {"authority": "primary official Indian electricity statistics source", "reliability_status": "high", "verification_date": "2026-09-07"},
       "status": "active"
     },
     {
@@ -256,22 +152,9 @@
       "frequency": "monthly and quarterly",
       "publication_release_pattern": "monthly subscription reports and quarterly performance indicator reports",
       "archive_snapshot": null,
-      "provenance": {
-        "discovery_method": "official TRAI reports portal",
-        "discovered_at": "2026-09-07",
-        "verification_status": "verified",
-        "verification_basis": "official TRAI reports portal lists current quarterly performance indicators and recurring subscription reports"
-      },
-      "licensing_access": {
-        "access": "public",
-        "redistribution": "source-specific terms to be checked before redistribution",
-        "access_notes": "official statutory regulator source"
-      },
-      "reliability_metadata": {
-        "authority": "primary official Indian regulatory source",
-        "reliability_status": "high",
-        "verification_date": "2026-09-07"
-      },
+      "provenance": {"discovery_method": "official TRAI reports portal", "discovered_at": "2026-09-07", "verification_status": "verified", "verification_basis": "official TRAI reports portal lists current quarterly performance indicators and recurring subscription reports"},
+      "licensing_access": {"access": "public", "redistribution": "source-specific terms to be checked before redistribution", "access_notes": "official statutory regulator source"},
+      "reliability_metadata": {"authority": "primary official Indian regulatory source", "reliability_status": "high", "verification_date": "2026-09-07"},
       "status": "active"
     },
     {
@@ -286,22 +169,43 @@
       "frequency": "quarterly",
       "publication_release_pattern": "quarterly FDI fact sheets",
       "archive_snapshot": null,
-      "provenance": {
-        "discovery_method": "official DPIIT publication",
-        "discovered_at": "2026-09-07",
-        "verification_status": "verified",
-        "verification_basis": "official DPIIT FDI fact sheet identifies FDI inflow statistics and states the data are based on official RBI inputs"
-      },
-      "licensing_access": {
-        "access": "public",
-        "redistribution": "source-specific terms to be checked before redistribution",
-        "access_notes": "official Government of India source; this record represents a verified official publication endpoint"
-      },
-      "reliability_metadata": {
-        "authority": "primary official Indian government source",
-        "reliability_status": "high",
-        "verification_date": "2026-09-07"
-      },
+      "provenance": {"discovery_method": "official DPIIT publication", "discovered_at": "2026-09-07", "verification_status": "verified", "verification_basis": "official DPIIT FDI fact sheet identifies FDI inflow statistics and states the data are based on official RBI inputs"},
+      "licensing_access": {"access": "public", "redistribution": "source-specific terms to be checked before redistribution", "access_notes": "official Government of India source; this record represents a verified official publication endpoint"},
+      "reliability_metadata": {"authority": "primary official Indian government source", "reliability_status": "high", "verification_date": "2026-09-07"},
+      "status": "active"
+    },
+    {
+      "source_id": "SRC-MOSPI-ASI",
+      "source_name": "Annual Survey of Industries",
+      "institution": "Ministry of Statistics and Programme Implementation (MoSPI)",
+      "source_tier": 1,
+      "source_type": "official industrial survey and data portal",
+      "url_reference": "https://www.mospi.gov.in/themes/product/65--",
+      "dataset_relationship": ["manufacturing output", "manufacturing GVA", "manufacturing employment", "capital formation", "state manufacturing statistics", "industry structure"],
+      "retrieval_method": "official MoSPI ASI portal and published ASI tables",
+      "frequency": "annual",
+      "publication_release_pattern": "annual ASI releases and website tables",
+      "archive_snapshot": null,
+      "provenance": {"discovery_method": "official MoSPI ASI product page and 2023-24 publication", "discovered_at": "2026-09-07", "verification_status": "verified", "verification_basis": "MoSPI identifies ASI as covering manufacturing output, value added, employment and capital formation, with results at state and major industry level"},
+      "licensing_access": {"access": "public", "redistribution": "source-specific terms to be checked before redistribution", "access_notes": "official Government of India source; MoSPI dissemination terms apply"},
+      "reliability_metadata": {"authority": "primary official Indian industrial survey source", "reliability_status": "high", "verification_date": "2026-09-07"},
+      "status": "active"
+    },
+    {
+      "source_id": "SRC-UNIDO-STATISTICS",
+      "source_name": "UNIDO Statistics Portal",
+      "institution": "United Nations Industrial Development Organization (UNIDO)",
+      "source_tier": 2,
+      "source_type": "international statistical database",
+      "url_reference": "https://stat.unido.org/",
+      "dataset_relationship": ["INDSTAT", "industrial statistics", "manufacturing trade", "manufacturing production", "Competitive Industrial Performance", "SDG 9"],
+      "retrieval_method": "official UNIDO Statistics Portal and data downloads",
+      "frequency": "annual, quarterly and monthly depending on dataset",
+      "publication_release_pattern": "dataset-specific releases and updates",
+      "archive_snapshot": null,
+      "provenance": {"discovery_method": "official UNIDO Statistics Portal", "discovered_at": "2026-09-07", "verification_status": "verified", "verification_basis": "UNIDO provides free official access to INDSTAT, manufacturing trade, IIP, National Accounts, SDG 9 and Competitive Industrial Performance databases with cross-country coverage"},
+      "licensing_access": {"access": "public", "redistribution": "source-specific terms to be checked before redistribution", "access_notes": "official multilateral statistical source; used for international benchmarking and corroboration"},
+      "reliability_metadata": {"authority": "recognised international statistical agency", "reliability_status": "high", "verification_date": "2026-09-07"},
       "status": "active"
     }
   ]
