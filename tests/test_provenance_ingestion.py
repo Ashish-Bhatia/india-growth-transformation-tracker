@@ -16,11 +16,12 @@ def test_ingestion_manifest_schema_is_valid_json_schema_shape():
     assert "locator_ids" in schema["properties"]["lineage"]["properties"]
 
 
-def test_ingestion_conventions_are_contract_only_and_preserve_registry_boundary():
+def test_ingestion_conventions_reflect_current_registry_boundary():
     conventions = json.loads((ROOT / "data/metadata/ingestion-conventions.json").read_text())
     assert conventions["manifest_version"] == "1.0"
-    assert conventions["source_registry_seeded"] is False
-    assert conventions["indicator_registry_seeded"] is False
+    assert conventions["status"] == "active_contract"
+    assert conventions["source_registry_seeded"] is True
+    assert conventions["indicator_registry_seeded"] is True
     assert conventions["authoritative_registry_seed_required"] is True
     assert "SHA-256" == conventions["hash_algorithm"]
     assert set(conventions["layers"]) == {"raw", "clean", "derived"}
