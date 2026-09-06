@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://india-growth-transformation-tracker.github.io/schemas/source-registry.schema.json",
+  "title": "India Growth & Transformation Tracker Source Registry",
+  "type": "object",
+  "required": ["registry_version", "schema_version", "authority", "seed_status", "sources"],
+  "properties": {
+    "registry_version": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "authority": {"type": "string"},
+    "seed_status": {"type": "string", "enum": ["authoritative_seeded", "pending_authoritative_seed"]},
+    "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}}
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["source_id", "source_name", "institution", "source_tier", "source_type", "url_reference", "dataset_relationship", "retrieval_method", "frequency", "publication_release_pattern", "archive_snapshot", "provenance", "licensing_access", "reliability_metadata", "status"],
+      "properties": {
+        "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]+$"},
+        "source_name": {"type": "string", "minLength": 1},
+        "institution": {"type": "string", "minLength": 1},
+        "source_tier": {"type": "integer", "minimum": 1, "maximum": 7},
+        "source_type": {"type": "string", "minLength": 1},
+        "url_reference": {"type": ["string", "null"]},
+        "dataset_relationship": {"type": "array", "items": {"type": "string"}},
+        "retrieval_method": {"type": ["string", "null"]},
+        "frequency": {"type": ["string", "null"]},
+        "publication_release_pattern": {"type": ["string", "null"]},
+        "archive_snapshot": {"type": ["object", "null"], "additionalProperties": true},
+        "provenance": {"type": ["object", "null"], "additionalProperties": true},
+        "licensing_access": {"type": ["object", "null"], "additionalProperties": true},
+        "reliability_metadata": {"type": ["object", "null"], "additionalProperties": true},
+        "status": {"type": "string", "enum": ["active", "unavailable", "superseded", "archived"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
