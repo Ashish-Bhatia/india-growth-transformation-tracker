@@ -1,75 +1,43 @@
 # Project State
 
-Version: 0.11.0-iip-august-2026-vintage-ingested
+Version: 0.12.0-asi-2023-24-ingestion-verified
 State date: 2026-09-07
 
 ## Current phase
-Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry and Indicator Registry establishment, with two preserved validated IIP release-state vintages ingested for Manufacturing. Manufacturing (`MFG`) remains the first pilot sector. The Source Registry contains 12 verified records. The Dataset Registry contains 9 authoritative dataset records and the Indicator Registry contains 7 minimum authoritative Manufacturing indicators. `IND-MFG-IIP-001` now has 41 canonical observations across two preserved vintages.
+Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry and Indicator Registry establishment, with ASI 2023-24 acquired and ingested and two preserved validated IIP release-state vintages retained for Manufacturing. Manufacturing (`MFG`) remains the first pilot sector. The Source Registry contains 12 verified records. The Dataset Registry contains 9 authoritative dataset records and the Indicator Registry contains 7 minimum authoritative Manufacturing indicators.
 
-## Verified substantive repository state before this continuity update
-- HEAD: `26c1ed5f8b4cffce362329732bf87e27ae04fd3c`.
-- This continuity update will advance HEAD. Verify the actual repository HEAD before relying on this file.
+## Verified repository state
+- Prior verified implementation HEAD: `050847f3e4ad87fab09680a314d933da0974b707`.
+- `050847f3e4ad87fab09680a314d933da0974b707` is the verified test commit containing `tests/test_asi_ingestion.py`.
+- The targeted ASI test was not independently executed because the available execution environment could not access the GitHub repository filesystem. A direct `git clone` attempt failed with network name-resolution failure. No test pass is claimed.
+- GitHub Actions workflow runs for `050847f3e4ad87fab09680a314d933da0974b707`: `no run`.
+- Commit status checks for `050847f3e4ad87fab09680a314d933da0974b707`: none exposed.
 
-## Completed work
+## Completed and verified by repository inspection
 - All 15 Project Source documents reviewed for initialization.
-- Foundational research, evidence, attribution, scoring, indicator, data, database, sector, policy, counterfactual, execution and GitHub frameworks established.
-- Repository `india-growth-transformation-tracker` confirmed and initialized.
-- PostgreSQL schema migration framework implemented.
-- Controlled vocabulary structure implemented.
-- Canonical taxonomy seed implemented.
-- Migration runner and seed runner implemented.
-- Static migration/schema tests implemented.
-- PostgreSQL integration test and GitHub Actions database validation workflow implemented.
-- Machine-readable Source Registry contract implemented.
-- Machine-readable Master Indicator Registry contract implemented.
-- Operational provenance and ingestion convention document implemented.
-- Machine-readable ingestion manifest contract implemented.
-- Source Registry seeded with 12 verified authoritative records.
-- Nine authoritative Manufacturing pilot datasets registered.
-- Seven minimum authoritative Manufacturing indicators registered.
-- Dataset-to-Source and Indicator-to-Dataset/Source mappings established.
-- First Manufacturing observation-ingestion plan implemented.
-- Dataset Vintage Registry contract implemented.
-- Nine Manufacturing current-version acquisition targets registered.
-- First actual MoSPI IIP vintage acquired by permitted official source reference and registered as `VNT-MOSPI-IIP-2022-23`.
-- Second IIP release-state vintage assessed and registered as `VNT-MOSPI-IIP-2022-23-20260828`.
-- The 28 August 2026 release was determined to be a new release-state vintage of the existing 2022-23-base dataset, not a new base-year or indicator-definition methodology.
-- June 1 vintage remains unchanged.
-- August 28 vintage records revised April 2026 = 118.7, May 2026 = 122.2, revised June 2026 = 125.3, and provisional July 2026 = 127.4.
-- Source snapshot reference `SNP-MOSPI-IIP-20260828-001` and three source locators registered.
-- Direct binary artifact retrieval was unavailable, so no SHA-256 was claimed for the August vintage.
-- August vintage validation passed with flags for prior-observation revisions and the July 2026 quick estimate.
-- Canonical lineage is preserved through source reference, dataset, vintage, snapshot, locators, staged observations, canonical observations and ingestion manifest.
-- Indicator health metadata for `IND-MFG-IIP-001` is now `Watch`. Indicator definition and methodology version were not changed.
-- Targeted IIP ingestion test extended for two preserved vintages.
-- `RESEARCH_LEDGER.md` and `DECISIONS_LOG.md` updated for the August vintage determination and ingestion.
-
-## Registry layer status
-- Source Registry: 12 verified records.
-- Dataset Registry: 9 authoritative records.
+- PostgreSQL schema migration framework, controlled vocabularies, canonical taxonomy seed, migration/seed runners and validation infrastructure implemented.
+- Machine-readable Source Registry, Dataset Registry, Indicator Registry and provenance/ingestion contracts implemented.
+- Source Registry: 12 verified authoritative records.
+- Dataset Registry: 9 authoritative Manufacturing records.
 - Indicator Registry: 7 authoritative Manufacturing records.
-- Observation layer: `IND-MFG-IIP-001` contains 41 canonical observations across two vintages.
-- Evidence layer: no substantive policy/evidence records loaded.
-- Source tier remains separate from data quality, evidence grade and causal strength.
+- First IIP vintage `VNT-MOSPI-IIP-2022-23` preserved unchanged.
+- Second IIP release-state vintage `VNT-MOSPI-IIP-2022-23-20260828` preserved.
+- `IND-MFG-IIP-001` retains 41 canonical observations across the two IIP vintages according to the repository continuity record and targeted test contract. Full test execution remains unverified.
+- ASI dataset `DS-MOSPI-ASI-001` and vintage `VNT-MOSPI-ASI-2023-24` registered.
+- ASI release date preserved as 2025-08-27 and reference period as April 2023-March 2024.
+- ASI snapshot `SNP-MOSPI-ASI-20250827-001`, source reference and source locators preserved.
+- ASI validation report records `passed_with_flags` with `registered_manufacturing_coverage_limit`.
+- ASI ingestion manifest records retrieved status, lineage and validation flag.
+- `IND-MFG-ASI-GVA-001`: All-India value 245833605 ₹ lakh, source-defined.
+- `IND-MFG-ASI-EMP-001`: All-India value 19589131 persons.
+- ASI registered organised manufacturing coverage limitation is explicitly preserved. ASI GVA is not total manufacturing GVA, and ASI persons engaged are not total manufacturing employment.
+- `tests/test_asi_ingestion.py` is present and checks ASI vintage metadata, manifest, validation report, both ASI observations and preservation of the 41 IIP observations across both vintage IDs.
 
-## Preserved IIP vintages
-### First release-state
-- Vintage: `VNT-MOSPI-IIP-2022-23`.
-- Official release date: 2026-06-01.
-- Snapshot: `SNP-MOSPI-IIP-20260601-001`.
-- Observation coverage: April 2023-April 2026, 37 observations.
-- April 2026 remains 119.3 and provisional in this preserved vintage.
-- Validation: passed with methodology-change flag.
+## ASI verification boundary
+Repository inspection verified the test source and all ASI fixture/metadata paths referenced by the test. The targeted test itself was not independently executed. Therefore the ASI ingestion is repository-verified by inspection, but its automated test result remains `not independently executed`.
 
-### August 2026 release-state
-- Vintage: `VNT-MOSPI-IIP-2022-23-20260828`.
-- Official release date: 2026-08-28.
-- Snapshot: `SNP-MOSPI-IIP-20260828-001`.
-- Release: July 2026 quick estimate, with June 2026 final revision.
-- Four release-state observations loaded: April, May, June and July 2026.
-- April 2026 is revised from 119.3 to 118.7 relative to the June 1 vintage.
-- June 2026 is recorded at its later revised value of 125.3.
-- July 2026 is 127.4 and provisional.
+## IIP preservation verification boundary
+The repository contains the two IIP vintage IDs and the canonical IIP observation file referenced by the ASI test. The test contract explicitly requires 41 rows and both vintage IDs. Because the targeted test could not be executed, this chat does not claim an independent runtime count check. No historical IIP observation was modified by the ASI test commit, which only added `tests/test_asi_ingestion.py`.
 
 ## Important methodological controls
 - IIP uses the current 2022-23 base series and must not be silently spliced with the superseded 2011-12 series.
@@ -79,20 +47,11 @@ Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry an
 - PLFS 2025 changed sampling design. Cross-vintage comparability requires explicit treatment.
 - UNIDO peer comparison remains constrained by the unresolved final international peer-basket methodology.
 - No score methodology has been applied.
-- No policy evaluation, attribution or causal conclusion has been loaded from the IIP ingestion.
-
-## CI validation record
-- Database foundation workflow: `Database Validation`, run 34057565918, success.
-- Registry layer workflow: `Database Validation`, run 34058734002, success.
-- Source Registry update commit: 7184c501169ee3abfe6c4394ca7ae87359d09d14.
-- CI run 34060700876 for the source-registry commit is terminal `failure`. Failure was confined to stale registry-test expectations; no CI rerun was performed.
-- No exposed GitHub Actions workflow run had been verified for the IIP ingestion before this continuity update. Verify the current HEAD workflow state after the final commit. Do not infer success.
-- Targeted IIP ingestion test was updated but execution after the August vintage change still requires verification.
+- No policy evaluation, attribution or causal conclusion has been loaded from the IIP or ASI ingestion.
 
 ## In progress
-- Verify targeted IIP test execution and GitHub Actions status for the final HEAD.
-- Preserve and monitor the current IIP release-state vintage for the next official revision.
-- Continue with the next acquisition target only after current IIP lineage and validation records remain consistent.
+- Preserve and monitor current IIP release-state vintages for the next official revision.
+- Continue with the next Manufacturing acquisition target only after current lineage and validation records remain consistent.
 
 ## Pending
 - Additional Manufacturing dataset vintage acquisition and observation ingestion.
@@ -125,4 +84,4 @@ Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry an
 - No public score has been calculated.
 
 ## Immediate next action
-Verify the final repository state, execute or verify the applicable targeted IIP ingestion test, inspect the GitHub Actions result literally, and confirm the two-vintage IIP lineage before moving to the next Manufacturing dataset acquisition. Do not begin full policy research, attribution or scoring.
+Identify the next authoritative Manufacturing acquisition target from the existing Dataset Registry and Project Sources, then acquire and validate it using the established Source → Dataset → Vintage → Snapshot → Locator → Validation → Observation lineage. Do not begin policy research, attribution or scoring.
