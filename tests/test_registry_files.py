@@ -10,16 +10,25 @@ def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def test_source_registry_is_machine_readable_and_empty_until_authoritative_seed_exists():
+def test_source_registry_is_seeded_only_with_verified_authoritative_records():
     registry = load_json(REGISTRY / "source-registry.json")
-    assert registry["registry_version"] == "1.0.0"
+    assert registry["registry_version"] == "1.1.0"
     assert registry["schema_version"] == "1.0"
     assert registry["authority"] == "Source & Data Acquisition Architecture"
-    assert registry["seed_status"] == "pending_authoritative_seed"
-    assert registry["sources"] == []
+    assert registry["seed_status"] == "authoritative_seeded"
+    assert len(registry["sources"]) == 10
+    source_ids = {item["source_id"] for item in registry["sources"]}
+    assert source_ids == {
+        "SRC-MOSPI-NAS", "SRC-MOSPI-PLFS", "SRC-MOSPI-CPI", "SRC-MOSPI-IIP",
+        "SRC-RBI-DBIE", "SRC-MOF-UNION-BUDGET", "SRC-COMMERCE-TRADE",
+        "SRC-CEA-ELECTRICITY", "SRC-TRAI-TELECOM", "SRC-DPIIT-FDI"
+    }
+    assert all(item["source_tier"] == 1 for item in registry["sources"])
+    assert all(item["provenance"]["verification_status"] == "verified" for item in registry["sources"])
+    assert all(item["status"] == "active" for item in registry["sources"])
 
 
-def test_indicator_registry_is_machine_readable_and_empty_until_authoritative_seed_exists():
+def test_indicator_registry_remains_empty_until_authoritative_record_level_seed_exists():
     registry = load_json(REGISTRY / "indicator-registry.json")
     assert registry["registry_version"] == "1.0.0"
     assert registry["schema_version"] == "1.0"

@@ -1,7 +1,7 @@
 # Next Chat
 
 ## Current position
-Operational provenance and ingestion conventions are implemented on main as of 2026-09-07. Database foundation and registry layer are execution-validated. The Source Registry and Master Indicator Registry remain intentionally unseeded.
+Authoritative Source Registry discovery and controlled seeding is in progress on main as of 2026-09-07. Database foundation, registry contracts and operational provenance conventions are execution-validated. The Source Registry now contains an initial controlled seed of 10 verified Tier 1 official source records. The Master Indicator Registry remains intentionally unseeded.
 
 ## Completed
 - Versioned PostgreSQL migrations.
@@ -10,14 +10,19 @@ Operational provenance and ingestion conventions are implemented on main as of 2
 - Canonical taxonomy: 33 sectors and 354 sub-sectors.
 - India plus 28 States and 8 Union Territories.
 - Source snapshots, locators, dataset vintages and observation revision structures.
-- Source Registry and Master Indicator Registry JSON Schema contracts and intentionally empty registry documents.
+- Source Registry and Master Indicator Registry JSON Schema contracts.
 - Registry structural tests and CI validation.
 - Operational provenance and ingestion conventions.
 - Machine-readable ingestion manifest contract.
 - Provenance/ingestion convention tests.
+- Initial Source Registry controlled seed with 10 verified Tier 1 official sources.
 
 ## Registry seed status
-Both registries are intentionally empty. No fabricated source or indicator records were added. Record-level seeding remains dependent on authoritative source discovery and verification.
+Source Registry: seeded with 10 verified Tier 1 official records. Further records require the same record-level verification standard.
+
+Indicator Registry: intentionally empty. Do not add indicator records until the definition, metadata and source mapping are verified against authoritative material.
+
+No fabricated source, dataset, indicator or observation records were added.
 
 ## Open controls
 - ISSUE-INIT-001: materiality descriptions.
@@ -27,7 +32,7 @@ Both registries are intentionally empty. No fabricated source or indicator recor
 - ISSUE-INIT-006: API and website implementation contracts.
 - ISSUE-DB-001: authoritative domain registry.
 - ISSUE-DB-002: international country registry.
-- ISSUE-REG-001: authoritative record-level source and indicator registry seed dependency.
+- ISSUE-REG-001: indicator-side registry seed dependency remains open.
 - Final pilot sector.
 - Final public data/content licensing treatment per source.
 
@@ -35,6 +40,6 @@ Both registries are intentionally empty. No fabricated source or indicator recor
 No substantive sector research, policy evaluation, verified observations or public scores have been added.
 
 ## Next executable task
-Begin authoritative record-level source discovery and controlled Source Registry seeding. For each verified source, establish the minimum dataset and provenance chain needed for future indicator registration. Then establish authoritative indicator records only where definitions and source mappings are verified.
+Continue authoritative record-level Source Registry discovery and controlled seeding. Establish Dataset Registry records where authoritative dataset-level metadata is verified. Establish Indicator Registry records only where the indicator definition, metadata and source mapping are independently verified. Validate all seeded records against the registry contract and provenance conventions, then run the applicable registry and CI validation.
 
 Do not begin substantive sector research. Do not resolve open methodology decisions by implication. Do not seed domains or international countries without authoritative registry content. Preserve source tier separately from evidence grade and causal strength.

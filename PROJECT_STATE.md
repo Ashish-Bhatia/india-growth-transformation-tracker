@@ -1,10 +1,10 @@
 # Project State
 
-Version: 0.5.0-provenance-ingestion-validated
+Version: 0.6.0-source-registry-seeded
 State date: 2026-09-07
 
 ## Current phase
-Operational provenance and ingestion conventions implemented. Registry layer remains execution-validated and intentionally unseeded. No substantive sector research has started.
+Authoritative Source Registry discovery and controlled seeding. Record-level Source Registry discovery has begun and the first verified Tier 1 source records have been seeded. The Indicator Registry remains intentionally unseeded. No substantive sector research has started.
 
 ## Completed work
 - All 15 Project Source documents reviewed for initialization.
@@ -26,29 +26,28 @@ Operational provenance and ingestion conventions implemented. Registry layer rem
 - Machine-readable ingestion manifest contract implemented in `schemas/ingestion-manifest.schema.json`.
 - Machine-readable ingestion convention metadata implemented in `data/metadata/ingestion-conventions.json`.
 - Provenance and ingestion convention tests implemented.
+- Authoritative record-level Source Registry discovery completed for the initial controlled seed set.
+- Ten verified Tier 1 official source records seeded in `data/metadata/source-registry.json`.
 
 ## Registry layer status
 - Source Registry structure: implemented and CI-validated.
-- Master Indicator Registry structure: implemented and CI-validated.
-- Source Registry authoritative records: not seeded. Project Sources define required fields and hierarchy but do not provide a complete authoritative record-level source catalogue.
-- Indicator Registry authoritative records: not seeded. Project Sources define indicator families and metadata requirements but do not provide a complete record-level registry with authoritative definitions and source mappings.
+- Source Registry initial authoritative seed: 10 verified Tier 1 records.
+- Source Registry seed records are limited to official Indian government/statutory sources whose source endpoints were independently verified during discovery.
+- Indicator Registry structure: implemented and CI-validated.
+- Indicator Registry authoritative records: not seeded. No indicator was added without a verified record-level definition and source mapping.
 - No fabricated source or indicator records were added.
 
-## Current phase outputs
-- Existing PostgreSQL source, dataset, snapshot, locator, vintage and observation structures are governed by explicit ingestion conventions.
-- Source acquisition modes and append-only acquisition states defined.
-- RAW, CLEAN and DERIVED lineage rules defined.
-- Dataset, snapshot, locator, vintage and observation registration rules defined.
-- Transformation and calculation provenance contract defined.
-- Release calendar and freshness conventions defined.
-- Source, revision and methodology change handling defined.
-- Validation states and anomaly flags defined.
-- Reconciliation and publication approval boundaries defined.
-- JSON Schema ingestion manifest contract added.
-- Structural tests added for the provenance convention layer.
+## Source discovery and verification boundary
+- Discovery covered foundational macroeconomic, labour, price, industrial, financial, fiscal, trade, electricity, telecommunications and FDI source endpoints.
+- Each seeded source record has a stable Source ID, source tier, source type, official URL, dataset relationship, retrieval method, release pattern, provenance metadata, licensing/access note and reliability metadata.
+- Source tier remains separate from evidence grade and causal strength.
+- Archive snapshots were not created merely from discovery. `archive_snapshot` remains null until an acquisition produces an actual archived artifact or reference.
+- Dataset records, observations and indicator records remain separate implementation steps. Source discovery does not constitute data ingestion.
 
 ## In progress
-- Authoritative record-level Source Registry and Indicator Registry discovery.
+- Continue authoritative record-level Source Registry discovery and controlled seeding where additional verified sources are identified.
+- Establish Dataset Registry records only when authoritative dataset-level metadata and provenance are verified.
+- Establish authoritative Indicator Registry records only where definitions, metadata and source mappings are verified.
 - Formal resolution of documented terminology conflicts before policy onboarding and scoring.
 
 ## Pending
@@ -67,7 +66,7 @@ Operational provenance and ingestion conventions implemented. Registry layer rem
 - ISSUE-INIT-004: attribution confidence mapping where A-D is used in the External Conditions framework.
 - ISSUE-INIT-005: final sector score weights, normalization and composite formulas.
 - ISSUE-INIT-006: API and website implementation contracts.
-- ISSUE-REG-001: authoritative record-level Source Registry and Indicator Registry seed dependency.
+- ISSUE-REG-001: indicator-side registry seed dependency remains open.
 - Final pilot sector.
 - Final public data/content licensing treatment per source.
 
@@ -79,8 +78,7 @@ Operational provenance and ingestion conventions implemented. Registry layer rem
 
 ## Technical gaps
 - Codespaces was not used in the database foundation validation. GitHub Actions provided the actual PostgreSQL execution environment.
-- Registry records remain unseeded pending authoritative record-level sources.
-- Full ETL/data-quality execution framework remains pending. This phase establishes its provenance and ingestion contracts, not substantive source ingestion.
+- Full ETL/data-quality execution framework remains pending. This phase establishes its provenance and ingestion contracts and begins controlled source registration, not substantive source ingestion.
 - API and website not implemented.
 
 ## Database foundation
@@ -98,7 +96,8 @@ Operational provenance and ingestion conventions implemented. Registry layer rem
 - Database foundation workflow: `Database Validation`, run 34057565918, success.
 - Registry layer workflow: `Database Validation`, run 34058734002, success.
 - Provenance/ingestion convention layer: repository contract and structural tests implemented; PostgreSQL structures reused without schema alteration.
-- No authoritative source or indicator records were ingested in this phase.
+- Source Registry initial seed is contract-valid by repository tests after the controlled seed update.
+- No indicator observations or substantive research records were ingested in this phase.
 
 ## Immediate next action
-Move from convention implementation to authoritative record-level source discovery and controlled registry seeding. Do not begin substantive sector research. Preserve all open decisions and dependencies, especially materiality, government-term boundaries, attribution confidence, scoring methodology, domain registry, international country registry and registry seed dependency.
+Continue record-level authoritative Source Registry discovery and controlled seeding, then establish verified Dataset Registry and Indicator Registry records only where authoritative definitions and mappings exist. Run the applicable registry and CI validation after each implementation change. Do not begin substantive sector research. Preserve all open decisions and dependencies, especially materiality, government-term boundaries, attribution confidence, scoring methodology, domain registry, international country registry and indicator registry seeding.
