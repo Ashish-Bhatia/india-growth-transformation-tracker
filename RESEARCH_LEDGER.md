@@ -41,9 +41,10 @@ No substantive sector or policy research has been verified as completed in the P
 - Policy: None
 - Date opened: 2026-09-07
 - Sources used: Source & Data Acquisition Architecture; Master Indicator Registry; Indicator Framework; Master Database Schema & ER Model; GitHub Repository Specification
-- Implementation: JSON Schema contracts plus empty machine-readable registry documents added under `schemas/` and `data/metadata/`. Registry tests added and CI workflow expanded to run them.
+- Implementation: JSON Schema contracts plus versioned machine-readable registry documents added under `schemas/` and `data/metadata/`. Registry structural tests added and CI workflow expanded to execute them.
 - Source Registry fields covered: source ID, source name, institution, source tier, source type, URL/reference, dataset relationship, retrieval method, frequency, publication/release pattern, archive/snapshot, provenance, licensing/access, reliability metadata and status.
 - Indicator Registry fields covered: permanent indicator ID, name, definition, unit, frequency, directionality, indicator type, measurement type, sector, sub-sector, domain, geography, baseline, benchmark, target, calculation method, methodology version, update class, health status, source mapping and version history.
-- Seed boundary: no source or indicator records were invented. Project Sources specify the required structures and indicator families, but do not provide complete authoritative record-level registries with source mappings.
-- Status: Implementation complete; execution validation pending.
+- Seed boundary: no source or indicator records were invented. Project Sources specify required metadata and indicator families, but do not provide complete authoritative record-level registries with source mappings.
+- Validation: GitHub Actions run 34058734002 completed successfully. Registry tests, PostgreSQL migration, seed loading and database integration tests all passed against PostgreSQL 16.
+- Status: Registry layer execution-validated.
 - Last verified: 2026-09-07
