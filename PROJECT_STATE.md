@@ -1,10 +1,10 @@
 # Project State
 
-Version: 0.8.0-manufacturing-registry-seeded
+Version: 0.9.0-manufacturing-ingestion-plan
 State date: 2026-09-07
 
 ## Current phase
-Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry and Indicator Registry establishment. Manufacturing (`MFG`) is selected as the first pilot sector. The Source Registry contains 12 verified records. The Dataset Registry now contains 9 authoritative dataset records and the Indicator Registry contains 7 minimum authoritative Manufacturing indicators. No observations have been loaded.
+Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry and Indicator Registry establishment, transitioning into first observation-ingestion preparation. Manufacturing (`MFG`) is the first pilot sector. The Source Registry contains 12 verified records. The Dataset Registry contains 9 authoritative dataset records and the Indicator Registry contains 7 minimum authoritative Manufacturing indicators. No observations have been loaded.
 
 ## Completed work
 - All 15 Project Source documents reviewed for initialization.
@@ -30,6 +30,11 @@ Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry an
 - Nine authoritative Manufacturing pilot datasets registered in `data/metadata/dataset-registry.json`.
 - Seven minimum authoritative Manufacturing indicators registered in `data/metadata/indicator-registry.json`.
 - Registry tests updated to validate the current 12-source seed and the Dataset/Indicator Registry seeds.
+- GitHub Actions exposure checked for current pre-ingestion registry HEAD `dab1a82a90792681fa84a4a19754d52956633502`: no workflow run and no commit status were exposed. No CI rerun was performed.
+- Dataset and Indicator Registry schemas and repository registry tests were inspected at the verified registry HEAD. Their required contracts align with the seeded records. Runtime test execution was not possible from this environment because direct GitHub network access is unavailable.
+- First Manufacturing observation-ingestion plan implemented in `docs/architecture/manufacturing-observation-ingestion-plan.md`.
+- Dataset vintage registry contract implemented in `schemas/dataset-vintage-registry.schema.json`.
+- Nine Manufacturing dataset current-version targets registered in `data/metadata/dataset-vintage-registry.json` with `pending_acquisition` status. These are acquisition targets, not fabricated acquired snapshots or observations.
 
 ## Registry layer status
 - Source Registry: 12 verified records, 11 Tier 1 official Indian government/statutory sources and 1 Tier 2 international statistical source.
@@ -73,12 +78,13 @@ Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry an
 - Source Registry update commit: 7184c501169ee3abfe6c4394ca7ae87359d09d14.
 - Source Registry update CI: run 34060700876, terminal `failure`. Failure was confined to a stale test expecting Source Registry version 1.1.0 and 10 records, while the verified registry is version 1.2.0 with 12 records. Migration and integration tests were skipped because the test step failed.
 - No CI rerun was performed for run 34060700876.
-- New registry implementation CI result remains unresolved until GitHub exposes the new workflow run and its terminal result.
+- Registry implementation CI for pre-ingestion HEAD `dab1a82a90792681fa84a4a19754d52956633502` was not exposed by GitHub. No terminal result is claimed.
+- Subsequent documentation/ingestion-plan commits were created without rerunning CI.
 
 ## In progress
-- Verify the new registry implementation CI result.
-- Confirm Dataset Registry and Indicator Registry schema/test validation.
-- Prepare source-vintage and observation-ingestion design after registry validation.
+- Acquire and register the first actual source vintage, beginning with MoSPI IIP Manufacturing.
+- Preserve the raw artifact or permitted source reference and register the corresponding source snapshot, locator and SHA-256 where applicable.
+- Validate the first vintage before loading observations.
 
 ## Pending
 - Observation ingestion.
@@ -94,7 +100,7 @@ Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry an
 - ISSUE-INIT-001: canonical descriptive labels for P1-P5 policy materiality.
 - ISSUE-INIT-002: analytical government-term boundary convention.
 - ISSUE-INIT-004: attribution confidence mapping.
-- ISSUE-INIT-005: final sector score weights, normalization and composite formulas.
+- ISSUE-INIT-005: final scoring weights, normalization and composite formulas.
 - ISSUE-INIT-006: API and website implementation contracts.
 - ISSUE-DB-001: authoritative domain registry.
 - ISSUE-DB-002: international country registry expansion.
@@ -110,4 +116,4 @@ Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry an
 - No public score has been calculated.
 
 ## Immediate next action
-Verify the new `Database Validation` workflow result for the registry implementation without rerunning or manufacturing CI. If terminal, correct only any evidenced failure. After registry validation, begin observation-ingestion planning and source-vintage registration. Do not begin full policy research, attribution or scoring yet.
+Acquire the first actual Manufacturing source vintage for the registered IIP dataset, preserve its raw artifact or permitted source reference, register the source snapshot and vintage metadata, validate the acquired data, and only then load IIP observations. Do not begin full policy research, attribution or scoring.
