@@ -1,14 +1,16 @@
 # Next Chat
 
 ## Current position
-Manufacturing (`MFG`) is selected as the first pilot sector. The Source Registry has 12 verified records, including MoSPI Annual Survey of Industries for State/industry manufacturing data and UNIDO Statistics for international manufacturing benchmarking. The database contains Dataset and Indicator structures, but no pilot Dataset Registry records, Indicator Registry records or observations have been seeded.
+Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 verified records. The Dataset Registry now contains 9 authoritative dataset records and the Indicator Registry now contains 7 minimum authoritative Manufacturing indicators. No observations have been loaded.
 
 ## Verified repository state
-- Latest known main HEAD: 8ca8e6fb454f233305dea22be4fb77c989ada99d.
-- Immediate source-registry implementation commit: 7184c501169ee3abfe6c4394ca7ae87359d09d14.
-- Source-registry commit CI run: GitHub Actions `Database Validation`, run 34060700876, observed in progress. Do not claim success or failure until a terminal result is actually available.
-- Earlier database validation run 34057565918 succeeded.
-- Earlier registry-layer validation run 34058734002 succeeded.
+- Current implementation HEAD before this documentation update: `2ea864f6c537304bcdc26a8fd6442a42cfa0aa20`.
+- Source-registry implementation commit: `7184c501169ee3abfe6c4394ca7ae87359d09d14`.
+- CI run `34060700876` for the source-registry commit is terminal `failure`. The failure was a stale registry test expecting Source Registry version `1.1.0` and 10 sources while the verified registry is version `1.2.0` with 12 sources. The failure occurred before database migration/integration tests. No CI rerun was performed.
+- Dataset Registry implementation commits: `6d9f32e09ef23526390f5c26c27dc2efb371dc12` and `733894fe3d7d9c0d507c579e5db90e37a5bebe30`.
+- Indicator Registry implementation commit: `5a91cb7124fd4a3c72883c4e5e94f42e3d2c0278`.
+- Registry test update commit: `2ea864f6c537304bcdc26a8fd6442a42cfa0aa20`.
+- CI for the new registry implementation has not yet been verified as terminal. Do not claim success or failure until a new run is exposed and reaches a terminal state.
 
 ## Completed
 - PostgreSQL schema and migration foundation.
@@ -16,21 +18,44 @@ Manufacturing (`MFG`) is selected as the first pilot sector. The Source Registry
 - Canonical taxonomy: 33 sectors and 354 sub-sectors.
 - India plus 28 States and 8 Union Territories.
 - Provenance structures and ingestion manifest contract.
-- Source Registry and Master Indicator Registry contracts.
-- Initial 10-record Source Registry seed.
-- Verified MoSPI ASI Source Registry record.
-- Verified UNIDO Statistics Source Registry record.
+- Source Registry and Indicator Registry contracts.
+- 12 verified Source Registry records.
 - Manufacturing pilot selection recorded as DECISION-PILOT-001.
+- Dataset Registry schema contract.
+- 9 verified Manufacturing pilot dataset records mapped to Source Registry records.
+- Minimum 7 verified Manufacturing Indicator Registry records mapped to Dataset and Source Registry records.
+- Registry tests updated for the current 12-source seed and new Dataset/Indicator Registry seeds.
 
 ## Current registry status
-- Source Registry: 12 verified source records.
-- Dataset Registry: no authoritative pilot dataset records yet.
-- Indicator Registry: intentionally empty.
+- Source Registry: 12 verified records.
+- Dataset Registry: 9 authoritative records.
+- Indicator Registry: 7 authoritative Manufacturing records.
 - Observation layer: empty.
-- No substantive sector research, policy evaluation, attribution or score exists.
+- Evidence layer: empty.
+- Manufacturing policy inventory: not started.
+- Attribution and scoring: not started.
 
-## Pilot rationale
-The Research Execution Protocol requires a pilot with strong official data, clear policy interventions, measurable outcomes, international benchmarks and State variation. Manufacturing satisfies the currently evidenced criteria through the existing MoSPI, RBI, fiscal, trade, FDI and labour sources, MoSPI ASI State/industry manufacturing coverage, and UNIDO international manufacturing statistics. The recommended onboarding sequence also places Manufacturing immediately after Infrastructure. This selection is not based solely on ease of data access.
+## Dataset coverage established
+- MoSPI Annual Survey of Industries.
+- MoSPI National Accounts Statistics.
+- MoSPI Index of Industrial Production, current 2022-23 base series.
+- MoSPI PLFS.
+- India Budget and Demands for Grants.
+- Department of Commerce TRADESTAT.
+- DPIIT FDI statistics.
+- RBI DBIE.
+- UNIDO INDSTAT Revision 4.
+
+## Indicator coverage established
+- Real manufacturing GVA growth.
+- Manufacturing share of GVA.
+- Manufacturing IIP.
+- Registered manufacturing GVA from ASI.
+- Registered manufacturing persons engaged from ASI.
+- Manufacturing share of workers from PLFS.
+- UNIDO manufacturing value added for international comparison.
+
+All indicators remain observation-empty. The IIP indicator explicitly uses the current 2022-23 base series and does not silently splice the superseded 2011-12 series. PLFS 2025 methodology change remains a comparability control. UNIDO peer comparison remains constrained by the unresolved peer-basket methodology.
 
 ## Open controls
 - ISSUE-INIT-001: materiality descriptions.
@@ -40,23 +65,23 @@ The Research Execution Protocol requires a pilot with strong official data, clea
 - ISSUE-INIT-006: API and website implementation contracts.
 - ISSUE-DB-001: authoritative domain registry.
 - ISSUE-DB-002: international country registry.
-- ISSUE-REG-001: indicator-side registry seed dependency.
+- ISSUE-REG-001: indicator-side registry seed dependency should now be reviewed against the seeded records.
 - Final international peer basket methodology.
 - Final public data/content licensing treatment per source.
-- Current source-registry commit CI terminal result, if not yet resolved.
+- CI terminal result for the new registry implementation.
 
 ## Exact next executable task
-1. Verify the terminal result of Database Validation run 34060700876 for commit 7184c501169ee3abfe6c4394ca7ae87359d09d14 if it has reached a terminal state. Do not rerun or manufacture CI.
-2. Inspect the actual repository state after that validation.
-3. Establish the minimum authoritative Dataset Registry records required for Manufacturing, using only verified dataset-level metadata from MoSPI ASI, MoSPI NAS/IIP, PLFS, India Budget, Commerce trade, DPIIT FDI, RBI DBIE and UNIDO where each dataset is directly verified.
-4. Seed only the minimum Indicator Registry records whose definitions, units, frequency, directionality, geography, sector/sub-sector mapping, source/dataset mapping, methodology and provenance are independently verified.
-5. Do not ingest observations until Dataset and Indicator registration is complete and provenance requirements are satisfied.
+1. Verify the new `Database Validation` workflow result for the registry implementation. Do not rerun or manufacture CI.
+2. If the new run is terminal, inspect failures if any and make only the smallest justified correction.
+3. Verify the Dataset Registry and Indicator Registry against their schemas and repository tests.
+4. Confirm no observations were loaded prematurely.
+5. Only after registry validation is complete, establish the first observation-ingestion plan and source-vintage requirements.
 6. Do not begin full Manufacturing policy research, attribution or scoring yet.
 
 ## Research boundary
-The first pilot must follow:
+The pilot must follow:
 Source → Dataset → Indicator → Observation → Evidence → Policy → Attribution → Sector analysis → Score → Publication.
-No layer should be skipped. Observed change and attributed change remain separate. Source tier remains separate from evidence grade and causal strength.
+No layer should be skipped. Observed change and attributed change remain separate. Source tier remains separate from data quality, evidence grade and causal strength.
 
 ## What not to repeat
-Do not repeat initialization audit, database design, migration framework design, taxonomy design, provenance architecture, registry contract design, the existing 12 Source Registry records, prior CI absence investigation for the old HEAD, or methodology-document creation.
+Do not repeat initialization audit, database design, migration framework design, taxonomy design, provenance architecture, registry contract design, the existing 12 Source Registry records, old-HEAD CI absence investigation, pilot-sector selection, or methodology-document creation.
