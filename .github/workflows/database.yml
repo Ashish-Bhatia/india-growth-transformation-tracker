@@ -6,8 +6,13 @@ on:
       - 'db/**'
       - 'schemas/**'
       - 'data/metadata/**'
+      - 'data/raw/**'
+      - 'data/canonical/**'
       - 'docs/architecture/**'
       - 'scripts/db_*.py'
+      - 'tests/test_asi_ingestion.py'
+      - 'tests/test_iip_ingestion.py'
+      - 'tests/test_nas_ingestion.py'
       - 'tests/test_database_integration.py'
       - 'tests/test_migration_files.py'
       - 'tests/test_registry_files.py'
@@ -19,8 +24,13 @@ on:
       - 'db/**'
       - 'schemas/**'
       - 'data/metadata/**'
+      - 'data/raw/**'
+      - 'data/canonical/**'
       - 'docs/architecture/**'
       - 'scripts/db_*.py'
+      - 'tests/test_asi_ingestion.py'
+      - 'tests/test_iip_ingestion.py'
+      - 'tests/test_nas_ingestion.py'
       - 'tests/test_database_integration.py'
       - 'tests/test_migration_files.py'
       - 'tests/test_registry_files.py'
@@ -55,7 +65,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m pip install -r requirements-dev.txt
-      - run: python -m pytest tests/test_migration_files.py tests/test_registry_files.py tests/test_provenance_ingestion.py -q
+      - run: python -m pytest tests/test_migration_files.py tests/test_registry_files.py tests/test_provenance_ingestion.py tests/test_asi_ingestion.py tests/test_iip_ingestion.py tests/test_nas_ingestion.py -q
       - run: python scripts/db_migrate.py
       - run: python scripts/db_seed.py
       - run: python -m pytest tests/test_database_integration.py -q
