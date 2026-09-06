@@ -145,8 +145,11 @@ No substantive policy or causal sector research has been verified as completed. 
 - Evidence status: descriptive data evidence only. No policy, attribution, counterfactual, effectiveness or scoring conclusion introduced.
 - Last verified: 2026-09-07
 
-## Documentation descendants after PLFS validation
+## Documentation and continuity corrections
 - `c1a6690e9980430c380c7e13912da63b52313ce2` updated `PROJECT_STATE.md` after PLFS validation.
-- `dbc690b22de747a01520eb52cdc43cc1f77bdfd5` is the current main documentation descendant and updates `NEXT_CHAT.md`.
-- These are documentation descendants of the PLFS acquisition state. Database Validation #35 remains validation of `8a79fc7...`, not of the documentation descendants.
-- Current HEAD CI must be recorded literally as `NO RUN / NOT VERIFIED` unless an actual workflow run exists for the exact current SHA.
+- `dbc690b22de747a01520eb52cdc43cc1f77bdfd5` updated `NEXT_CHAT.md` as a documentation descendant.
+- `567a74db8ae8388e9b63275b360751787188d753` reconciled the five continuity records after PLFS validation.
+- `0d6b4d55c26d54b49ff0aef93ed69878cd7c4fd0` corrected `PROJECT_STATE.md` to the actual main HEAD at the time of correction.
+- `3f28b18ad1acccff200d1059b1f657bc98220f20` corrected `NEXT_CHAT.md` to the then-current main HEAD.
+- The current main HEAD must always be verified directly from GitHub. Documentation descendants do not inherit the CI result of the PLFS acquisition commit.
+- Exact current-HEAD CI must be recorded literally as `NO RUN / NOT VERIFIED` unless an actual workflow run exists for the exact SHA.
