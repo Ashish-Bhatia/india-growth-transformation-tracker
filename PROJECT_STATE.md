@@ -1,61 +1,62 @@
-# Project State
+# India Growth & Transformation Tracker
 
-Version: 0.16.0-continuity-reconciled
-State date: 2026-09-07
+## Current verified position
 
-## Current phase
-Manufacturing pilot-sector onboarding. PLFS acquisition and validation is complete at the dataset-ingestion boundary. The next Manufacturing research action must be selected only after continuity state is preserved.
+- Repository: `Ashish-Bhatia/india-growth-transformation-tracker`
+- Current `main` HEAD: `567a74db8ae8388e9b63275b360751787188d753`
+- HEAD commit: `docs: reconcile project continuity state after PLFS validation`
+- Exact HEAD CI: `NO RUN / NOT VERIFIED`.
+- Latest verified dataset CI: Database Validation #35, run `34066759564`, terminal `success`, tested SHA `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`.
+- `567a74d...` is a documentation descendant of the PLFS acquisition state. Do not infer CI success for it from Database Validation #35.
 
-## Verified repository state
-- Repository: `Ashish-Bhatia/india-growth-transformation-tracker`.
-- Current main HEAD: `dbc690b22de747a01520eb52cdc43cc1f77bdfd5`.
-- Current HEAD commit: `docs: update next chat after PLFS validation`.
-- PLFS acquisition / CI-tested commit: `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`.
-- Database Validation: run `34066759564`, Database Validation #35, terminal `success`, on the PLFS acquisition commit `8a79fc7...`.
-- Current HEAD CI status: `NO RUN / NOT VERIFIED`. Database Validation #35 must not be treated as CI validation of current HEAD.
+## Project phase
 
-## Completed
-- Infrastructure gate remains closed and was not repeated.
-- Manufacturing pilot-sector onboarding foundations remain intact.
-- PLFS Dataset Registry record was already authoritative and was not recreated.
-- Indicator `IND-MFG-PLFS-SHARE-001` was already authoritative and was not recreated.
-- Official MoSPI PLFS 2025 annual-report release state was acquired by reference.
-- PLFS source locator and raw source-reference lineage were preserved.
-- Vintage `VNT-MOSPI-PLFS-2025` registered.
-- Snapshot `SNP-MOSPI-PLFS-20260327-001` registered.
-- Acquisition manifest `ACQ-MOSPI-PLFS-2025` created.
-- PLFS validation report created.
-- Four all-India manufacturing worker-share observations ingested: 2022 11.2%, 2023 11.7%, 2024 11.6%, 2025 12.1%.
-- The PLFS 2025 methodology break remains explicitly flagged.
-- `tests/test_plfs_ingestion.py` added and included in Database Validation.
-- Database Validation #35 executed the PLFS ingestion test together with the existing validation suite, migration, seed and database integration stages. All terminal steps succeeded.
+Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and dataset-ingestion validation are closed. The next research stage is Manufacturing baseline establishment.
 
-## Validation boundary
-- PLFS dataset-specific ingestion validation is CLOSED.
-- Dataset-specific ingestion validation is separate from causal validity, policy effectiveness, attribution, counterfactual analysis and scoring.
-- Database integration does not establish that canonical observation CSVs were loaded into PostgreSQL. Dataset-specific ingestion tests remain the observation-file validation boundary.
-- PLFS vintage, snapshot, manifest, validation-report lineage and canonical observations were exercised by the PLFS ingestion test in the successful Database Validation #35 run.
-- `file_hash=null` remains explicit because no permitted binary artifact was preserved. No byte-level artifact hash is claimed.
-- The 2025 PLFS methodology break is unresolved as a comparability issue and remains a validation control.
+## Verified dataset boundaries
 
-## CI record
-- Database Validation #35: run `34066759564`, terminal `success`, commit `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`.
-- The workflow job `database` was terminal `success`.
-- The pytest step explicitly included `tests/test_plfs_ingestion.py` and was terminal `success`.
-- Migration, seed and database integration steps were also terminal `success`.
-- Current main HEAD `dbc690b...` has no exposed workflow run. Record its CI state literally as `NO RUN / NOT VERIFIED`.
+- IIP: two preserved 2022-23-base release-state vintages. The methodology/base-year break from the superseded 2011-12 series remains an open comparability control.
+- ASI 2023-24: acquired vintage with registered organised-manufacturing coverage limitation. ASI measures must not be presented as total manufacturing measures.
+- NAS 2026: acquired 2022-23-base vintage. The methodology boundary from the superseded 2011-12 series remains an open comparability control. Revised/provisional status is preserved.
+- PLFS 2025: acquired vintage `VNT-MOSPI-PLFS-2025`; binary artifact not preserved, `file_hash=null`; sampling methodology and survey-cycle break remains an explicit comparability control.
 
-## Remaining limitations
-- PLFS 2025 methodology break remains an explicit comparability limitation.
-- PLFS binary source artifact is not preserved; `file_hash=null` remains explicit.
-- Direct binary-artifact limitations for earlier IIP, ASI and NAS acquisitions remain preserved where applicable.
-- No policy evaluation, attribution, counterfactual analysis or scoring has been introduced from these observations.
+## Current analytical boundary
 
-## Gate status
-PLFS acquisition/validation boundary: CLOSED, based on the terminal-successful Database Validation #35 on commit `8a79fc7...` and the preserved validation controls above. This does not imply CI validation of current HEAD.
+Existing observations are descriptive evidence only. No causal, attribution, policy-effectiveness, counterfactual or scoring conclusion has been introduced.
 
-## Analytical readiness
-Manufacturing is not research-complete. Data-ingestion validation is ahead of analytical readiness. Baseline completion, policy inventory, outcome analysis, State variation, peer methodology, external conditions, counterfactual analysis, attribution, evaluation and scoring remain separate research stages.
+Before additional data acquisition, establish the Manufacturing baseline research specification and map required baseline dimensions to the approved indicator registry. Do not introduce indicators merely because data exists.
 
-## Immediate next action
-After continuity verification, select the next Manufacturing research action using the approved Research Execution Protocol, Indicator Framework, Sector Research Blueprint and Source/Data Acquisition Architecture. Do not reacquire PLFS or reopen its validation boundary unless new evidence or a source revision requires it.
+## Baseline scope
+
+The governing frameworks require examination of output, growth, productivity, investment, employment, wages where available, exports, imports, market size, capacity, fiscal support, infrastructure, financial access, competitiveness and relevant social outcomes. The Sector Research Blueprint additionally specifies scale, quality, inclusion and international position. The preferred immediate pre-policy benchmark is 2013-14, with longer historical context where reliable comparable data exists.
+
+## Methodological controls
+
+- Preserve indicator definitions, units, frequency, geography, methodology, directionality and source mappings.
+- Preserve source vintages and revisions.
+- Do not splice incompatible IIP, NAS or PLFS methodologies.
+- Observed change must precede attribution.
+- Attribution, counterfactual analysis, policy evaluation and scoring remain downstream.
+- Final scoring weights, normalization and composite formulas remain unresolved.
+- Domain seed and international peer-basket methodology remain unresolved.
+
+## Open dependencies
+
+- PLFS 2025 comparability treatment.
+- IIP methodology/base-year break.
+- NAS methodology boundary.
+- Binary artifact preservation limitations.
+- Policy materiality terminology.
+- Government-term analytical boundaries.
+- Attribution-confidence taxonomy.
+- Final scoring methodology.
+- Domain seed.
+- International peer-basket methodology.
+
+## Required analytical sequence
+
+Evidence → Data validation → Descriptive analysis → Attribution → Counterfactual analysis → Evaluation → Scoring.
+
+## Continuity rule
+
+This file must always report the actual verified repository HEAD. Documentation changes after a validated data commit do not inherit the data commit's CI result.
