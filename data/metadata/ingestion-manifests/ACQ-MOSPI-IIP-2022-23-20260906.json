@@ -1,0 +1,43 @@
+{
+  "manifest_version": "1.0",
+  "acquisition_ref": "ACQ-MOSPI-IIP-2022-23-20260906",
+  "run_id": "IIP-INGEST-20260906",
+  "source_code": "SRC-MOSPI-IIP",
+  "dataset_code": "DS-MOSPI-IIP-001",
+  "acquisition": {
+    "mode": "research_extraction",
+    "status": "retrieved",
+    "retrieved_at": "2026-09-06T21:46:22Z",
+    "requested_url": "https://www.mospi.gov.in/uploads/latestReleases/latest_release_1780371708887_52b83604-666c-443a-82c6-4411103e2ede_Press_Release_IIP_2022-23f.pdf",
+    "content_type": "application/pdf",
+    "raw_artifact_reference": "data/raw/mospi/iip/VNT-MOSPI-IIP-2022-23/source-reference.json",
+    "operator": "research-extraction",
+    "code_version": "67e5ca399d2671c7446b36855591b23d16b0c4c4"
+  },
+  "lineage": {
+    "source": "SRC-MOSPI-IIP",
+    "dataset": "DS-MOSPI-IIP-001",
+    "snapshot": "SNP-MOSPI-IIP-20260601-001",
+    "locator_ids": ["LOC-MOSPI-IIP-20260601-STATEMENT-I", "LOC-MOSPI-IIP-20260601-STATEMENT-IIA"],
+    "vintage": "VNT-MOSPI-IIP-2022-23",
+    "observation_ids": ["OBS-MFG-IIP-2022-23-2023-04", "OBS-MFG-IIP-2022-23-2023-05", "OBS-MFG-IIP-2022-23-2023-06", "OBS-MFG-IIP-2022-23-2023-07", "OBS-MFG-IIP-2022-23-2023-08", "OBS-MFG-IIP-2022-23-2023-09", "OBS-MFG-IIP-2022-23-2023-10", "OBS-MFG-IIP-2022-23-2023-11", "OBS-MFG-IIP-2022-23-2023-12", "OBS-MFG-IIP-2022-23-2024-01", "OBS-MFG-IIP-2022-23-2024-02", "OBS-MFG-IIP-2022-23-2024-03", "OBS-MFG-IIP-2022-23-2024-04", "OBS-MFG-IIP-2022-23-2024-05", "OBS-MFG-IIP-2022-23-2024-06", "OBS-MFG-IIP-2022-23-2024-07", "OBS-MFG-IIP-2022-23-2024-08", "OBS-MFG-IIP-2022-23-2024-09", "OBS-MFG-IIP-2022-23-2024-10", "OBS-MFG-IIP-2022-23-2024-11", "OBS-MFG-IIP-2022-23-2024-12", "OBS-MFG-IIP-2022-23-2025-01", "OBS-MFG-IIP-2022-23-2025-02", "OBS-MFG-IIP-2022-23-2025-03", "OBS-MFG-IIP-2022-23-2025-04", "OBS-MFG-IIP-2022-23-2025-05", "OBS-MFG-IIP-2022-23-2025-06", "OBS-MFG-IIP-2022-23-2025-07", "OBS-MFG-IIP-2022-23-2025-08", "OBS-MFG-IIP-2022-23-2025-09", "OBS-MFG-IIP-2022-23-2025-10", "OBS-MFG-IIP-2022-23-2025-11", "OBS-MFG-IIP-2022-23-2025-12", "OBS-MFG-IIP-2022-23-2026-01", "OBS-MFG-IIP-2022-23-2026-02", "OBS-MFG-IIP-2022-23-2026-03", "OBS-MFG-IIP-2022-23-2026-04"]
+  },
+  "validation": {
+    "status": "passed_with_flags",
+    "anomalies": ["methodology_change"],
+    "review_required": true
+  },
+  "transformation": {
+    "steps": ["extract manufacturing sector monthly index from official Statement I", "standardise period fields to calendar-month dates", "preserve source-defined index unit", "classify April 2026 quick estimate as provisional"],
+    "input_references": ["data/raw/mospi/iip/VNT-MOSPI-IIP-2022-23/source-reference.json"],
+    "output_reference": "data/canonical/observations/IND-MFG-IIP-001.csv",
+    "methodology_version": "IND-MFG-REG-1.0",
+    "code_version": "67e5ca399d2671c7446b36855591b23d16b0c4c4",
+    "calculated_at": "2026-09-06T21:46:22Z"
+  },
+  "release": {
+    "release_date": "2026-06-01",
+    "source_version": "IIP-2022-23",
+    "freshness_status": "Recent"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "source_id": "SRC-MOSPI-IIP",
+  "dataset_id": "DS-MOSPI-IIP-001",
+  "vintage_id": "VNT-MOSPI-IIP-2022-23",
+  "snapshot_id": "SNP-MOSPI-IIP-20260601-001",
+  "retrieved_at": "2026-09-06T21:46:22Z",
+  "release_date": "2026-06-01",
+  "source_title": "First Press Release of All India Index of Industrial Production of New Series with Base Year 2022-23",
+  "source_url": "https://www.mospi.gov.in/uploads/latestReleases/latest_release_1780371708887_52b83604-666c-443a-82c6-4411103e2ede_Press_Release_IIP_2022-23f.pdf",
+  "content_type": "application/pdf",
+  "artifact_status": "permitted_source_reference_preserved",
+  "local_artifact": null,
+  "sha256": null,
+  "acquisition_method": "research_extraction",
+  "access_note": "The official MoSPI PDF endpoint was identified and its source reference preserved. Direct binary retrieval was unavailable in the execution environment, so no artifact hash is claimed.",
+  "licence_note": "Official public source; redistribution remains subject to applicable MoSPI terms."
+}

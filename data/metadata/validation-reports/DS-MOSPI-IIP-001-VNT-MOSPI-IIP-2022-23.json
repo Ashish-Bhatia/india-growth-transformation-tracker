@@ -1,0 +1,30 @@
+{
+  "dataset_id": "DS-MOSPI-IIP-001",
+  "vintage_id": "VNT-MOSPI-IIP-2022-23",
+  "indicator_id": "IND-MFG-IIP-001",
+  "validation_status": "passed_with_flags",
+  "anomaly_flags": ["methodology_change"],
+  "review_required": true,
+  "checks": {
+    "source_identity": "passed",
+    "dataset_mapping": "passed",
+    "indicator_mapping": "passed",
+    "base_year": {"expected": "2022-23", "observed": "2022-23", "status": "passed"},
+    "unit": {"expected": "index, 2022-23=100", "observed": "index, 2022-23=100", "status": "passed"},
+    "frequency": {"expected": "monthly", "observed": "monthly", "status": "passed"},
+    "geography": {"expected": "INDIA", "observed": "INDIA", "status": "passed"},
+    "observation_count": {"expected": 37, "observed": 37, "status": "passed"},
+    "duplicate_observations": {"observed": 0, "status": "passed"},
+    "missing_months": {"observed": 0, "status": "passed"},
+    "annual_index_reconciliation": {
+      "2023-24": {"calculated": 107.1, "published": 107.1, "status": "passed"},
+      "2024-25": {"calculated": 113.8, "published": 113.8, "status": "passed"},
+      "2025-26": {"calculated": 119.4, "published": 119.4, "status": "passed"}
+    },
+    "april_2026_growth_reconciliation": {"calculated_percent": 6.2, "published_percent": 6.2, "status": "passed"},
+    "april_2026_status": {"observed_status": "quick estimate", "canonical_status": "provisional", "status": "passed"}
+  },
+  "methodology_note": "The June 1, 2026 first release introduces the new IIP 2022-23 base series. This is a methodology/base-year change from the superseded 2011-12 series and is retained as a validation flag. No 2011-12 observations were spliced into this vintage.",
+  "source_locator": "STATEMENT I: INDEX OF INDUSTRIAL PRODUCTION - SECTORAL; STATEMENT II-A: Manufacturing at NIC 2 digit; Part A: Quick Estimates for April 2026",
+  "validated_at": "2026-09-06T21:46:22Z"
+}

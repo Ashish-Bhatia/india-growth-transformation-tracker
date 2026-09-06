@@ -1,0 +1,18 @@
+[
+  {
+    "locator_id": "LOC-MOSPI-IIP-20260601-STATEMENT-I",
+    "source_id": "SRC-MOSPI-IIP",
+    "source_url": "https://www.mospi.gov.in/uploads/latestReleases/latest_release_1780371708887_52b83604-666c-443a-82c6-4411103e2ede_Press_Release_IIP_2022-23f.pdf",
+    "section": "Part A: Quick Estimates of Index of Industrial Production",
+    "table_ref": "STATEMENT I: INDEX OF INDUSTRIAL PRODUCTION - SECTORAL",
+    "locator_text": "Manufacturing sector monthly index, Base 2022-23=100"
+  },
+  {
+    "locator_id": "LOC-MOSPI-IIP-20260601-STATEMENT-IIA",
+    "source_id": "SRC-MOSPI-IIP",
+    "source_url": "https://www.mospi.gov.in/uploads/latestReleases/latest_release_1780371708887_52b83604-666c-443a-82c6-4411103e2ede_Press_Release_IIP_2022-23f.pdf",
+    "section": "Part A: Quick Estimates of Index of Industrial Production",
+    "table_ref": "STATEMENT II A: INDEX OF INDUSTRIAL PRODUCTION - Manufacturing at NIC 2 digit",
+    "locator_text": "10-32 Manufacturing weight 76.062; April 2026 index 119.3; April growth 6.2%"
+  }
+]
