@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://india-growth-transformation-tracker.github.io/schemas/dataset-registry.schema.json",
+  "title": "India Growth & Transformation Tracker Dataset Registry",
+  "type": "object",
+  "required": ["registry_version", "schema_version", "authority", "seed_status", "datasets"],
+  "properties": {
+    "registry_version": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "authority": {"type": "string"},
+    "seed_status": {"type": "string", "enum": ["authoritative_seeded", "pending_authoritative_seed"]},
+    "datasets": {"type": "array", "items": {"$ref": "#/$defs/dataset"}}
+  },
+  "$defs": {
+    "dataset": {
+      "type": "object",
+      "required": ["dataset_id", "dataset_name", "publisher", "source_id", "coverage", "frequency", "unit", "methodology", "revision_policy", "latest_observation", "ingestion_status", "validation_status", "current_version", "access_location", "licence", "status", "provenance"],
+      "properties": {
+        "dataset_id": {"type": "string", "pattern": "^DS-[A-Z0-9-]+$"},
+        "dataset_name": {"type": "string", "minLength": 1},
+        "publisher": {"type": "string", "minLength": 1},
+        "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]+$"},
+        "coverage": {"type": "string", "minLength": 1},
+        "frequency": {"type": "string", "minLength": 1},
+        "unit": {"type": "string", "minLength": 1},
+        "definitions": {"type": "string"},
+        "dimensions": {"type": "array", "items": {"type": "string"}},
+        "methodology": {"type": "string", "minLength": 1},
+        "revision_policy": {"type": "string", "minLength": 1},
+        "latest_observation": {"type": ["string", "null"]},
+        "ingestion_status": {"type": "string"},
+        "validation_status": {"type": "string"},
+        "current_version": {"type": "string", "minLength": 1},
+        "access_location": {"type": "string", "minLength": 1},
+        "licence": {"type": "string", "minLength": 1},
+        "update_schedule": {"type": "string"},
+        "status": {"type": "string", "enum": ["active", "superseded", "retired", "pending"]},
+        "provenance": {"type": "object", "required": ["verification_status", "verified_at", "verification_basis"], "properties": {"verification_status": {"type": "string", "enum": ["verified", "pending"]}, "verified_at": {"type": "string", "format": "date"}, "verification_basis": {"type": "string"}, "verification_reference": {"type": "string"}}, "additionalProperties": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
