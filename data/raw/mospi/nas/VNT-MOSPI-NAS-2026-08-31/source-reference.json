@@ -1,0 +1,13 @@
+{
+  "vintage_id": "VNT-MOSPI-NAS-2026-08-31",
+  "dataset_id": "DS-MOSPI-NAS-001",
+  "source_id": "SRC-MOSPI-NAS",
+  "release_date": "2026-08-31",
+  "release_title": "National Accounts Statistics 2025-26",
+  "official_mospi_portal": "https://www.mospi.gov.in/publication/national-accounts-statistics-2025-26",
+  "content_type": "official_mospi_publication_reference",
+  "artifact_retrieval": "official_reference_preserved; binary_artifact_not_committed",
+  "file_hash": null,
+  "retrieved_at": "2026-09-07",
+  "notes": "The official MoSPI NAS publication release state is preserved by reference. Binary artifact hash is not claimed because direct binary artifact retrieval was unavailable in the execution environment."
+}
