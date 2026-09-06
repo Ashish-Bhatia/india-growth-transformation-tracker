@@ -1,83 +1,56 @@
 # Next Chat
 
 ## Current position
-Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 verified records. The Dataset Registry has 9 authoritative dataset records and the Indicator Registry has 7 minimum authoritative Manufacturing indicators. No observations have been loaded.
+Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 verified records. The Dataset Registry has 9 authoritative dataset records and the Indicator Registry has 7 minimum authoritative Manufacturing indicators. The first IIP observation vintage has now been acquired, validated and ingested for `IND-MFG-IIP-001`.
 
 ## Verified repository state
-- Current repository HEAD: `82f8c6e773c5f4bea4249d2e93557b3ec104cc3b`.
-- Previous registry-seeded HEAD: `dab1a82a90792681fa84a4a19754d52956633502`.
-- GitHub Actions lookup for `dab1a82a90792681fa84a4a19754d52956633502` exposed no workflow run and no commit status. No CI rerun was performed.
-- Source-registry implementation commit: `7184c501169ee3abfe6c4394ca7ae87359d09d14`.
-- CI run `34060700876` for the source-registry commit is terminal `failure`. The failure was a stale registry test expecting Source Registry version `1.1.0` and 10 sources while the verified registry is version `1.2.0` with 12 sources. The failure occurred before database migration/integration tests. No CI rerun was performed.
-- Ingestion-plan and vintage-registry implementation commits followed the verified registry state. Their CI has not been rerun or claimed.
+- Current repository HEAD: `4cbf78091881401bfa0853112b82e93de4f0a079`.
+- First IIP vintage registration commit: `afcc0c7a7d41af1e489b0959795049f2d68b8813`.
+- First IIP observation ingestion commit: `46bf1ad40c88134b916888a70d13b7c912fdccf4`.
+- IIP ingestion test commit: `f9575d9c5defc1401311720d8f1dc50657ff4e8e`.
+- Project-state update commit: `4cbf78091881401bfa0853112b82e93de4f0a079`.
+- No GitHub Actions workflow run is exposed for the current ingestion commits. CI status is `no run`. Do not infer success or rerun CI merely to obtain a status.
+- Historical CI run `34060700876` remains terminal `failure` from stale Source Registry test expectations. No rerun was performed.
 
 ## Completed
 - PostgreSQL schema and migration foundation.
-- Controlled vocabularies.
-- Canonical taxonomy: 33 sectors and 354 sub-sectors.
-- India plus 28 States and 8 Union Territories.
+- Controlled vocabularies and canonical taxonomy.
 - Provenance structures and ingestion manifest contract.
-- Source Registry and Indicator Registry contracts.
 - 12 verified Source Registry records.
-- Manufacturing pilot selection recorded as DECISION-PILOT-001.
-- Dataset Registry schema contract.
-- 9 verified Manufacturing pilot dataset records mapped to Source Registry records.
-- Minimum 7 verified Manufacturing Indicator Registry records mapped to Dataset and Source Registry records.
-- Registry tests updated for the current 12-source seed and new Dataset/Indicator Registry seeds.
-- Dataset and Indicator Registry schemas and repository tests inspected for the seeded contracts. Runtime test execution was not possible from this environment because direct GitHub network access is unavailable.
-- First Manufacturing observation-ingestion plan implemented in `docs/architecture/manufacturing-observation-ingestion-plan.md`.
-- Dataset vintage registry contract implemented in `schemas/dataset-vintage-registry.schema.json`.
-- Nine current-version acquisition targets registered in `data/metadata/dataset-vintage-registry.json` with `pending_acquisition` status.
+- 9 authoritative Manufacturing Dataset Registry records.
+- 7 authoritative Manufacturing Indicator Registry records.
+- Manufacturing observation-ingestion plan.
+- Dataset Vintage Registry contract and acquisition targets.
+- First IIP vintage `VNT-MOSPI-IIP-2022-23` registered with release date 2026-06-01.
+- Official source reference preserved for the first new IIP 2022-23-base release.
+- Source snapshot `SNP-MOSPI-IIP-20260601-001` and source locators registered.
+- Validation report recorded as `passed_with_flags`, with `methodology_change` as the only anomaly flag.
+- 37 canonical monthly observations loaded for `IND-MFG-IIP-001`, April 2023 through April 2026.
+- April 2026 remains `provisional` because the source identifies it as a quick estimate.
+- Annual-index and April-growth reconciliation checks passed.
+- Targeted IIP ingestion test executed: `1 passed`.
 
-## Current registry status
-- Source Registry: 12 verified records.
-- Dataset Registry: 9 authoritative records.
-- Indicator Registry: 7 authoritative Manufacturing records.
-- Observation layer: empty.
-- Evidence layer: empty.
-- Manufacturing policy inventory: not started.
-- Attribution and scoring: not started.
-
-## Dataset coverage established
-- MoSPI Annual Survey of Industries.
-- MoSPI National Accounts Statistics.
-- MoSPI Index of Industrial Production, current 2022-23 base series.
-- MoSPI PLFS.
-- India Budget and Demands for Grants.
-- Department of Commerce TRADESTAT.
-- DPIIT FDI statistics.
-- RBI DBIE.
-- UNIDO INDSTAT Revision 4.
-
-## Indicator coverage established
-- Real manufacturing GVA growth.
-- Manufacturing share of GVA.
-- Manufacturing IIP.
-- Registered manufacturing GVA from ASI.
-- Registered manufacturing persons engaged from ASI.
-- Manufacturing share of workers from PLFS.
-- UNIDO manufacturing value added for international comparison.
-
-## Methodological controls
-- IIP uses the current 2022-23 base series and must not be silently spliced with the superseded 2011-12 series.
-- ASI covers registered organised manufacturing and must not be presented as total manufacturing without qualification.
-- PLFS 2025 sampling-design change requires explicit comparability treatment.
-- UNIDO peer comparison remains constrained by the unresolved final peer-basket methodology.
-- No score methodology has been applied.
+## IIP controls
+- Base year is 2022-23=100.
+- No 2011-12 observations were spliced into the current series.
+- Published manufacturing annual indices reconcile to 107.1 for 2023-24, 113.8 for 2024-25 and 119.4 for 2025-26.
+- April 2026 manufacturing index is 119.3 and the published year-on-year growth is 6.2%.
+- The first new-series release carries a methodology/base-year change. This remains explicitly flagged.
+- Direct binary retrieval of the official PDF was unavailable in the execution environment, so no SHA-256 was claimed. The permitted official source reference is preserved.
 
 ## Exact next executable task
-1. Acquire the first actual Manufacturing source vintage for `DS-MOSPI-IIP-001`.
-2. Preserve the raw artifact or permitted source reference.
-3. Register the actual source snapshot, release/version metadata and SHA-256 where an artifact is acquired.
-4. Validate structure, period coverage, units, revision status and current 2022-23 base-series identity.
-5. Only after validation, load canonical observations for `IND-MFG-IIP-001`.
-6. Record the ingestion manifest and lineage.
+1. Inspect the actual repository state at the current HEAD.
+2. Review the first IIP ingestion commit and all changed files.
+3. Ensure registry health/freshness metadata reflects the now-populated IIP indicator without changing the indicator definition.
+4. Verify the canonical IIP observation layer and validation manifest remain internally consistent.
+5. Check whether the next official IIP release should become a new vintage or a revision of the existing current series. Do not overwrite the first vintage.
+6. Only then acquire the next authoritative Manufacturing dataset vintage.
 7. Do not begin full Manufacturing policy research, attribution or scoring.
 
 ## Research boundary
-The pilot must follow:
-Source → Dataset → Vintage → Snapshot → Observation → Evidence → Policy → Attribution → Sector analysis → Score → Publication.
+The pilot chain is:
+Source → Dataset → Vintage → Snapshot → Locator → Raw reference → Validation → Staged observation → Canonical observation → Indicator → Evidence → Policy → Attribution → Sector analysis → Score → Publication.
 No layer should be skipped. Observed change and attributed change remain separate. Source tier remains separate from data quality, evidence grade and causal strength.
 
 ## What not to repeat
-Do not repeat initialization audit, database design, migration framework design, taxonomy design, provenance architecture, registry contract design, the existing 12 Source Registry records, old-HEAD CI absence investigation, pilot-sector selection, or methodology-document creation.
+Do not repeat initialization audit, database design, migration framework design, taxonomy design, provenance architecture, registry contract design, the existing Source Registry records, old-HEAD CI absence investigation, pilot-sector selection, methodology-document creation, Dataset Registry establishment, Indicator Registry establishment, existing registry tests, or the first IIP acquisition/validation already completed.
