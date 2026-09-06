@@ -1,16 +1,15 @@
 # Next Chat
 
 ## Current position
-Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 verified records. The Dataset Registry now contains 9 authoritative dataset records and the Indicator Registry now contains 7 minimum authoritative Manufacturing indicators. No observations have been loaded.
+Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 verified records. The Dataset Registry has 9 authoritative dataset records and the Indicator Registry has 7 minimum authoritative Manufacturing indicators. No observations have been loaded.
 
 ## Verified repository state
-- Current implementation HEAD before this documentation update: `2ea864f6c537304bcdc26a8fd6442a42cfa0aa20`.
+- Current repository HEAD: `82f8c6e773c5f4bea4249d2e93557b3ec104cc3b`.
+- Previous registry-seeded HEAD: `dab1a82a90792681fa84a4a19754d52956633502`.
+- GitHub Actions lookup for `dab1a82a90792681fa84a4a19754d52956633502` exposed no workflow run and no commit status. No CI rerun was performed.
 - Source-registry implementation commit: `7184c501169ee3abfe6c4394ca7ae87359d09d14`.
 - CI run `34060700876` for the source-registry commit is terminal `failure`. The failure was a stale registry test expecting Source Registry version `1.1.0` and 10 sources while the verified registry is version `1.2.0` with 12 sources. The failure occurred before database migration/integration tests. No CI rerun was performed.
-- Dataset Registry implementation commits: `6d9f32e09ef23526390f5c26c27dc2efb371dc12` and `733894fe3d7d9c0d507c579e5db90e37a5bebe30`.
-- Indicator Registry implementation commit: `5a91cb7124fd4a3c72883c4e5e94f42e3d2c0278`.
-- Registry test update commit: `2ea864f6c537304bcdc26a8fd6442a42cfa0aa20`.
-- CI for the new registry implementation has not yet been verified as terminal. Do not claim success or failure until a new run is exposed and reaches a terminal state.
+- Ingestion-plan and vintage-registry implementation commits followed the verified registry state. Their CI has not been rerun or claimed.
 
 ## Completed
 - PostgreSQL schema and migration foundation.
@@ -25,6 +24,10 @@ Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 veri
 - 9 verified Manufacturing pilot dataset records mapped to Source Registry records.
 - Minimum 7 verified Manufacturing Indicator Registry records mapped to Dataset and Source Registry records.
 - Registry tests updated for the current 12-source seed and new Dataset/Indicator Registry seeds.
+- Dataset and Indicator Registry schemas and repository tests inspected for the seeded contracts. Runtime test execution was not possible from this environment because direct GitHub network access is unavailable.
+- First Manufacturing observation-ingestion plan implemented in `docs/architecture/manufacturing-observation-ingestion-plan.md`.
+- Dataset vintage registry contract implemented in `schemas/dataset-vintage-registry.schema.json`.
+- Nine current-version acquisition targets registered in `data/metadata/dataset-vintage-registry.json` with `pending_acquisition` status.
 
 ## Current registry status
 - Source Registry: 12 verified records.
@@ -55,32 +58,25 @@ Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 veri
 - Manufacturing share of workers from PLFS.
 - UNIDO manufacturing value added for international comparison.
 
-All indicators remain observation-empty. The IIP indicator explicitly uses the current 2022-23 base series and does not silently splice the superseded 2011-12 series. PLFS 2025 methodology change remains a comparability control. UNIDO peer comparison remains constrained by the unresolved peer-basket methodology.
-
-## Open controls
-- ISSUE-INIT-001: materiality descriptions.
-- ISSUE-INIT-002: analytical government-term boundary convention.
-- ISSUE-INIT-004: attribution confidence mapping.
-- ISSUE-INIT-005: final scoring weights and composite formulas.
-- ISSUE-INIT-006: API and website implementation contracts.
-- ISSUE-DB-001: authoritative domain registry.
-- ISSUE-DB-002: international country registry.
-- ISSUE-REG-001: indicator-side registry seed dependency should now be reviewed against the seeded records.
-- Final international peer basket methodology.
-- Final public data/content licensing treatment per source.
-- CI terminal result for the new registry implementation.
+## Methodological controls
+- IIP uses the current 2022-23 base series and must not be silently spliced with the superseded 2011-12 series.
+- ASI covers registered organised manufacturing and must not be presented as total manufacturing without qualification.
+- PLFS 2025 sampling-design change requires explicit comparability treatment.
+- UNIDO peer comparison remains constrained by the unresolved final peer-basket methodology.
+- No score methodology has been applied.
 
 ## Exact next executable task
-1. Verify the new `Database Validation` workflow result for the registry implementation. Do not rerun or manufacture CI.
-2. If the new run is terminal, inspect failures if any and make only the smallest justified correction.
-3. Verify the Dataset Registry and Indicator Registry against their schemas and repository tests.
-4. Confirm no observations were loaded prematurely.
-5. Only after registry validation is complete, establish the first observation-ingestion plan and source-vintage requirements.
-6. Do not begin full Manufacturing policy research, attribution or scoring yet.
+1. Acquire the first actual Manufacturing source vintage for `DS-MOSPI-IIP-001`.
+2. Preserve the raw artifact or permitted source reference.
+3. Register the actual source snapshot, release/version metadata and SHA-256 where an artifact is acquired.
+4. Validate structure, period coverage, units, revision status and current 2022-23 base-series identity.
+5. Only after validation, load canonical observations for `IND-MFG-IIP-001`.
+6. Record the ingestion manifest and lineage.
+7. Do not begin full Manufacturing policy research, attribution or scoring.
 
 ## Research boundary
 The pilot must follow:
-Source → Dataset → Indicator → Observation → Evidence → Policy → Attribution → Sector analysis → Score → Publication.
+Source → Dataset → Vintage → Snapshot → Observation → Evidence → Policy → Attribution → Sector analysis → Score → Publication.
 No layer should be skipped. Observed change and attributed change remain separate. Source tier remains separate from data quality, evidence grade and causal strength.
 
 ## What not to repeat
