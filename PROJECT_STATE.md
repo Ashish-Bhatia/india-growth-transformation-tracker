@@ -1,10 +1,10 @@
 # Project State
 
-Version: 0.2.0-db-foundation
+Version: 0.3.0-db-validated
 State date: 2026-09-07
 
 ## Current phase
-Database foundation implementation.
+Database foundation validated; registry layer next.
 
 ## Completed work
 - All 15 Project Source documents reviewed for initialization.
@@ -18,15 +18,14 @@ Database foundation implementation.
 - Static migration/schema tests implemented.
 - PostgreSQL integration test and GitHub Actions database validation workflow implemented.
 - Database reproducibility documentation implemented in `db/README.md`.
+- GitHub Actions PostgreSQL validation executed successfully on 2026-09-06, including clean migration, seed loading, static tests and integration tests.
 
 ## In progress
-- CI execution of the PostgreSQL integration suite.
+- Machine-readable Source Registry and Master Indicator Registry implementation.
 - Formal resolution of documented terminology conflicts before policy onboarding and scoring.
 
 ## Pending
-- Machine-readable Master Indicator Registry population.
-- Source registry population and provenance ingestion.
-- Domain taxonomy seed, once an authoritative domain registry is established.
+- Authoritative domain taxonomy seed, once a complete domain registry is established.
 - International country registry expansion beyond India.
 - ETL and validation framework.
 - Pilot sector selection and onboarding.
@@ -51,8 +50,7 @@ Database foundation implementation.
 - No public score has been calculated.
 
 ## Technical gaps
-- Live PostgreSQL execution has not been run from this ChatGPT environment because no PostgreSQL server or Docker runtime is available here.
-- CI is configured to execute clean-database migration, seed and integration validation.
+- Codespaces was not used in this validation. GitHub Actions provided the actual PostgreSQL execution environment.
 - No source/data ingestion pipeline.
 - No API or website implementation.
 
@@ -61,11 +59,23 @@ Database foundation implementation.
 - 354 canonical sub-sector entries seeded from the Master Research Taxonomy.
 - 28 States and 8 Union Territories seeded.
 - India geography seeded.
-- Government terms seeded as exact administration-date records for storage. Analytical boundary methodology remains open under ISSUE-002.
+- Four government-term records seeded with exact administration dates for storage. Analytical boundary methodology remains open under ISSUE-002.
 - Domains table implemented but not populated because the Project Sources do not provide a complete authoritative domain registry.
 - Country table implemented and India seeded. International country coverage remains an explicit future registry dependency.
 - Provenance, source snapshots, dataset vintages, observation revisions, audit events and public provenance view implemented.
 - Scoring infrastructure implemented without final weights or composite formulas.
 
+## Validation record
+- Workflow: `Database Validation`
+- Run: 34057565918
+- Commit: `cc16a384e457ddf8f002660d7352391bb8857f64`
+- Result: success
+- PostgreSQL service: postgres:16
+- Migration step: success
+- Seed step: success
+- Static migration tests: success
+- Database integration tests: success
+- Workflow completed: 2026-09-06T20:18:50Z
+
 ## Immediate next action
-Verify CI execution of the database migration/integration workflow. If green, proceed to the Master Indicator Registry and Source Registry implementation without beginning substantive sector research.
+Implement the machine-readable Source Registry and Master Indicator Registry structures, seeding only authoritative registry content already present in Project Sources. Do not begin substantive sector research.
