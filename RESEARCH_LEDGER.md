@@ -11,11 +11,24 @@ No substantive sector or policy research has been verified as completed in the P
 - Date opened: 2026-09-07
 - Sources searched: All 15 Project Source documents available in the project
 - Sources found: 15 foundational framework documents
-- Sources unavailable: No project source unavailable
-- Findings: Methodology and architecture are substantially specified. Implementation and substantive research are not yet evidenced.
-- Contradictions: See ISSUES_REGISTER.md
-- Evidence grade: A for project-state facts derived from the Project Sources
-- Attribution: Not applicable
-- Conclusion: Project is at initialization/repository-bootstrap stage.
-- Open questions: Canonical resolution of materiality labels, term-date convention, confidence mapping, final scoring weights, pilot sector.
+- Findings: Methodology and architecture are substantially specified. Implementation and substantive research were not evidenced at initialization.
+- Conclusion: Project moved from initialization into database foundation implementation.
+- Last verified: 2026-09-07
+
+## Database foundation record
+
+- Research ID: DB-001
+- Question: Has the canonical PostgreSQL analytical foundation been implemented from the Project Sources?
+- Sector: Project-wide
+- Policy: None
+- Date opened: 2026-09-07
+- Sources used: Master Research Taxonomy and Data Model; Master Database Schema & ER Model; Data Governance & Versioning; Indicator Framework; Source & Data Acquisition Architecture; Research Execution Protocol; GitHub Repository Specification
+- Implementation: PostgreSQL schema migration framework, controlled vocabularies, canonical taxonomy seed, migration runner, seed runner, static tests, integration test and CI workflow added to the repository.
+- Taxonomy seeded: 33 sectors, 354 sub-sectors, government terms, India, 28 States, 8 Union Territories.
+- Domains: Schema implemented; seed deferred because the Project Sources do not provide a complete authoritative domain registry.
+- International geography: Country model implemented; India seeded; broader country registry deferred.
+- Provenance: Sources, datasets, source snapshots, source locators, vintages, observation revisions, audit events and public provenance view implemented.
+- Scoring: Configurable schema implemented; no final weights, normalization or composite formulas seeded.
+- Research status: No substantive sector research or verified observations added.
+- Validation status: Static tests are repository-local; PostgreSQL integration is configured for GitHub Actions but has not been executed in this runtime.
 - Last verified: 2026-09-07
