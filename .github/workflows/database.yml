@@ -4,17 +4,23 @@ on:
   push:
     paths:
       - 'db/**'
+      - 'schemas/**'
+      - 'data/metadata/**'
       - 'scripts/db_*.py'
       - 'tests/test_database_integration.py'
       - 'tests/test_migration_files.py'
+      - 'tests/test_registry_files.py'
       - 'requirements-dev.txt'
       - '.github/workflows/database.yml'
   pull_request:
     paths:
       - 'db/**'
+      - 'schemas/**'
+      - 'data/metadata/**'
       - 'scripts/db_*.py'
       - 'tests/test_database_integration.py'
       - 'tests/test_migration_files.py'
+      - 'tests/test_registry_files.py'
       - 'requirements-dev.txt'
       - '.github/workflows/database.yml'
 
@@ -45,7 +51,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m pip install -r requirements-dev.txt
-      - run: python -m pytest tests/test_migration_files.py -q
+      - run: python -m pytest tests/test_migration_files.py tests/test_registry_files.py -q
       - run: python scripts/db_migrate.py
       - run: python scripts/db_seed.py
       - run: python -m pytest tests/test_database_integration.py -q

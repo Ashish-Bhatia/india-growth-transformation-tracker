@@ -32,3 +32,19 @@ No substantive sector or policy research has been verified as completed in the P
 - Research status: No substantive sector research or verified observations added.
 - Validation: GitHub Actions workflow run 34057565918 executed against PostgreSQL 16 and completed successfully. Static migration tests, migrations, seed loading and database integration tests all passed.
 - Last verified: 2026-09-07
+
+## Registry layer record
+
+- Research ID: REG-001
+- Question: Does the repository contain machine-readable Source Registry and Master Indicator Registry structures without inventing unsupported records?
+- Sector: Project-wide
+- Policy: None
+- Date opened: 2026-09-07
+- Sources used: Source & Data Acquisition Architecture; Master Indicator Registry; Indicator Framework; Master Database Schema & ER Model; GitHub Repository Specification
+- Implementation: JSON Schema contracts plus versioned machine-readable registry documents added under `schemas/` and `data/metadata/`. Registry structural tests added and CI workflow expanded to execute them.
+- Source Registry fields covered: source ID, source name, institution, source tier, source type, URL/reference, dataset relationship, retrieval method, frequency, publication/release pattern, archive/snapshot, provenance, licensing/access, reliability metadata and status.
+- Indicator Registry fields covered: permanent indicator ID, name, definition, unit, frequency, directionality, indicator type, measurement type, sector, sub-sector, domain, geography, baseline, benchmark, target, calculation method, methodology version, update class, health status, source mapping and version history.
+- Seed boundary: no source or indicator records were invented. Project Sources specify required metadata and indicator families, but do not provide complete authoritative record-level registries with source mappings.
+- Validation: GitHub Actions run 34058734002 completed successfully. Registry tests, PostgreSQL migration, seed loading and database integration tests all passed against PostgreSQL 16.
+- Status: Registry layer execution-validated.
+- Last verified: 2026-09-07
