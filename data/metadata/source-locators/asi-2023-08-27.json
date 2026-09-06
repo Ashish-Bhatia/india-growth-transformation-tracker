@@ -1,0 +1,26 @@
+{
+  "source_id": "SRC-MOSPI-ASI",
+  "snapshot_id": "SNP-MOSPI-ASI-20250827-001",
+  "release_date": "2025-08-27",
+  "retrieval_date": "2026-09-07",
+  "locators": [
+    {
+      "locator_id": "LOC-MOSPI-ASI-20250827-PRESS-NOTE-TABLE-1",
+      "reference": "ASI 2023-24 Press Release, Table 1",
+      "url": "https://www.mospi.gov.in/sites/default/files/press_release/PIBNote_ASI%202023-24-English_rev.pdf",
+      "detail": "All-India 2023-24 GVA and total persons engaged, with 2019-20 to 2023-24 comparison."
+    },
+    {
+      "locator_id": "LOC-MOSPI-ASI-20250827-SUMMARY-ALL-INDIA",
+      "reference": "Summary Results for Factory Sector: ASI 2023-24, All India",
+      "url": "https://new.mospi.gov.in/uploads/publications_reports/publications_reports1759229789833_2b8ed8ad-314e-46b7-b123-b08cb17f1233_ASI_Summary_Results_2023-24C.pdf",
+      "detail": "All-India operating factories, persons engaged, total output, GVA and related principal characteristics."
+    },
+    {
+      "locator_id": "LOC-MOSPI-ASI-20250827-SUMMARY-STATE-GVA",
+      "reference": "Summary Results for Factory Sector: ASI 2023-24, Statement 7A",
+      "url": "https://new.mospi.gov.in/uploads/publications_reports/publications_reports1759229789833_2b8ed8ad-314e-46b7-b123-b08cb17f1233_ASI_Summary_Results_2023-24C.pdf",
+      "detail": "State/UT GVA and persons engaged table, confirming State-level coverage."
+    }
+  ]
+}

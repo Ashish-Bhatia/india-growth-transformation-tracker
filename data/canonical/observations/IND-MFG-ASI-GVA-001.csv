@@ -1,0 +1,2 @@
+observation_id,indicator_id,measurement_date,period_label,period_start,period_end,geography,value,unit,status,dataset_id,vintage_id,observation_version,quality_grade,publication_date,verification_date
+OBS-MFG-ASI-2023-24-INDIA-GVA,IND-MFG-ASI-GVA-001,2024-03-31,2023-24,2023-04-01,2024-03-31,INDIA,245833605,"₹ lakh, source-defined",observed,DS-MOSPI-ASI-001,VNT-MOSPI-ASI-2023-24,1,A,2025-08-27,2026-09-07

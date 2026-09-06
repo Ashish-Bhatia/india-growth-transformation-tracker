@@ -1,0 +1,44 @@
+{
+  "validation_report_version": "1.0",
+  "dataset_id": "DS-MOSPI-ASI-001",
+  "vintage_id": "VNT-MOSPI-ASI-2023-24",
+  "snapshot_id": "SNP-MOSPI-ASI-20250827-001",
+  "validation_status": "passed_with_flags",
+  "release_validation": {
+    "release_date": "2025-08-27",
+    "reference_period": "2023-24",
+    "period_start": "2023-04-01",
+    "period_end": "2024-03-31",
+    "release_state": "published_results"
+  },
+  "definition_validation": {
+    "coverage": "registered organised manufacturing",
+    "classification": "NIC 2008 for economic activity; NPC-MS classification for products/materials as applicable",
+    "geography": "India and State/UT aggregates",
+    "frequency": "annual",
+    "status": "passed"
+  },
+  "indicator_validation": {
+    "IND-MFG-ASI-GVA-001": {
+      "source_value": 245833605,
+      "unit": "₹ lakh, source-defined",
+      "status": "validated"
+    },
+    "IND-MFG-ASI-EMP-001": {
+      "source_value": 19589131,
+      "unit": "persons",
+      "status": "validated"
+    }
+  },
+  "coverage_controls": [
+    "ASI observations represent registered organised manufacturing only.",
+    "ASI GVA must not be presented as total manufacturing GVA.",
+    "ASI persons engaged must not be presented as total manufacturing employment.",
+    "The observation period is the financial year April 2023-March 2024.",
+    "No IIP observation was modified or overwritten."
+  ],
+  "flags": ["registered_manufacturing_coverage_limit"],
+  "contradiction_check": "No conflicting official value identified for the two selected national aggregates in the reviewed release references.",
+  "methodology_version": "IND-MFG-REG-1.0",
+  "verified_at": "2026-09-07"
+}

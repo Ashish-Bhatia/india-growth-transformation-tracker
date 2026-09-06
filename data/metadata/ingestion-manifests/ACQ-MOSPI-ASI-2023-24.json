@@ -1,0 +1,44 @@
+{
+  "manifest_version": "1.0",
+  "acquisition_ref": "ACQ-MOSPI-ASI-2023-24",
+  "run_id": "ASI-INGEST-20260907-01",
+  "source_code": "SRC-MOSPI-ASI",
+  "dataset_code": "DS-MOSPI-ASI-001",
+  "acquisition": {
+    "mode": "research_extraction",
+    "status": "retrieved",
+    "retrieved_at": "2026-09-07T00:00:00Z",
+    "requested_url": "https://www.mospi.gov.in/sites/default/files/press_release/PIBNote_ASI%202023-24-English_rev.pdf",
+    "content_type": "official_mospi_pdf_release",
+    "raw_artifact_reference": "data/raw/mospi/asi/VNT-MOSPI-ASI-2023-24/source-reference.json",
+    "operator": "research-extraction",
+    "code_version": "repository-manual-ingestion"
+  },
+  "lineage": {
+    "source": "SRC-MOSPI-ASI",
+    "dataset": "DS-MOSPI-ASI-001",
+    "snapshot": "SNP-MOSPI-ASI-20250827-001",
+    "locator_ids": ["LOC-MOSPI-ASI-20250827-PRESS-NOTE-TABLE-1", "LOC-MOSPI-ASI-20250827-SUMMARY-ALL-INDIA", "LOC-MOSPI-ASI-20250827-SUMMARY-STATE-GVA"],
+    "vintage": "VNT-MOSPI-ASI-2023-24",
+    "observation_ids": ["OBS-MFG-ASI-2023-24-INDIA-GVA", "OBS-MFG-ASI-2023-24-INDIA-EMP"]
+  },
+  "validation": {
+    "status": "passed_with_flags",
+    "anomalies": ["registered_manufacturing_coverage_limit"],
+    "review_required": true
+  },
+  "transformation": {
+    "steps": ["extract All-India GVA and persons engaged from official ASI 2023-24 release", "standardise reference period to financial year 2023-24", "preserve source-defined GVA unit", "retain registered organised manufacturing coverage qualification", "load only registered ASI indicators"],
+    "input_references": ["data/raw/mospi/asi/VNT-MOSPI-ASI-2023-24/source-reference.json"],
+    "output_references": ["data/canonical/observations/IND-MFG-ASI-GVA-001.csv", "data/canonical/observations/IND-MFG-ASI-EMP-001.csv"],
+    "methodology_version": "IND-MFG-REG-1.0",
+    "code_version": "repository-manual-ingestion",
+    "calculated_at": "2026-09-07T00:00:00Z"
+  },
+  "release": {
+    "release_date": "2025-08-27",
+    "source_version": "ASI-2023-24",
+    "freshness_status": "Recent",
+    "release_relationship": "first_registered_vintage_for_dataset"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.1.0",
+  "registry_version": "1.2.0",
   "schema_version": "1.0",
   "status": "active",
   "vintages": [
@@ -37,11 +37,11 @@
       "vintage_id": "VNT-MOSPI-ASI-2023-24",
       "dataset_id": "DS-MOSPI-ASI-001",
       "version": "ASI-2023-24",
-      "release_date": null,
-      "retrieval_date": null,
+      "release_date": "2025-08-27",
+      "retrieval_date": "2026-09-07T00:00:00Z",
       "file_hash": null,
-      "snapshot_id": null,
-      "acquisition_status": "pending_acquisition"
+      "snapshot_id": "SNP-MOSPI-ASI-20250827-001",
+      "acquisition_status": "acquired"
     },
     {
       "vintage_id": "VNT-MOSPI-PLFS-2025",

@@ -1,0 +1,16 @@
+{
+  "vintage_id": "VNT-MOSPI-ASI-2023-24",
+  "dataset_id": "DS-MOSPI-ASI-001",
+  "source_id": "SRC-MOSPI-ASI",
+  "release_date": "2025-08-27",
+  "release_title": "Annual Survey of Industries (ASI) Results for 2023-24",
+  "official_mospi_portal": "https://www.mospi.gov.in/themes/product/65--",
+  "official_release_reference": "https://www.mospi.gov.in/sites/default/files/press_release/PIBNote_ASI%202023-24-English_rev.pdf",
+  "detailed_publication_reference": "https://www.mospi.gov.in/sites/default/files/asi_results/Instruction-Manual-2023-24.pdf",
+  "summary_results_reference": "https://new.mospi.gov.in/uploads/publications_reports/publications_reports1759229789833_2b8ed8ad-314e-46b7-b123-b08cb17f1233_ASI_Summary_Results_2023-24C.pdf",
+  "content_type": "official_mospi_pdf_release_and_summary_results",
+  "artifact_retrieval": "official_reference_preserved; binary_artifact_not_committed",
+  "file_hash": null,
+  "retrieved_at": "2026-09-07",
+  "notes": "MoSPI released ASI 2023-24 results on 27 August 2025 for the reference period April 2023-March 2024. The release covers registered organised manufacturing. Binary artifact hash is not claimed because direct binary retrieval was unavailable in the execution environment."
+}

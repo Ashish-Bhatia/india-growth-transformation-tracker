@@ -1,0 +1,3 @@
+indicator_id,measurement_date,period_label,geography,value,unit,status,source_locator_id
+IND-MFG-ASI-GVA-001,2024-03-31,2023-24,INDIA,245833605,"₹ lakh, source-defined",observed,LOC-MOSPI-ASI-20250827-PRESS-NOTE-TABLE-1
+IND-MFG-ASI-EMP-001,2024-03-31,2023-24,INDIA,19589131,persons,observed,LOC-MOSPI-ASI-20250827-PRESS-NOTE-TABLE-1
