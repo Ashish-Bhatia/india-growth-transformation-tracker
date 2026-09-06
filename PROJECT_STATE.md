@@ -1,10 +1,10 @@
 # Project State
 
-Version: 0.3.0-db-validated
+Version: 0.4.0-registry-layer
 State date: 2026-09-07
 
 ## Current phase
-Database foundation validated; registry layer next.
+Registry-layer implementation, pending execution validation.
 
 ## Completed work
 - All 15 Project Source documents reviewed for initialization.
@@ -17,17 +17,27 @@ Database foundation validated; registry layer next.
 - Migration runner and seed runner implemented.
 - Static migration/schema tests implemented.
 - PostgreSQL integration test and GitHub Actions database validation workflow implemented.
-- Database reproducibility documentation implemented in `db/README.md`.
 - GitHub Actions PostgreSQL validation executed successfully on 2026-09-06, including clean migration, seed loading, static tests and integration tests.
+- Machine-readable Source Registry contract implemented in `schemas/source-registry.schema.json` and `data/metadata/source-registry.json`.
+- Machine-readable Master Indicator Registry contract implemented in `schemas/indicator-registry.schema.json` and `data/metadata/indicator-registry.json`.
+- Registry structural tests added and CI workflow expanded to execute them.
+
+## Registry layer status
+- Source Registry structure: implemented.
+- Master Indicator Registry structure: implemented.
+- Source Registry authoritative records: not seeded. Project Sources define required fields and hierarchy but do not provide a complete authoritative record-level source catalogue.
+- Indicator Registry authoritative records: not seeded. Project Sources define indicator families and metadata requirements but do not provide a complete record-level registry with authoritative definitions and source mappings.
+- No fabricated source or indicator records were added.
 
 ## In progress
-- Machine-readable Source Registry and Master Indicator Registry implementation.
+- Execution validation of the registry layer.
 - Formal resolution of documented terminology conflicts before policy onboarding and scoring.
 
 ## Pending
+- Operational provenance and ingestion conventions after registry validation.
 - Authoritative domain taxonomy seed, once a complete domain registry is established.
 - International country registry expansion beyond India.
-- ETL and validation framework.
+- ETL and data-quality validation framework.
 - Pilot sector selection and onboarding.
 - Pilot data ingestion and research.
 - Attribution and scoring engines.
@@ -35,11 +45,11 @@ Database foundation validated; registry layer next.
 - Automated source monitoring and publication workflow.
 
 ## Open decisions
-- ISSUE-001: canonical descriptive labels for P1-P5 policy materiality.
-- ISSUE-002: analytical government-term boundary convention. Exact administration dates are stored, but this does not settle analytical term-window methodology.
-- ISSUE-004: attribution confidence mapping where A-D is used in the External Conditions framework.
-- ISSUE-005: final sector score weights, normalization and composite formulas.
-- ISSUE-006: API and website implementation contracts.
+- ISSUE-INIT-001: canonical descriptive labels for P1-P5 policy materiality.
+- ISSUE-INIT-002: analytical government-term boundary convention. Exact administration dates are stored, but this does not settle analytical term-window methodology.
+- ISSUE-INIT-004: attribution confidence mapping where A-D is used in the External Conditions framework.
+- ISSUE-INIT-005: final sector score weights, normalization and composite formulas.
+- ISSUE-INIT-006: API and website implementation contracts.
 - Final pilot sector.
 - Final public data/content licensing treatment per source.
 
@@ -50,8 +60,9 @@ Database foundation validated; registry layer next.
 - No public score has been calculated.
 
 ## Technical gaps
-- Codespaces was not used in this validation. GitHub Actions provided the actual PostgreSQL execution environment.
-- No source/data ingestion pipeline.
+- Codespaces was not used in the database foundation validation. GitHub Actions provided the actual PostgreSQL execution environment.
+- Registry records remain unseeded pending authoritative record-level sources.
+- No operational ingestion pipeline yet.
 - No API or website implementation.
 
 ## Database foundation
@@ -59,13 +70,13 @@ Database foundation validated; registry layer next.
 - 354 canonical sub-sector entries seeded from the Master Research Taxonomy.
 - 28 States and 8 Union Territories seeded.
 - India geography seeded.
-- Four government-term records seeded with exact administration dates for storage. Analytical boundary methodology remains open under ISSUE-002.
+- Four government-term records seeded with exact administration dates for storage. Analytical boundary methodology remains open under ISSUE-INIT-002.
 - Domains table implemented but not populated because the Project Sources do not provide a complete authoritative domain registry.
 - Country table implemented and India seeded. International country coverage remains an explicit future registry dependency.
 - Provenance, source snapshots, dataset vintages, observation revisions, audit events and public provenance view implemented.
 - Scoring infrastructure implemented without final weights or composite formulas.
 
-## Validation record
+## Last validated database foundation
 - Workflow: `Database Validation`
 - Run: 34057565918
 - Commit: `cc16a384e457ddf8f002660d7352391bb8857f64`
@@ -78,4 +89,4 @@ Database foundation validated; registry layer next.
 - Workflow completed: 2026-09-06T20:18:50Z
 
 ## Immediate next action
-Implement the machine-readable Source Registry and Master Indicator Registry structures, seeding only authoritative registry content already present in Project Sources. Do not begin substantive sector research.
+Execute and validate the registry layer. If validation passes, implement operational provenance and ingestion conventions. Do not begin substantive sector research until the database, Source Registry, Indicator Registry, provenance chain and ingestion conventions are operational.
