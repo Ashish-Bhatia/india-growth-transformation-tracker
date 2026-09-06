@@ -32,3 +32,18 @@ No substantive sector or policy research has been verified as completed in the P
 - Research status: No substantive sector research or verified observations added.
 - Validation: GitHub Actions workflow run 34057565918 executed against PostgreSQL 16 and completed successfully. Static migration tests, migrations, seed loading and database integration tests all passed.
 - Last verified: 2026-09-07
+
+## Registry layer record
+
+- Research ID: REG-001
+- Question: Does the repository contain machine-readable Source Registry and Master Indicator Registry structures without inventing unsupported records?
+- Sector: Project-wide
+- Policy: None
+- Date opened: 2026-09-07
+- Sources used: Source & Data Acquisition Architecture; Master Indicator Registry; Indicator Framework; Master Database Schema & ER Model; GitHub Repository Specification
+- Implementation: JSON Schema contracts plus empty machine-readable registry documents added under `schemas/` and `data/metadata/`. Registry tests added and CI workflow expanded to run them.
+- Source Registry fields covered: source ID, source name, institution, source tier, source type, URL/reference, dataset relationship, retrieval method, frequency, publication/release pattern, archive/snapshot, provenance, licensing/access, reliability metadata and status.
+- Indicator Registry fields covered: permanent indicator ID, name, definition, unit, frequency, directionality, indicator type, measurement type, sector, sub-sector, domain, geography, baseline, benchmark, target, calculation method, methodology version, update class, health status, source mapping and version history.
+- Seed boundary: no source or indicator records were invented. Project Sources specify the required structures and indicator families, but do not provide complete authoritative record-level registries with source mappings.
+- Status: Implementation complete; execution validation pending.
+- Last verified: 2026-09-07
