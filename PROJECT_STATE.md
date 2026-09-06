@@ -1,10 +1,10 @@
 # Project State
 
-Version: 0.4.0-registry-layer-validated
+Version: 0.5.0-provenance-ingestion-validated
 State date: 2026-09-07
 
 ## Current phase
-Registry layer execution-validated. Next phase: operational provenance and ingestion conventions.
+Operational provenance and ingestion conventions implemented. Registry layer remains execution-validated and intentionally unseeded. No substantive sector research has started.
 
 ## Completed work
 - All 15 Project Source documents reviewed for initialization.
@@ -20,8 +20,12 @@ Registry layer execution-validated. Next phase: operational provenance and inges
 - GitHub Actions PostgreSQL validation executed successfully on 2026-09-06, including clean migration, seed loading, static tests and integration tests.
 - Machine-readable Source Registry contract implemented in `schemas/source-registry.schema.json` and `data/metadata/source-registry.json`.
 - Machine-readable Master Indicator Registry contract implemented in `schemas/indicator-registry.schema.json` and `data/metadata/indicator-registry.json`.
-- Registry structural tests added and CI workflow expanded to execute them.
+- Registry structural tests added and CI coverage expanded.
 - Registry layer CI validation completed successfully on GitHub Actions run 34058734002.
+- Operational provenance and ingestion convention document implemented.
+- Machine-readable ingestion manifest contract implemented in `schemas/ingestion-manifest.schema.json`.
+- Machine-readable ingestion convention metadata implemented in `data/metadata/ingestion-conventions.json`.
+- Provenance and ingestion convention tests implemented.
 
 ## Registry layer status
 - Source Registry structure: implemented and CI-validated.
@@ -31,20 +35,26 @@ Registry layer execution-validated. Next phase: operational provenance and inges
 - No fabricated source or indicator records were added.
 
 ## Current phase outputs
-- JSON Schema contracts for both registries.
-- Versioned machine-readable registry documents under `data/metadata/`.
-- Structural registry tests.
-- CI coverage for registry tests plus PostgreSQL migration, seed and integration validation.
-- Explicit registry seed dependency recorded as ISSUE-REG-001.
+- Existing PostgreSQL source, dataset, snapshot, locator, vintage and observation structures are governed by explicit ingestion conventions.
+- Source acquisition modes and append-only acquisition states defined.
+- RAW, CLEAN and DERIVED lineage rules defined.
+- Dataset, snapshot, locator, vintage and observation registration rules defined.
+- Transformation and calculation provenance contract defined.
+- Release calendar and freshness conventions defined.
+- Source, revision and methodology change handling defined.
+- Validation states and anomaly flags defined.
+- Reconciliation and publication approval boundaries defined.
+- JSON Schema ingestion manifest contract added.
+- Structural tests added for the provenance convention layer.
 
 ## In progress
-- Operational provenance and ingestion conventions.
+- Authoritative record-level Source Registry and Indicator Registry discovery.
 - Formal resolution of documented terminology conflicts before policy onboarding and scoring.
 
 ## Pending
 - Authoritative domain taxonomy seed, once a complete domain registry is established.
 - International country registry expansion beyond India.
-- ETL and data-quality validation framework.
+- Full ETL and data-quality validation framework.
 - Pilot sector selection and onboarding.
 - Pilot data ingestion and research.
 - Attribution and scoring engines.
@@ -70,12 +80,12 @@ Registry layer execution-validated. Next phase: operational provenance and inges
 ## Technical gaps
 - Codespaces was not used in the database foundation validation. GitHub Actions provided the actual PostgreSQL execution environment.
 - Registry records remain unseeded pending authoritative record-level sources.
-- Operational ingestion pipeline not yet implemented.
+- Full ETL/data-quality execution framework remains pending. This phase establishes its provenance and ingestion contracts, not substantive source ingestion.
 - API and website not implemented.
 
 ## Database foundation
 - 33 canonical sectors seeded.
-- 354 canonical sub-sector entries seeded from the Master Research Taxonomy.
+- 354 canonical sub-sector entries seeded.
 - 28 States and 8 Union Territories seeded.
 - India geography seeded.
 - Four government-term records seeded with exact administration dates for storage. Analytical boundary methodology remains open under ISSUE-INIT-002.
@@ -87,13 +97,8 @@ Registry layer execution-validated. Next phase: operational provenance and inges
 ## Validation record
 - Database foundation workflow: `Database Validation`, run 34057565918, success.
 - Registry layer workflow: `Database Validation`, run 34058734002, success.
-- Registry run commit: `ec802d9aae9d122631ccafab07e1ee9906a5f873`.
-- Registry test step: success.
-- PostgreSQL migration step: success.
-- Seed step: success.
-- Database integration test step: success.
-- PostgreSQL service: postgres:16.
-- Codespaces: not performed.
+- Provenance/ingestion convention layer: repository contract and structural tests implemented; PostgreSQL structures reused without schema alteration.
+- No authoritative source or indicator records were ingested in this phase.
 
 ## Immediate next action
-Implement operational provenance and ingestion conventions using the existing source, dataset, snapshot, locator, vintage and observation structures. Define raw-to-clean-to-derived lineage, acquisition metadata, source-change handling, release calendars, validation states and reproducible ingestion contracts. Do not begin substantive sector research until the provenance chain and ingestion conventions are operational.
+Move from convention implementation to authoritative record-level source discovery and controlled registry seeding. Do not begin substantive sector research. Preserve all open decisions and dependencies, especially materiality, government-term boundaries, attribution confidence, scoring methodology, domain registry, international country registry and registry seed dependency.

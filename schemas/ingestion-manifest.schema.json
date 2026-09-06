@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://india-growth-transformation-tracker.github.io/schemas/ingestion-manifest.schema.json",
+  "title": "India Growth & Transformation Tracker Ingestion Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifest_version", "acquisition", "lineage", "validation"],
+  "properties": {
+    "manifest_version": {"type": "string", "const": "1.0"},
+    "run_id": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9._-]{2,127}$"},
+    "source_code": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9._-]{2,127}$"},
+    "dataset_code": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9._-]{2,127}$"},
+    "acquisition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "status", "retrieved_at"],
+      "properties": {
+        "mode": {"type": "string", "enum": ["automated", "semi_automated", "manual", "research_extraction"]},
+        "status": {"type": "string", "enum": ["discovered", "requested", "retrieved", "failed", "blocked", "superseded"]},
+        "retrieved_at": {"type": "string", "format": "date-time"},
+        "requested_url": {"type": "string", "format": "uri"},
+        "endpoint": {"type": "string", "format": "uri"},
+        "query_parameters": {"type": "object"},
+        "content_type": {"type": "string"},
+        "http_status": {"type": "integer", "minimum": 100, "maximum": 599},
+        "failure_reason": {"type": "string"},
+        "raw_artifact_reference": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"},
+        "operator": {"type": "string"},
+        "code_version": {"type": "string"}
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "dataset", "snapshot"],
+      "properties": {
+        "source": {"type": "string"},
+        "dataset": {"type": "string"},
+        "snapshot": {"type": "string"},
+        "vintage": {"type": "string"},
+        "observation_ids": {"type": "array", "items": {"type": "string"}},
+        "calculation_ids": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "anomalies"],
+      "properties": {
+        "status": {"type": "string", "enum": ["pending", "passed", "passed_with_flags", "failed", "not_applicable"]},
+        "anomalies": {
+          "type": "array",
+          "items": {"type": "string", "enum": ["missing_period", "duplicate_observation", "unit_mismatch", "type_mismatch", "range_flag", "discontinuity", "schema_drift", "revision_detected", "methodology_change", "source_conflict"]}
+        },
+        "review_required": {"type": "boolean"}
+      }
+    },
+    "transformation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "calculation_id": {"type": "string"},
+        "formula": {"type": "string"},
+        "steps": {"type": "array", "items": {"type": "string"}},
+        "input_references": {"type": "array", "items": {"type": "string"}},
+        "output_reference": {"type": "string"},
+        "unit_conversion": {"type": "string"},
+        "aggregation_method": {"type": "string"},
+        "methodology_version": {"type": "string"},
+        "code_version": {"type": "string"},
+        "calculated_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "release_date": {"type": "string", "format": "date"},
+        "source_version": {"type": "string"},
+        "expected_release": {"type": "string"},
+        "next_expected_release": {"type": "string"},
+        "freshness_status": {"type": "string", "enum": ["Current", "Recent", "Stale", "Awaiting release"]}
+      }
+    }
+  }
+}

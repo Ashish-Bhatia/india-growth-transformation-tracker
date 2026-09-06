@@ -1,0 +1,17 @@
+{
+  "manifest_version": "1.0",
+  "status": "contract_only",
+  "purpose": "Machine-readable conventions for provenance-preserving ingestion.",
+  "authoritative_registry_seed_required": true,
+  "source_registry_seeded": false,
+  "indicator_registry_seeded": false,
+  "acquisition_modes": ["automated", "semi_automated", "manual", "research_extraction"],
+  "acquisition_states": ["discovered", "requested", "retrieved", "failed", "blocked", "superseded"],
+  "validation_states": ["pending", "passed", "passed_with_flags", "failed", "not_applicable"],
+  "anomaly_flags": ["missing_period", "duplicate_observation", "unit_mismatch", "type_mismatch", "range_flag", "discontinuity", "schema_drift", "revision_detected", "methodology_change", "source_conflict"],
+  "freshness_statuses": ["Current", "Recent", "Stale", "Awaiting release"],
+  "layers": ["raw", "clean", "derived"],
+  "lineage": ["source", "dataset", "snapshot", "vintage", "observation", "transformation", "calculation", "publication"],
+  "hash_algorithm": "SHA-256",
+  "publication_requires_human_review_for": ["attribution_changes", "policy_verdicts", "methodology_changes", "sector_score_methodology_changes", "major_public_findings"]
+}

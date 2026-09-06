@@ -2,7 +2,7 @@
 
 Authoritative open-source implementation layer for the India Growth & Transformation Tracker.
 
-Project status: Initialization / architecture bootstrap
+Project status: Operational provenance and ingestion conventions implemented
 Methodology: Version 1.0
 Data cutoff: Not yet established
 
@@ -26,4 +26,4 @@ Exact dates and native fiscal/calendar periods are preserved in the underlying d
 
 ## Status
 
-This repository is being initialized from the project's Version 1.0 source frameworks. No substantive sector research is represented yet.
+Database foundation and registry layer are execution-validated. Source Registry and Master Indicator Registry structures exist as machine-readable contracts but remain intentionally unseeded pending authoritative record-level source discovery. Operational provenance and ingestion conventions are now defined and tested. No substantive sector research is represented yet.
