@@ -1,0 +1,14 @@
+{
+  "vintage_id": "VNT-MOSPI-IIP-2022-23-20260828",
+  "dataset_id": "DS-MOSPI-IIP-001",
+  "source_id": "SRC-MOSPI-IIP",
+  "release_date": "2026-08-28",
+  "release_title": "Quick Estimates of Index of Industrial Production and Use-Based Index for the Month of July 2026 (Base 2022-23=100)",
+  "official_mospi_portal": "https://www.mospi.gov.in/themes/product/54-index-of-industrial-production",
+  "official_release_reference": "https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=48&relid=294030",
+  "detailed_data_portal": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+  "content_type": "official_html_release_reference",
+  "artifact_retrieval": "direct_binary_artifact_unavailable",
+  "file_hash": null,
+  "notes": "Official 28 August 2026 release for July 2026. It retains the 2022-23 base series, incorporates updated June 2026 production data, and adds the July 2026 quick estimate. No binary hash is claimed."
+}
