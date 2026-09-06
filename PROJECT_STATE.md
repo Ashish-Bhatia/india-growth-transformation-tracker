@@ -1,17 +1,18 @@
 # Project State
 
-Version: 0.15.0-plfs-validated
+Version: 0.16.0-continuity-reconciled
 State date: 2026-09-07
 
 ## Current phase
-Manufacturing pilot-sector onboarding. PLFS acquisition and validation is complete at the dataset-ingestion boundary. The next Manufacturing research action must be selected only after this closed boundary is preserved.
+Manufacturing pilot-sector onboarding. PLFS acquisition and validation is complete at the dataset-ingestion boundary. The next Manufacturing research action must be selected only after continuity state is preserved.
 
 ## Verified repository state
 - Repository: `Ashish-Bhatia/india-growth-transformation-tracker`.
-- Main HEAD at PLFS validation: `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`.
-- PLFS acquisition commit: `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`.
-- Database Validation: run `34066759564`, Database Validation #35, terminal `success`, on the PLFS commit.
-- Current-HEAD CI status before this continuity update was `success` for the PLFS commit. This documentation commit is a subsequent docs-only change and must not be described as CI-tested unless a workflow run exists for it.
+- Current main HEAD: `dbc690b22de747a01520eb52cdc43cc1f77bdfd5`.
+- Current HEAD commit: `docs: update next chat after PLFS validation`.
+- PLFS acquisition / CI-tested commit: `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`.
+- Database Validation: run `34066759564`, Database Validation #35, terminal `success`, on the PLFS acquisition commit `8a79fc7...`.
+- Current HEAD CI status: `NO RUN / NOT VERIFIED`. Database Validation #35 must not be treated as CI validation of current HEAD.
 
 ## Completed
 - Infrastructure gate remains closed and was not repeated.
@@ -30,10 +31,11 @@ Manufacturing pilot-sector onboarding. PLFS acquisition and validation is comple
 - Database Validation #35 executed the PLFS ingestion test together with the existing validation suite, migration, seed and database integration stages. All terminal steps succeeded.
 
 ## Validation boundary
-- Dataset-specific PLFS ingestion validation is separate from causal validity, policy effectiveness, attribution, counterfactual analysis and scoring.
+- PLFS dataset-specific ingestion validation is CLOSED.
+- Dataset-specific ingestion validation is separate from causal validity, policy effectiveness, attribution, counterfactual analysis and scoring.
 - Database integration does not establish that canonical observation CSVs were loaded into PostgreSQL. Dataset-specific ingestion tests remain the observation-file validation boundary.
-- PLFS vintage, snapshot, manifest, validation-report lineage and canonical observations were exercised by the PLFS ingestion test in the successful Database Validation run.
-- `file_hash=null` remains explicit where no permitted binary artifact was preserved. No byte-level artifact hash is claimed.
+- PLFS vintage, snapshot, manifest, validation-report lineage and canonical observations were exercised by the PLFS ingestion test in the successful Database Validation #35 run.
+- `file_hash=null` remains explicit because no permitted binary artifact was preserved. No byte-level artifact hash is claimed.
 - The 2025 PLFS methodology break is unresolved as a comparability issue and remains a validation control.
 
 ## CI record
@@ -41,15 +43,19 @@ Manufacturing pilot-sector onboarding. PLFS acquisition and validation is comple
 - The workflow job `database` was terminal `success`.
 - The pytest step explicitly included `tests/test_plfs_ingestion.py` and was terminal `success`.
 - Migration, seed and database integration steps were also terminal `success`.
-- Do not infer CI status for later documentation commits without an exposed workflow run.
+- Current main HEAD `dbc690b...` has no exposed workflow run. Record its CI state literally as `NO RUN / NOT VERIFIED`.
 
 ## Remaining limitations
 - PLFS 2025 methodology break remains an explicit comparability limitation.
-- No policy evaluation, attribution, counterfactual analysis or scoring has been introduced from these observations.
+- PLFS binary source artifact is not preserved; `file_hash=null` remains explicit.
 - Direct binary-artifact limitations for earlier IIP, ASI and NAS acquisitions remain preserved where applicable.
+- No policy evaluation, attribution, counterfactual analysis or scoring has been introduced from these observations.
 
 ## Gate status
-PLFS acquisition/validation boundary: CLOSED, based on the terminal-successful Database Validation #35 on commit `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78` and the preserved validation controls above.
+PLFS acquisition/validation boundary: CLOSED, based on the terminal-successful Database Validation #35 on commit `8a79fc7...` and the preserved validation controls above. This does not imply CI validation of current HEAD.
+
+## Analytical readiness
+Manufacturing is not research-complete. Data-ingestion validation is ahead of analytical readiness. Baseline completion, policy inventory, outcome analysis, State variation, peer methodology, external conditions, counterfactual analysis, attribution, evaluation and scoring remain separate research stages.
 
 ## Immediate next action
-Select the next Manufacturing research action using the approved onboarding and indicator-selection framework. Do not reacquire PLFS or reopen its validation boundary unless new evidence or a source revision requires it.
+After continuity verification, select the next Manufacturing research action using the approved Research Execution Protocol, Indicator Framework, Sector Research Blueprint and Source/Data Acquisition Architecture. Do not reacquire PLFS or reopen its validation boundary unless new evidence or a source revision requires it.
