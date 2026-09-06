@@ -6,14 +6,17 @@ State date: 2026-09-07
 ## Current phase
 Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry and Indicator Registry establishment, with the first validated observation vintage ingested for Manufacturing IIP. Manufacturing (`MFG`) remains the first pilot sector. The Source Registry contains 12 verified records. The Dataset Registry contains 9 authoritative dataset records and the Indicator Registry contains 7 minimum authoritative Manufacturing indicators. The first 37 observations for `IND-MFG-IIP-001` are now loaded in the repository canonical observation layer.
 
+## Verified substantive repository state before this continuity update
+- HEAD: `c3cbb9c3dcd5fe7f598c0661823cbdb1cf374b52`.
+- This continuity update will advance HEAD by one commit. Verify the actual repository HEAD before relying on this file.
+
 ## Completed work
 - All 15 Project Source documents reviewed for initialization.
 - Foundational research, evidence, attribution, scoring, indicator, data, database, sector, policy, counterfactual, execution and GitHub frameworks established.
 - Repository `india-growth-transformation-tracker` confirmed and initialized.
 - PostgreSQL schema migration framework implemented.
-- Initial canonical database schema implemented in `db/migrations/001_initial_schema.sql`.
-- Controlled vocabulary structure implemented in `db/migrations/002_controlled_vocabularies.sql`.
-- Canonical taxonomy seed implemented in `db/seeds/001_canonical_taxonomy.sql`.
+- Controlled vocabulary structure implemented.
+- Canonical taxonomy seed implemented.
 - Migration runner and seed runner implemented.
 - Static migration/schema tests implemented.
 - PostgreSQL integration test and GitHub Actions database validation workflow implemented.
@@ -35,34 +38,15 @@ Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry an
 - 37 monthly observations for `IND-MFG-IIP-001` were loaded from April 2023 through April 2026. April 2026 remains provisional because the source identifies it as a quick estimate.
 - Canonical lineage is preserved through source reference, dataset, vintage, snapshot, locator, staged observations, canonical observations and ingestion manifest.
 - Targeted IIP ingestion test added and executed successfully: 1 passed.
+- `RESEARCH_LEDGER.md`, `ISSUES_REGISTER.md`, `DECISIONS_LOG.md` and `NEXT_CHAT.md` updated for the IIP ingestion state.
 
 ## Registry layer status
-- Source Registry: 12 verified records, 11 Tier 1 official Indian government/statutory sources and 1 Tier 2 international statistical source.
-- Dataset Registry: 9 authoritative records, all mapped to verified Source Registry IDs.
-- Indicator Registry: 7 authoritative Manufacturing records, all mapped to verified Dataset and Source Registry IDs.
+- Source Registry: 12 verified records.
+- Dataset Registry: 9 authoritative records.
+- Indicator Registry: 7 authoritative Manufacturing records.
 - Observation layer: `IND-MFG-IIP-001` contains 37 canonical observations for the first acquired vintage.
 - Evidence layer: no substantive policy/evidence records loaded.
 - Source tier remains separate from data quality, evidence grade and causal strength.
-
-## Pilot datasets
-- MoSPI Annual Survey of Industries.
-- MoSPI National Accounts Statistics.
-- MoSPI Index of Industrial Production, current 2022-23 base series.
-- MoSPI PLFS.
-- India Budget and Demands for Grants.
-- Department of Commerce TRADESTAT.
-- DPIIT FDI statistics.
-- RBI DBIE.
-- UNIDO INDSTAT Revision 4.
-
-## Pilot indicators
-- Real manufacturing GVA growth.
-- Manufacturing share of GVA.
-- Manufacturing IIP.
-- Registered manufacturing GVA from ASI.
-- Registered manufacturing persons engaged from ASI.
-- Manufacturing share of workers from PLFS.
-- UNIDO manufacturing value added for international comparison.
 
 ## IIP vintage record
 - Dataset: `DS-MOSPI-IIP-001`.
@@ -118,6 +102,8 @@ Manufacturing pilot-sector onboarding, minimum authoritative Dataset Registry an
 - ISSUE-DB-001: authoritative domain registry.
 - ISSUE-DB-002: international country registry expansion.
 - ISSUE-REG-001: indicator-side registry seed dependency should now be reviewed against the seeded records.
+- ISSUE-DATA-IIP-001: current-series break and historical comparability treatment.
+- ISSUE-DATA-IIP-002: binary artifact retrieval limitation and future hash capture.
 - Final public data/content licensing treatment per source.
 - Final approved international peer basket methodology.
 
