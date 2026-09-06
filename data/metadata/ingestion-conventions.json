@@ -1,10 +1,10 @@
 {
   "manifest_version": "1.0",
-  "status": "contract_only",
+  "status": "active_contract",
   "purpose": "Machine-readable conventions for provenance-preserving ingestion.",
   "authoritative_registry_seed_required": true,
-  "source_registry_seeded": false,
-  "indicator_registry_seeded": false,
+  "source_registry_seeded": true,
+  "indicator_registry_seeded": true,
   "acquisition_modes": ["automated", "semi_automated", "manual", "research_extraction"],
   "acquisition_states": ["discovered", "requested", "retrieved", "failed", "blocked", "superseded"],
   "validation_states": ["pending", "passed", "passed_with_flags", "failed", "not_applicable"],
