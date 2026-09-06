@@ -11,7 +11,8 @@
   "anomaly_flags": ["missing_period", "duplicate_observation", "unit_mismatch", "type_mismatch", "range_flag", "discontinuity", "schema_drift", "revision_detected", "methodology_change", "source_conflict"],
   "freshness_statuses": ["Current", "Recent", "Stale", "Awaiting release"],
   "layers": ["raw", "clean", "derived"],
-  "lineage": ["source", "dataset", "snapshot", "vintage", "observation", "transformation", "calculation", "publication"],
+  "lineage": ["source", "dataset", "snapshot", "locator", "vintage", "observation", "transformation", "calculation", "publication"],
+  "required_manifest_controls": ["acquisition_ref", "source", "dataset", "snapshot", "locator_ids", "validation_status", "transformation_metadata"],
   "hash_algorithm": "SHA-256",
   "publication_requires_human_review_for": ["attribution_changes", "policy_verdicts", "methodology_changes", "sector_score_methodology_changes", "major_public_findings"]
 }

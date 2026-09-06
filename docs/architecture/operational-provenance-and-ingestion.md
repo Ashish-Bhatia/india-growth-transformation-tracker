@@ -10,7 +10,7 @@ This document defines the executable conventions for moving external evidence in
 
 Lineage:
 
-Source → Dataset → Snapshot → Acquisition → Vintage → Observation → Transformation/Calculation → Publication
+Source → Dataset → Snapshot → Locator → Acquisition → Vintage → Observation → Transformation/Calculation → Publication
 
 The existing database remains the system of record. JSON/YAML manifests describe ingestion intent and execution metadata. They do not replace canonical PostgreSQL records.
 
@@ -22,10 +22,11 @@ A candidate source becomes a canonical Source Registry record only after source 
 
 ## 3. Source acquisition convention
 
-Every acquisition attempt receives a deterministic acquisition reference in the ingestion manifest. The reference is not a replacement for `source_id`.
+Every acquisition attempt receives a deterministic `acquisition_ref` in the ingestion manifest. The reference is operational history and is not a replacement for `source_id`.
 
 Required acquisition metadata:
 
+- acquisition reference
 - source code or candidate source reference
 - acquisition mode: automated, semi_automated, manual, research_extraction
 - retrieval timestamp
@@ -114,7 +115,7 @@ Use the most specific available combination:
 
 For structured datasets, the locator should identify the relevant sheet, table, field, query/filter or row key through `locator_text` or the applicable source metadata.
 
-A source without a precise locator remains usable for discovery, but material evidence should receive a precise locator before publication.
+The ingestion manifest records the applicable `locator_ids` when locators exist. A source without a precise locator remains usable for discovery, but material evidence should receive a precise locator before publication.
 
 ## 8. Vintage convention
 
@@ -256,6 +257,7 @@ Do not select the more convenient value.
 
 A valid ingestion manifest must be sufficient for another researcher to determine:
 
+- which acquisition attempt is being described
 - what was requested
 - what was retrieved
 - when it was retrieved

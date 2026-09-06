@@ -8,10 +8,12 @@ def test_ingestion_manifest_schema_is_valid_json_schema_shape():
     schema = json.loads((ROOT / "schemas/ingestion-manifest.schema.json").read_text())
     assert schema["$schema"] == "https://json-schema.org/draft/2020-12/schema"
     assert schema["manifest_version"] if "manifest_version" in schema else True
-    assert set(schema["required"]) == {"manifest_version", "acquisition", "lineage", "validation"}
+    assert set(schema["required"]) == {"manifest_version", "acquisition_ref", "acquisition", "lineage", "validation"}
+    assert schema["properties"]["acquisition_ref"]["pattern"] == "^ACQ-[A-Z0-9][A-Z0-9._-]{2,127}$"
     assert schema["properties"]["acquisition"]["properties"]["mode"]["enum"] == [
         "automated", "semi_automated", "manual", "research_extraction"
     ]
+    assert "locator_ids" in schema["properties"]["lineage"]["properties"]
 
 
 def test_ingestion_conventions_are_contract_only_and_preserve_registry_boundary():
@@ -22,6 +24,8 @@ def test_ingestion_conventions_are_contract_only_and_preserve_registry_boundary(
     assert conventions["authoritative_registry_seed_required"] is True
     assert "SHA-256" == conventions["hash_algorithm"]
     assert set(conventions["layers"]) == {"raw", "clean", "derived"}
+    assert "acquisition_ref" in conventions["required_manifest_controls"]
+    assert "locator_ids" in conventions["required_manifest_controls"]
 
 
 def test_provenance_document_contains_required_operational_controls():

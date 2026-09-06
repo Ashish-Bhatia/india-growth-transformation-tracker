@@ -4,9 +4,10 @@
   "title": "India Growth & Transformation Tracker Ingestion Manifest",
   "type": "object",
   "additionalProperties": false,
-  "required": ["manifest_version", "acquisition", "lineage", "validation"],
+  "required": ["manifest_version", "acquisition_ref", "acquisition", "lineage", "validation"],
   "properties": {
     "manifest_version": {"type": "string", "const": "1.0"},
+    "acquisition_ref": {"type": "string", "pattern": "^ACQ-[A-Z0-9][A-Z0-9._-]{2,127}$"},
     "run_id": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9._-]{2,127}$"},
     "source_code": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9._-]{2,127}$"},
     "dataset_code": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9._-]{2,127}$"},
@@ -38,6 +39,7 @@
         "source": {"type": "string"},
         "dataset": {"type": "string"},
         "snapshot": {"type": "string"},
+        "locator_ids": {"type": "array", "items": {"type": "string"}},
         "vintage": {"type": "string"},
         "observation_ids": {"type": "array", "items": {"type": "string"}},
         "calculation_ids": {"type": "array", "items": {"type": "string"}}
