@@ -1,10 +1,10 @@
 # Project State
 
-Version: 0.6.0-source-registry-seeded
+Version: 0.7.0-manufacturing-pilot-selected
 State date: 2026-09-07
 
 ## Current phase
-Authoritative Source Registry discovery and controlled seeding. Record-level Source Registry discovery has begun and the first verified Tier 1 source records have been seeded. The Indicator Registry remains intentionally unseeded. No substantive sector research has started.
+Pilot-sector selection and minimum authoritative registry foundation. Manufacturing (`MFG`) is selected as the first pilot sector. The Source Registry now contains 12 verified records, including MoSPI ASI for State/industry manufacturing data and UNIDO Statistics for international manufacturing benchmarking. Dataset and Indicator Registry records remain unseeded. No observations or substantive sector research have started.
 
 ## Completed work
 - All 15 Project Source documents reviewed for initialization.
@@ -17,7 +17,7 @@ Authoritative Source Registry discovery and controlled seeding. Record-level Sou
 - Migration runner and seed runner implemented.
 - Static migration/schema tests implemented.
 - PostgreSQL integration test and GitHub Actions database validation workflow implemented.
-- GitHub Actions PostgreSQL validation executed successfully on 2026-09-06, including clean migration, seed loading, static tests and integration tests.
+- GitHub Actions PostgreSQL validation executed successfully on 2026-09-06 for earlier validated commits.
 - Machine-readable Source Registry contract implemented in `schemas/source-registry.schema.json` and `data/metadata/source-registry.json`.
 - Machine-readable Master Indicator Registry contract implemented in `schemas/indicator-registry.schema.json` and `data/metadata/indicator-registry.json`.
 - Registry structural tests added and CI coverage expanded.
@@ -26,49 +26,55 @@ Authoritative Source Registry discovery and controlled seeding. Record-level Sou
 - Machine-readable ingestion manifest contract implemented in `schemas/ingestion-manifest.schema.json`.
 - Machine-readable ingestion convention metadata implemented in `data/metadata/ingestion-conventions.json`.
 - Provenance and ingestion convention tests implemented.
-- Authoritative record-level Source Registry discovery completed for the initial controlled seed set.
-- Ten verified Tier 1 official source records seeded in `data/metadata/source-registry.json`.
+- Initial controlled Source Registry seed of 10 verified Tier 1 official sources.
+- MoSPI Annual Survey of Industries added as a verified Tier 1 manufacturing source.
+- UNIDO Statistics Portal added as a verified Tier 2 international manufacturing source.
+- Manufacturing (`MFG`) selected as the first pilot sector under DECISION-PILOT-001.
 
 ## Registry layer status
-- Source Registry structure: implemented and CI-validated.
-- Source Registry initial authoritative seed: 10 verified Tier 1 records.
-- Source Registry seed records are limited to official Indian government/statutory sources whose source endpoints were independently verified during discovery.
-- Indicator Registry structure: implemented and CI-validated.
-- Indicator Registry authoritative records: not seeded. No indicator was added without a verified record-level definition and source mapping.
-- No fabricated source or indicator records were added.
-
-## Source discovery and verification boundary
-- Discovery covered foundational macroeconomic, labour, price, industrial, financial, fiscal, trade, electricity, telecommunications and FDI source endpoints.
-- Each seeded source record has a stable Source ID, source tier, source type, official URL, dataset relationship, retrieval method, release pattern, provenance metadata, licensing/access note and reliability metadata.
+- Source Registry structure: implemented.
+- Source Registry authoritative seed: 12 verified records, 11 Tier 1 official Indian government/statutory sources and 1 Tier 2 international statistical source.
 - Source tier remains separate from evidence grade and causal strength.
-- Archive snapshots were not created merely from discovery. `archive_snapshot` remains null until an acquisition produces an actual archived artifact or reference.
-- Dataset records, observations and indicator records remain separate implementation steps. Source discovery does not constitute data ingestion.
+- Indicator Registry structure: implemented but intentionally empty.
+- Dataset Registry: database structure exists, but no authoritative dataset records have yet been registered for the pilot.
+- No fabricated dataset, indicator or observation records were added.
+
+## Pilot sector
+- Sector: Manufacturing (`MFG`).
+- Taxonomy sub-sectors include General Manufacturing, Electronics, Semiconductors, Automobiles, Auto Components, Textiles, Pharmaceuticals, Chemicals, Steel, Cement, Capital Goods, Defence Manufacturing, Machinery and Consumer Goods.
+- Pilot selection is based on the mandatory pilot criteria: strong official data, clear policy interventions, measurable outcomes, international benchmarks and State variation.
+- MoSPI ASI provides manufacturing output, value added, employment and capital formation with results at State and major-industry level.
+- Existing project sources provide National Accounts, IIP, labour, fiscal, trade, FDI and financial context.
+- UNIDO provides international manufacturing datasets and competitiveness benchmarks.
+- Final international peer-basket methodology remains open and must follow the approved peer methodology rather than being invented during onboarding.
 
 ## In progress
-- Continue authoritative record-level Source Registry discovery and controlled seeding where additional verified sources are identified.
-- Establish Dataset Registry records only when authoritative dataset-level metadata and provenance are verified.
-- Establish authoritative Indicator Registry records only where definitions, metadata and source mappings are verified.
-- Formal resolution of documented terminology conflicts before policy onboarding and scoring.
+- Establish verified Dataset Registry records for the Manufacturing pilot.
+- Establish the minimum authoritative Indicator Registry set for Manufacturing.
+- Map each indicator to verified dataset/source relationships and sector/sub-sector geography.
+- Prepare the first observation ingestion chain only after dataset and indicator registration is complete.
 
 ## Pending
-- Authoritative domain taxonomy seed, once a complete domain registry is established.
-- International country registry expansion beyond India.
-- Full ETL and data-quality validation framework.
-- Pilot sector selection and onboarding.
-- Pilot data ingestion and research.
+- Pilot source/dataset acquisition and observation ingestion.
+- Manufacturing policy inventory and evaluation.
+- State manufacturing analysis.
+- International peer methodology and comparison.
+- External-condition and counterfactual analysis.
 - Attribution and scoring engines.
 - API and website implementation.
 - Automated source monitoring and publication workflow.
 
 ## Open decisions
 - ISSUE-INIT-001: canonical descriptive labels for P1-P5 policy materiality.
-- ISSUE-INIT-002: analytical government-term boundary convention. Exact administration dates are stored, but this does not settle analytical term-window methodology.
+- ISSUE-INIT-002: analytical government-term boundary convention.
 - ISSUE-INIT-004: attribution confidence mapping where A-D is used in the External Conditions framework.
 - ISSUE-INIT-005: final sector score weights, normalization and composite formulas.
 - ISSUE-INIT-006: API and website implementation contracts.
+- ISSUE-DB-001: authoritative domain registry.
+- ISSUE-DB-002: international country registry expansion.
 - ISSUE-REG-001: indicator-side registry seed dependency remains open.
-- Final pilot sector.
 - Final public data/content licensing treatment per source.
+- Final approved international peer basket methodology.
 
 ## Research gaps
 - No substantive sector research has been loaded.
@@ -77,27 +83,16 @@ Authoritative Source Registry discovery and controlled seeding. Record-level Sou
 - No public score has been calculated.
 
 ## Technical gaps
-- Codespaces was not used in the database foundation validation. GitHub Actions provided the actual PostgreSQL execution environment.
-- Full ETL/data-quality execution framework remains pending. This phase establishes its provenance and ingestion contracts and begins controlled source registration, not substantive source ingestion.
+- Current HEAD CI status must be treated separately from prior successful runs. The source-registry implementation commit 7184c501169ee3abfe6c4394ca7ae87359d09d14 has an observed GitHub Actions `Database Validation` run in progress; no terminal result is claimed yet.
+- Full ETL/data-quality execution framework remains pending.
 - API and website not implemented.
-
-## Database foundation
-- 33 canonical sectors seeded.
-- 354 canonical sub-sector entries seeded.
-- 28 States and 8 Union Territories seeded.
-- India geography seeded.
-- Four government-term records seeded with exact administration dates for storage. Analytical boundary methodology remains open under ISSUE-INIT-002.
-- Domains table implemented but not populated because the Project Sources do not provide a complete authoritative domain registry.
-- Country table implemented and India seeded. International country coverage remains an explicit future registry dependency.
-- Provenance, source snapshots, dataset vintages, observation revisions, audit events and public provenance view implemented.
-- Scoring infrastructure implemented without final weights or composite formulas.
 
 ## Validation record
 - Database foundation workflow: `Database Validation`, run 34057565918, success.
 - Registry layer workflow: `Database Validation`, run 34058734002, success.
-- Provenance/ingestion convention layer: repository contract and structural tests implemented; PostgreSQL structures reused without schema alteration.
-- Source Registry initial seed is contract-valid by repository tests after the controlled seed update.
-- No indicator observations or substantive research records were ingested in this phase.
+- Source Registry update commit: 7184c501169ee3abfe6c4394ca7ae87359d09d14. Its associated `Database Validation` run is 34060700876 and was observed in progress during this state update. Terminal result not yet verified.
+- Pilot decision recorded in DECISIONS_LOG.md as DECISION-PILOT-001.
+- No indicator observations or substantive research records have been ingested.
 
 ## Immediate next action
-Continue record-level authoritative Source Registry discovery and controlled seeding, then establish verified Dataset Registry and Indicator Registry records only where authoritative definitions and mappings exist. Run the applicable registry and CI validation after each implementation change. Do not begin substantive sector research. Preserve all open decisions and dependencies, especially materiality, government-term boundaries, attribution confidence, scoring methodology, domain registry, international country registry and indicator registry seeding.
+After the currently running validation for source-registry commit 7184c501169ee3abfe6c4394ca7ae87359d09d14 reaches a terminal result, establish the minimum verified Dataset Registry records for the Manufacturing pilot, then seed only those Indicator Registry records whose definition, unit, frequency, directionality, geography, sector mapping, source mapping, methodology and provenance are independently verified. Do not ingest observations until this chain is complete.
