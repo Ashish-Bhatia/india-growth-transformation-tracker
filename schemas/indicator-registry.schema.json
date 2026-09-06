@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://india-growth-transformation-tracker.github.io/schemas/indicator-registry.schema.json",
+  "title": "India Growth & Transformation Tracker Master Indicator Registry",
+  "type": "object",
+  "required": ["registry_version", "schema_version", "authority", "seed_status", "indicators"],
+  "properties": {
+    "registry_version": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "authority": {"type": "string"},
+    "seed_status": {"type": "string", "enum": ["authoritative_seeded", "pending_authoritative_seed"]},
+    "indicators": {"type": "array", "items": {"$ref": "#/$defs/indicator"}}
+  },
+  "$defs": {
+    "source_mapping": {
+      "type": "object",
+      "required": ["source_id", "dataset_id", "priority", "relationship", "effective_date"],
+      "properties": {
+        "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]+$"},
+        "dataset_id": {"type": "string", "pattern": "^DS-[A-Z0-9-]+$"},
+        "priority": {"type": "integer", "minimum": 1},
+        "relationship": {"type": "string"},
+        "effective_date": {"type": "string", "format": "date"},
+        "end_date": {"type": ["string", "null"], "format": "date"}
+      },
+      "additionalProperties": false
+    },
+    "version": {
+      "type": "object",
+      "required": ["version", "definition", "effective_date"],
+      "properties": {
+        "version": {"type": "string"},
+        "definition": {"type": "string"},
+        "numerator": {"type": ["string", "null"]},
+        "denominator": {"type": ["string", "null"]},
+        "methodology": {"type": ["string", "null"]},
+        "base_year": {"type": ["string", "null"]},
+        "effective_date": {"type": "string", "format": "date"},
+        "source_id": {"type": ["string", "null"], "pattern": "^SRC-[A-Z0-9-]+$"},
+        "comparability_status": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "indicator": {
+      "type": "object",
+      "required": ["indicator_id", "name", "definition", "unit", "frequency", "directionality", "indicator_type", "measurement_type", "sector", "sub_sector", "domain", "geography", "baseline", "benchmark", "target", "calculation_method", "methodology_version", "update_class", "health_status", "source_mapping", "version_history"],
+      "properties": {
+        "indicator_id": {"type": "string", "pattern": "^IND-[A-Z0-9-]+$"},
+        "name": {"type": "string", "minLength": 1},
+        "definition": {"type": "string", "minLength": 1},
+        "unit": {"type": "string", "minLength": 1},
+        "frequency": {"type": "string"},
+        "directionality": {"type": "string", "enum": ["POSITIVE", "NEGATIVE", "NEUTRAL", "CONTEXTUAL"]},
+        "indicator_type": {"type": "string"},
+        "measurement_type": {"type": "string"},
+        "sector": {"type": ["string", "null"]},
+        "sub_sector": {"type": ["string", "null"]},
+        "domain": {"type": ["string", "null"]},
+        "geography": {"type": "array", "items": {"type": "string"}},
+        "baseline": {"type": ["object", "null"], "additionalProperties": true},
+        "benchmark": {"type": ["object", "null"], "additionalProperties": true},
+        "target": {"type": ["object", "null"], "additionalProperties": true},
+        "calculation_method": {"type": "string"},
+        "methodology_version": {"type": "string"},
+        "update_class": {"type": "string", "enum": ["U1", "U2", "U3", "U4", "U5", "U6"]},
+        "health_status": {"type": "string", "enum": ["Healthy", "Watch", "Stale", "Data conflict", "Methodology change", "Missing", "Retired"]},
+        "source_mapping": {"type": "array", "items": {"$ref": "#/$defs/source_mapping"}},
+        "version_history": {"type": "array", "items": {"$ref": "#/$defs/version"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
