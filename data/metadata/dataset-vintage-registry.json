@@ -1,16 +1,97 @@
 {
   "registry_version": "1.0.0",
   "schema_version": "1.0",
-  "status": "planning",
+  "status": "active",
   "vintages": [
-    {"vintage_id":"VNT-MOSPI-IIP-2022-23","dataset_id":"DS-MOSPI-IIP-001","version":"IIP-2022-23","release_date":null,"retrieval_date":null,"file_hash":null,"snapshot_id":null,"acquisition_status":"pending_acquisition"},
-    {"vintage_id":"VNT-MOSPI-NAS-2025-26","dataset_id":"DS-MOSPI-NAS-001","version":"NAS-2025-26","release_date":null,"retrieval_date":null,"file_hash":null,"snapshot_id":null,"acquisition_status":"pending_acquisition"},
-    {"vintage_id":"VNT-MOSPI-ASI-2023-24","dataset_id":"DS-MOSPI-ASI-001","version":"ASI-2023-24","release_date":null,"retrieval_date":null,"file_hash":null,"snapshot_id":null,"acquisition_status":"pending_acquisition"},
-    {"vintage_id":"VNT-MOSPI-PLFS-2025","dataset_id":"DS-MOSPI-PLFS-001","version":"PLFS-2025","release_date":null,"retrieval_date":null,"file_hash":null,"snapshot_id":null,"acquisition_status":"pending_acquisition"},
-    {"vintage_id":"VNT-MOF-UNION-BUDGET-2026-27","dataset_id":"DS-MOF-UNION-BUDGET-001","version":"UNION-BUDGET-2026-27","release_date":null,"retrieval_date":null,"file_hash":null,"snapshot_id":null,"acquisition_status":"pending_acquisition"},
-    {"vintage_id":"VNT-COMMERCE-TRADESTAT-2025-26","dataset_id":"DS-COMMERCE-TRADESTAT-001","version":"TRADESTAT-2025-26","release_date":null,"retrieval_date":null,"file_hash":null,"snapshot_id":null,"acquisition_status":"pending_acquisition"},
-    {"vintage_id":"VNT-DPIIT-FDI-2026-Q1","dataset_id":"DS-DPIIT-FDI-001","version":"FDI-2026-Q1","release_date":null,"retrieval_date":null,"file_hash":null,"snapshot_id":null,"acquisition_status":"pending_acquisition"},
-    {"vintage_id":"VNT-RBI-DBIE-LIVE","dataset_id":"DS-RBI-DBIE-001","version":"DBIE-LIVE","release_date":null,"retrieval_date":null,"file_hash":null,"snapshot_id":null,"acquisition_status":"pending_acquisition"},
-    {"vintage_id":"VNT-UNIDO-INDSTAT-R4-2026-05","dataset_id":"DS-UNIDO-INDSTAT-R4-001","version":"INDSTAT-R4-2026-05","release_date":null,"retrieval_date":null,"file_hash":null,"snapshot_id":null,"acquisition_status":"pending_acquisition"}
+    {
+      "vintage_id": "VNT-MOSPI-IIP-2022-23",
+      "dataset_id": "DS-MOSPI-IIP-001",
+      "version": "IIP-2022-23",
+      "release_date": "2026-06-01",
+      "retrieval_date": "2026-09-06T21:46:22Z",
+      "file_hash": null,
+      "snapshot_id": "SNP-MOSPI-IIP-20260601-001",
+      "acquisition_status": "acquired"
+    },
+    {
+      "vintage_id": "VNT-MOSPI-NAS-2025-26",
+      "dataset_id": "DS-MOSPI-NAS-001",
+      "version": "NAS-2025-26",
+      "release_date": null,
+      "retrieval_date": null,
+      "file_hash": null,
+      "snapshot_id": null,
+      "acquisition_status": "pending_acquisition"
+    },
+    {
+      "vintage_id": "VNT-MOSPI-ASI-2023-24",
+      "dataset_id": "DS-MOSPI-ASI-001",
+      "version": "ASI-2023-24",
+      "release_date": null,
+      "retrieval_date": null,
+      "file_hash": null,
+      "snapshot_id": null,
+      "acquisition_status": "pending_acquisition"
+    },
+    {
+      "vintage_id": "VNT-MOSPI-PLFS-2025",
+      "dataset_id": "DS-MOSPI-PLFS-001",
+      "version": "PLFS-2025",
+      "release_date": null,
+      "retrieval_date": null,
+      "file_hash": null,
+      "snapshot_id": null,
+      "acquisition_status": "pending_acquisition"
+    },
+    {
+      "vintage_id": "VNT-MOF-UNION-BUDGET-2026-27",
+      "dataset_id": "DS-MOF-UNION-BUDGET-001",
+      "version": "UNION-BUDGET-2026-27",
+      "release_date": null,
+      "retrieval_date": null,
+      "file_hash": null,
+      "snapshot_id": null,
+      "acquisition_status": "pending_acquisition"
+    },
+    {
+      "vintage_id": "VNT-COMMERCE-TRADESTAT-2025-26",
+      "dataset_id": "DS-COMMERCE-TRADESTAT-001",
+      "version": "TRADESTAT-2025-26",
+      "release_date": null,
+      "retrieval_date": null,
+      "file_hash": null,
+      "snapshot_id": null,
+      "acquisition_status": "pending_acquisition"
+    },
+    {
+      "vintage_id": "VNT-DPIIT-FDI-2026-Q1",
+      "dataset_id": "DS-DPIIT-FDI-001",
+      "version": "FDI-2026-Q1",
+      "release_date": null,
+      "retrieval_date": null,
+      "file_hash": null,
+      "snapshot_id": null,
+      "acquisition_status": "pending_acquisition"
+    },
+    {
+      "vintage_id": "VNT-RBI-DBIE-LIVE",
+      "dataset_id": "DS-RBI-DBIE-001",
+      "version": "DBIE-LIVE",
+      "release_date": null,
+      "retrieval_date": null,
+      "file_hash": null,
+      "snapshot_id": null,
+      "acquisition_status": "pending_acquisition"
+    },
+    {
+      "vintage_id": "VNT-UNIDO-INDSTAT-R4-2026-05",
+      "dataset_id": "DS-UNIDO-INDSTAT-R4-001",
+      "version": "INDSTAT-R4-2026-05",
+      "release_date": null,
+      "retrieval_date": null,
+      "file_hash": null,
+      "snapshot_id": null,
+      "acquisition_status": "pending_acquisition"
+    }
   ]
 }
