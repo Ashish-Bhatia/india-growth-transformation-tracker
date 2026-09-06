@@ -1,15 +1,18 @@
 {
+  "manifest_version": "1.0",
   "acquisition_ref": "ACQ-MOSPI-NAS-2026",
+  "run_id": "NAS-INGEST-20260907-01",
+  "source_code": "SRC-MOSPI-NAS",
+  "dataset_code": "DS-MOSPI-NAS-001",
   "acquisition": {
     "mode": "manual",
     "status": "retrieved",
-    "source": "SRC-MOSPI-NAS",
-    "dataset": "DS-MOSPI-NAS-001",
-    "vintage": "VNT-MOSPI-NAS-2026-08-31",
-    "snapshot": "SNP-MOSPI-NAS-20260831-001",
-    "retrieval_date": "2026-09-07",
-    "artifact_hash": null,
-    "notes": "Official MoSPI NAS-2026 publication release state registered. Binary publication hash is not claimed because direct binary artifact retrieval was unavailable in the execution environment."
+    "retrieved_at": "2026-09-07T00:00:00Z",
+    "requested_url": "https://www.mospi.gov.in/publication/national-accounts-statistics-2025-26",
+    "content_type": "official_mospi_publication_reference",
+    "raw_artifact_reference": "data/raw/mospi/nas/VNT-MOSPI-NAS-2026-08-31/source-reference.json",
+    "operator": "research-extraction",
+    "code_version": "repository-manual-ingestion"
   },
   "lineage": {
     "source": "SRC-MOSPI-NAS",
@@ -20,15 +23,42 @@
       "LOC-MOSPI-NAS-20260831-MFG-GVA",
       "LOC-MOSPI-NAS-20260831-METHODOLOGY"
     ],
-    "vintage": "VNT-MOSPI-NAS-2026-08-31"
+    "vintage": "VNT-MOSPI-NAS-2026-08-31",
+    "observation_ids": [
+      "NAS-MFG-GROWTH-2023-24",
+      "NAS-MFG-GROWTH-2024-25",
+      "NAS-MFG-GROWTH-2025-26",
+      "NAS-MFG-SHARE-2022-23",
+      "NAS-MFG-SHARE-2023-24",
+      "NAS-MFG-SHARE-2024-25",
+      "NAS-MFG-SHARE-2025-26"
+    ]
   },
   "validation": {
     "status": "passed_with_flags",
     "anomalies": ["methodology_change"],
-    "notes": "Current 2022-23-base National Accounts series is retained as a distinct methodology vintage. Manufacturing growth and share values are source-defined current-series observations and are not mixed with the superseded 2011-12-base series."
+    "review_required": true
   },
   "transformation": {
-    "status": "source_defined_only",
-    "notes": "No cross-vintage splicing or unsupported derivation. Registered growth values and source-reported manufacturing GVA shares are ingested as published."
+    "steps": [
+      "extract registered Manufacturing GVA growth values from the official current-series release references",
+      "extract registered manufacturing share-of-GVA values from the official current-series release references",
+      "preserve source-defined values and units",
+      "retain the 2022-23-base methodology boundary",
+      "do not splice with the superseded 2011-12-base series"
+    ],
+    "input_references": [
+      "data/raw/mospi/nas/VNT-MOSPI-NAS-2026-08-31/source-reference.json"
+    ],
+    "output_reference": "data/canonical/observations/",
+    "methodology_version": "IND-MFG-REG-1.0",
+    "code_version": "repository-manual-ingestion",
+    "calculated_at": "2026-09-07T00:00:00Z"
+  },
+  "release": {
+    "release_date": "2026-08-31",
+    "source_version": "NAS-2026",
+    "freshness_status": "Recent",
+    "release_relationship": "first_acquired_vintage_for_dataset"
   }
 }
