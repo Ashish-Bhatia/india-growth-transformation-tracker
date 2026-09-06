@@ -1,0 +1,14 @@
+{
+  "locator_id": "LOC-MOSPI-PLFS-20260327-ANNUAL-REPORT",
+  "source_id": "SRC-MOSPI-PLFS",
+  "dataset_id": "DS-MOSPI-PLFS-001",
+  "vintage_id": "VNT-MOSPI-PLFS-2025",
+  "publication_date": "2026-03-27",
+  "document_title": "Annual Report, PLFS, 2025",
+  "url": "https://www.mospi.gov.in/uploads/publications_reports/publications_reports1780040415321_0624fb13-fb47-40bc-b470-7c7e9635c3ef_PLFS_2025_F_REV_29052026.pdf",
+  "locator_type": "PDF",
+  "relevant_pages": [48, 232],
+  "relevant_content": "Statement 8 reports broad industry distribution of workers in usual status (ps+ss), including manufacturing. Table 26 provides detailed industry-of-work distributions under NIC 2008.",
+  "retrieved_at": "2026-09-07",
+  "verification_status": "verified"
+}

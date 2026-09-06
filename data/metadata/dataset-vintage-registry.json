@@ -57,11 +57,11 @@
       "vintage_id": "VNT-MOSPI-PLFS-2025",
       "dataset_id": "DS-MOSPI-PLFS-001",
       "version": "PLFS-2025",
-      "release_date": null,
-      "retrieval_date": null,
+      "release_date": "2026-03-27",
+      "retrieval_date": "2026-09-07T00:00:00Z",
       "file_hash": null,
-      "snapshot_id": null,
-      "acquisition_status": "pending_acquisition"
+      "snapshot_id": "SNP-MOSPI-PLFS-20260327-001",
+      "acquisition_status": "acquired"
     },
     {
       "vintage_id": "VNT-MOF-UNION-BUDGET-2026-27",

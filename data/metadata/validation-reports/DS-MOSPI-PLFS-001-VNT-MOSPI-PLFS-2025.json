@@ -1,0 +1,50 @@
+{
+  "validation_version": "1.0",
+  "dataset_id": "DS-MOSPI-PLFS-001",
+  "vintage_id": "VNT-MOSPI-PLFS-2025",
+  "validation_status": "passed_with_flags",
+  "source_validation": {
+    "source_id": "SRC-MOSPI-PLFS",
+    "release_date": "2026-03-27",
+    "document": "Annual Report, PLFS, 2025",
+    "official_source": true,
+    "source_tier": 1
+  },
+  "release_validation": {
+    "survey_period": "January 2025 - December 2025",
+    "survey_cycle": "calendar year",
+    "classification": "NIC 2008",
+    "activity_status": "usual status (ps+ss)",
+    "methodology_change": "PLFS sampling methodology was revamped from January 2025 and the survey cycle changed from July-June to January-December. MoSPI states that 2025 estimates should be considered carefully when compared with estimates released through December 2024."
+  },
+  "indicator_validation": {
+    "IND-MFG-PLFS-SHARE-001": {
+      "geography": "INDIA",
+      "values_checked": [11.2, 11.7, 11.6, 12.1],
+      "periods": ["2022", "2023", "2024", "2025"],
+      "unit": "% of workers",
+      "source_table": "Statement 8",
+      "source_locator": "Annual Report PLFS 2025, page 19 / PDF page 48",
+      "manufacturing_definition": "NIC 2008 Section C / divisions 10-33",
+      "validation_checks": [
+        "values match the all-India rural+urban person column",
+        "unit is percentage of workers",
+        "all source values are within 0-100",
+        "2025 methodology break is retained as an explicit comparability flag"
+      ]
+    }
+  },
+  "observation_validation": {
+    "duplicate_observations": 0,
+    "missing_required_fields": 0,
+    "geography_scope": "INDIA",
+    "status": "passed_with_flags"
+  },
+  "anomalies": [
+    {
+      "type": "methodology_change",
+      "description": "MoSPI introduced a revamped PLFS sampling design from January 2025 and changed the survey period to January-December. The 2025 report cautions against treating 2025 and earlier PLFS estimates as strictly comparable without methodological treatment.",
+      "resolution": "Preserve the 2022-2024 values contained in the 2025 release as source-defined historical observations, flag the 2025 methodology boundary, and do not claim an uninterrupted comparable series across the break."
+    }
+  ]
+}

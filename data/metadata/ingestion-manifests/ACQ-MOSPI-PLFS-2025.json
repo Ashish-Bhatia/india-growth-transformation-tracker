@@ -1,0 +1,56 @@
+{
+  "manifest_version": "1.0",
+  "acquisition_ref": "ACQ-MOSPI-PLFS-2025",
+  "run_id": "PLFS-INGEST-20260907-01",
+  "source_code": "SRC-MOSPI-PLFS",
+  "dataset_code": "DS-MOSPI-PLFS-001",
+  "acquisition": {
+    "mode": "manual",
+    "status": "retrieved",
+    "retrieved_at": "2026-09-07T00:00:00Z",
+    "requested_url": "https://www.mospi.gov.in/themes/product/69--",
+    "content_type": "official_mospi_publication_reference",
+    "raw_artifact_reference": "data/raw/mospi/plfs/VNT-MOSPI-PLFS-2025/source-reference.json",
+    "operator": "research-extraction",
+    "code_version": "repository-manual-ingestion"
+  },
+  "lineage": {
+    "source": "SRC-MOSPI-PLFS",
+    "dataset": "DS-MOSPI-PLFS-001",
+    "snapshot": "SNP-MOSPI-PLFS-20260327-001",
+    "locator_ids": ["LOC-MOSPI-PLFS-20260327-ANNUAL-REPORT"],
+    "vintage": "VNT-MOSPI-PLFS-2025",
+    "observation_ids": [
+      "PLFS-MFG-SHARE-2022",
+      "PLFS-MFG-SHARE-2023",
+      "PLFS-MFG-SHARE-2024",
+      "PLFS-MFG-SHARE-2025"
+    ]
+  },
+  "validation": {
+    "status": "passed_with_flags",
+    "anomalies": ["methodology_change"],
+    "review_required": true
+  },
+  "transformation": {
+    "steps": [
+      "extract all-India rural+urban person manufacturing worker shares from PLFS Statement 8",
+      "preserve source-defined usual status (ps+ss) concept and NIC 2008 manufacturing classification",
+      "retain the 2025 sampling-design and survey-cycle methodology boundary",
+      "do not splice 2025 with earlier PLFS estimates without explicit comparability treatment"
+    ],
+    "input_references": [
+      "data/raw/mospi/plfs/VNT-MOSPI-PLFS-2025/source-reference.json"
+    ],
+    "output_reference": "data/canonical/observations/IND-MFG-PLFS-SHARE-001.csv",
+    "methodology_version": "IND-MFG-REG-1.0",
+    "code_version": "repository-manual-ingestion",
+    "calculated_at": "2026-09-07T00:00:00Z"
+  },
+  "release": {
+    "release_date": "2026-03-27",
+    "source_version": "PLFS-2025",
+    "freshness_status": "Recent",
+    "release_relationship": "first_acquired_vintage_for_dataset"
+  }
+}
