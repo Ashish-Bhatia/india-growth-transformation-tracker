@@ -1,14 +1,18 @@
 # Next Chat
 
 ## Current position
-Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 verified records. The Dataset Registry has 9 authoritative dataset records and the Indicator Registry has 7 minimum authoritative Manufacturing indicators. The first IIP observation vintage has now been acquired, validated and ingested for `IND-MFG-IIP-001`.
+Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 verified records. The Dataset Registry has 9 authoritative dataset records and the Indicator Registry has 7 minimum authoritative Manufacturing indicators. The first IIP observation vintage has been acquired, validated and ingested for `IND-MFG-IIP-001`.
 
-## Verified repository state
-- Current repository HEAD: `4cbf78091881401bfa0853112b82e93de4f0a079`.
+## Verified repository state before this continuity update
+- Verified substantive repository HEAD: `c3cbb9c3dcd5fe7f598c0661823cbdb1cf374b52`.
 - First IIP vintage registration commit: `afcc0c7a7d41af1e489b0959795049f2d68b8813`.
 - First IIP observation ingestion commit: `46bf1ad40c88134b916888a70d13b7c912fdccf4`.
 - IIP ingestion test commit: `f9575d9c5defc1401311720d8f1dc50657ff4e8e`.
 - Project-state update commit: `4cbf78091881401bfa0853112b82e93de4f0a079`.
+- Research ledger update commit: `d1e4ad96c4986df17f2c860133a8686a83c0b682`.
+- Issues register update commit: `1538e1b43dc976c080eda5245f61cf2ca6d2d421`.
+- Decisions log update commit: `c3cbb9c3dcd5fe7f598c0661823cbdb1cf374b52`.
+- The continuity-file update itself will advance HEAD by one commit. Verify the actual repository HEAD before relying on this file.
 - No GitHub Actions workflow run is exposed for the current ingestion commits. CI status is `no run`. Do not infer success or rerun CI merely to obtain a status.
 - Historical CI run `34060700876` remains terminal `failure` from stale Source Registry test expectations. No rerun was performed.
 
@@ -39,7 +43,7 @@ Manufacturing (`MFG`) is the first pilot sector. The Source Registry has 12 veri
 - Direct binary retrieval of the official PDF was unavailable in the execution environment, so no SHA-256 was claimed. The permitted official source reference is preserved.
 
 ## Exact next executable task
-1. Inspect the actual repository state at the current HEAD.
+1. Inspect the actual repository state and verify the current HEAD after this continuity update.
 2. Review the first IIP ingestion commit and all changed files.
 3. Ensure registry health/freshness metadata reflects the now-populated IIP indicator without changing the indicator definition.
 4. Verify the canonical IIP observation layer and validation manifest remain internally consistent.
