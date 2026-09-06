@@ -3,11 +3,9 @@
 ## Current verified position
 
 - Repository: `Ashish-Bhatia/india-growth-transformation-tracker`
-- Current `main` HEAD: `567a74db8ae8388e9b63275b360751787188d753`
-- HEAD commit: `docs: reconcile project continuity state after PLFS validation`
-- Exact HEAD CI: `NO RUN / NOT VERIFIED`.
+- The repository's actual `main` HEAD is verified directly from GitHub at each continuation boundary. This document does not duplicate a mutable HEAD SHA.
+- Exact current-HEAD CI must be verified against the SHA returned by GitHub. A successful run on an ancestor does not establish CI for a documentation descendant.
 - Latest verified dataset CI: Database Validation #35, run `34066759564`, terminal `success`, tested SHA `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`.
-- `567a74d...` is a documentation descendant of the PLFS acquisition state. Do not infer CI success for it from Database Validation #35.
 
 ## Project phase
 
@@ -59,4 +57,4 @@ Evidence → Data validation → Descriptive analysis → Attribution → Counte
 
 ## Continuity rule
 
-This file must always report the actual verified repository HEAD. Documentation changes after a validated data commit do not inherit the data commit's CI result.
+Repository HEAD and exact CI state are verification facts, not inherited documentation claims. At each continuation boundary, read the actual Git ref and verify the exact SHA and workflow state before relying on this record.
