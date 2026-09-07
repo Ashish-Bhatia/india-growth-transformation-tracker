@@ -1,0 +1,17 @@
+{
+  "source_id": "SRC-RBI-OBICUS",
+  "dataset_id": "DS-RBI-OBICUS-001",
+  "vintage_id": "VNT-RBI-OBICUS-2018-12-14",
+  "publication_date": "2018-12-14",
+  "source_reference": "https://sansad.in/getFile/loksabhaquestions/annex/16/AU775.pdf?source=pqals",
+  "source_document": "Lok Sabha Unstarred Question No. 775, Annexure-II: Estimates of Capacity Utilization (manufacturing sector) from Survey data (RBI's OBICUS)",
+  "source_locator": "Annexure-II, PDF page 4, rounds 30-42",
+  "source_role": "official parliamentary compilation of RBI OBICUS observations",
+  "artifact_preserved": false,
+  "file_hash": null,
+  "notes": [
+    "The annexure states that the estimates are based on RBI OBICUS and are compiled at aggregate level.",
+    "The annexure explicitly warns that survey coverage varies by round and the estimates are indicative, not official statistics.",
+    "This acquisition preserves raw CU separately; CU-SA is not extracted from this source artifact because the annexure reports CU only."
+  ]
+}
