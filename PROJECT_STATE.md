@@ -3,13 +3,13 @@
 ## Current verified position
 
 - Repository: `Ashish-Bhatia/india-growth-transformation-tracker`
-- Actual `main` HEAD verified directly from GitHub: `71acf8cf93795fb335fbbfc2162ed0a61fe3a95a`.
-- Exact current-HEAD CI: `NO RUN / NOT VERIFIED`.
+- Current main HEAD after the latest verified acquisition/documentation commits must be rechecked at the next continuation boundary.
+- Exact current-HEAD CI: `NO RUN / NOT VERIFIED` unless a later exact-SHA check establishes otherwise.
 - Latest verified dataset CI remains Database Validation #35, run `34066759564`, terminal `success`, tested SHA `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`. This is an ancestor and is not inherited by current descendants.
 
 ## Project phase
 
-Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and dataset-ingestion validation are closed. The baseline indicator-gap review and formal registration review for RBI OBICUS seasonally adjusted capacity utilisation and ASI GVA per person engaged are complete. Historical descriptive acquisition for both newly registered indicators has now been added.
+Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and dataset-ingestion validation are closed. The baseline indicator-gap review and formal registration review for RBI OBICUS seasonally adjusted capacity utilisation and ASI GVA per person engaged are complete. Historical descriptive acquisition has progressed for both indicators, but complete OBICUS historical backfill remains open.
 
 ## Completed acquisition work
 
@@ -17,10 +17,12 @@ Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and datas
 - Preferred 2013-14 baseline: ₹786,750 per person engaged, directly published by ASI.
 - ASI release-state lineage preserved across `VNT-MOSPI-ASI-2017-18`, `VNT-MOSPI-ASI-2019-20` and `VNT-MOSPI-ASI-2023-24`.
 - `IND-MFG-OBICUS-CU-SA-001`: five quarterly All-India observations acquired for Q1:2023-24 through Q1:2024-25 from RBI OBICUS Table 1.
-- Raw OBICUS CU is preserved separately in staged data. CU-SA is the only canonical registered indicator loaded.
-- OBICUS CU-SA methodology note preserved: X13-ARIMA-SEATS with Q1:2020-21 treated as an additive outlier in the source release.
-- Binary source artifacts remain unpreserved for these acquisitions; `file_hash=null` is explicit.
-- Descriptive validation report added. No attribution, counterfactual, policy-effectiveness or scoring conclusion introduced.
+- Raw OBICUS CU remains separately preserved in staged data. CU-SA is the only canonical registered indicator loaded.
+- OBICUS methodology note preserved: X13-ARIMA-SEATS with Q1:2020-21 treated as an additive outlier in the 2024-10-09 source release.
+- Historical OBICUS CU tranche acquired for Q1:2015-16 through Q1:2018-19 from an official Lok Sabha Annexure-II compilation of RBI OBICUS observations. Thirteen CU observations and respondent counts are preserved in staged data under `VNT-RBI-OBICUS-2018-12-14`.
+- The 2018-12-14 parliamentary compilation reports CU only. CU-SA was not extracted from this artifact and no CU-SA value was invented or inferred.
+- Historical OBICUS source-reference and acquisition manifest preserve the official source locator and explicit `file_hash=null` because the binary artifact is not preserved.
+- Descriptive validation remains the only analytical use. No attribution, counterfactual, policy-effectiveness or scoring conclusion introduced.
 
 ## Verified dataset boundaries
 
@@ -29,11 +31,11 @@ Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and datas
 - ASI GVA/person engaged: nominal, current-price, registered organised manufacturing only. It is a productivity diagnostic, not a real total-manufacturing productivity measure.
 - NAS 2026: acquired 2022-23-base vintage. The methodology boundary from the superseded 2011-12 series remains an open comparability control. Revised/provisional status is preserved.
 - PLFS 2025: acquired vintage `VNT-MOSPI-PLFS-2025`; binary artifact not preserved, `file_hash=null`; sampling methodology and survey-cycle break remains an explicit comparability control.
-- OBICUS: source and dataset registered; five historical CU-SA observations acquired. Complete historical OBICUS backfill remains open.
+- OBICUS: source and dataset registered; five historical CU-SA observations acquired for Q1:2023-24 through Q1:2024-25; an additional historical CU-only tranche covers Q1:2015-16 through Q1:2018-19. Complete historical CU/CU-SA backfill remains open.
 
 ## Current analytical boundary
 
-Existing observations remain descriptive research only. ASI GVA/person engaged is nominal and registered-organised. OBICUS CU-SA is contextual rather than automatically score-eligible. No causal, attribution, policy-effectiveness, counterfactual or scoring conclusion has been introduced.
+Existing observations remain descriptive research only. ASI GVA/person engaged is nominal and registered-organised. OBICUS CU-SA is contextual rather than automatically score-eligible. Historical CU remains a companion diagnostic and has not been substituted for CU-SA. No causal, attribution, policy-effectiveness, counterfactual or scoring conclusion has been introduced.
 
 ## Methodological controls
 
