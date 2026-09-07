@@ -1,6 +1,6 @@
 # Research Ledger
 
-No substantive policy or causal sector research has been verified as completed. The Manufacturing pilot contains repository-verified IIP, ASI, NAS and PLFS descriptive data ingestion records. Dataset-specific ingestion validation is executed by Database Validation CI.
+No substantive policy or causal sector research has been verified as completed. The Manufacturing pilot contains repository-verified IIP, ASI, NAS, PLFS and newly acquired descriptive OBICUS/ASI productivity data. Dataset-specific ingestion validation is executed by Database Validation CI.
 
 ## Initialization record
 - Research ID: INIT-001
@@ -98,7 +98,7 @@ No substantive policy or causal sector research has been verified as completed. 
 
 ## NAS 2026 ingestion record
 - Research ID: DATA-MFG-NAS-001
-- Question: Can the current National Accounts Statistics release be acquired, validated and loaded only for already registered Manufacturing GVA indicators while preserving the 2022-23 methodology boundary?
+- Question: Can the current National Accounts Statistics release be acquired and loaded only for already registered Manufacturing GVA indicators while preserving the 2022-23 methodology boundary?
 - Sector: Manufacturing (`MFG`)
 - Dataset: `DS-MOSPI-NAS-001`
 - Vintage: `VNT-MOSPI-NAS-2026-08-31`
@@ -116,16 +116,6 @@ No substantive policy or causal sector research has been verified as completed. 
 - Evidence status: descriptive data evidence only. No policy, attribution, counterfactual or scoring conclusion was introduced.
 - Last verified: 2026-09-07
 
-## Ingestion integrity correction record
-- Research ID: DATA-INTEGRITY-001
-- Question: Does Database Validation actually validate the acquired ASI, IIP and NAS ingestion boundary, and do provenance contracts reflect the current seeded registry architecture?
-- Date opened: 2026-09-07
-- Findings: Database Validation #26 passed but did not execute the dataset-specific ASI, IIP or NAS tests; database integration validates migration, seed and referential integrity only; registry flags and NAS manifest were stale/inconsistent.
-- Corrections: Database Validation was expanded to execute ASI, IIP and NAS ingestion tests; raw/canonical paths were added to workflow triggers; registry flags and NAS provenance contracts were corrected.
-- Verification: Database Validation #32, run `34064219332`, terminal `success`. Dataset-specific ingestion tests, migration, seed and database integration all completed successfully.
-- Historical state: Before PLFS acquisition, the remaining gate was current-HEAD CI plus continuity verification and PLFS remained blocked. This is preserved as historical state and is superseded by the PLFS acquisition/validation record below.
-- Last verified: 2026-09-07
-
 ## PLFS acquisition and validation record
 - Research ID: DATA-MFG-PLFS-001
 - Question: Can the official PLFS 2025 release state be acquired by reference and validated for the registered Manufacturing worker-share indicator while preserving its methodology boundary?
@@ -141,15 +131,38 @@ No substantive policy or causal sector research has been verified as completed. 
 - Validation: `tests/test_plfs_ingestion.py` verified vintage, snapshot, manifest, values, geography, dataset linkage, quality grade and methodology flag.
 - Database Validation #35, run `34066759564`, terminal `success`, executed the PLFS ingestion test, migration, seed and database integration successfully on the acquisition commit.
 - Boundary: PLFS acquisition and dataset-ingestion validation boundary is CLOSED.
-- Methodology control: PLFS 2025 sampling methodology and survey-cycle change remains an explicit unresolved comparability break. Do not treat 2025 as seamlessly comparable with earlier PLFS methodology.
-- Evidence status: descriptive data evidence only. No policy, attribution, counterfactual, effectiveness or scoring conclusion introduced.
+- Methodology control: PLFS 2025 sampling methodology and survey-cycle change remains an explicit unresolved comparability break.
+- Evidence status: descriptive data evidence only.
+- Last verified: 2026-09-07
+
+## Historical ASI productivity acquisition record
+- Research ID: DATA-MFG-ASI-PPE-001
+- Question: Can the registered ASI GVA per person engaged diagnostic be populated with source-published historical observations while preserving release-state lineage and its nominal registered-organised-manufacturing limitation?
+- Indicator: `IND-MFG-ASI-GVA-PPE-001`
+- Dataset: `DS-MOSPI-ASI-001`
+- Vintages: `VNT-MOSPI-ASI-2017-18`, `VNT-MOSPI-ASI-2019-20`, `VNT-MOSPI-ASI-2023-24`.
+- Observation layer: 11 All-India annual observations for 2013-14 through 2023-24.
+- Preferred baseline: 2013-14 = ₹786,750 per person engaged, directly published in the ASI historical structural-ratio table.
+- Validation: schema, units, annual periods, geography, duplicates and source-published ratios passed. Flags preserve nominal current-price basis and registered-organised coverage. ASI 2019-20 source publication date was not independently established and remains null.
+- Evidence status: descriptive data evidence only. No real-price productivity claim was made.
+- Last verified: 2026-09-07
+
+## Historical OBICUS acquisition record
+- Research ID: DATA-MFG-OBICUS-001
+- Question: Can an authoritative historical OBICUS release state be acquired for the registered CU-SA indicator while preserving raw CU separately and retaining source methodology?
+- Indicator: `IND-MFG-OBICUS-CU-SA-001`
+- Dataset: `DS-RBI-OBICUS-001`
+- Vintage: `VNT-RBI-OBICUS-2024-10-09`.
+- Observation layer: five All-India quarterly CU-SA observations from Q1:2023-24 through Q1:2024-25: 75.4, 74.5, 74.6, 74.6 and 75.8 per cent.
+- Raw CU companion: 73.6, 74.0, 74.7, 76.8 and 74.0 per cent preserved in staged data and not silently substituted for CU-SA.
+- Methodology: RBI reports CU-SA using X13-ARIMA-SEATS and treats Q1:2020-21 as an additive outlier in the source release.
+- Validation: schema, units, quarterly periods, geography, duplicates and source methodology passed with flags for voluntary survey response and non-census coverage.
+- Limitation: this is a historical release-state backfill of five quarters, not the complete available OBICUS series. Full historical backfill remains open.
+- Evidence status: descriptive data evidence only.
 - Last verified: 2026-09-07
 
 ## Documentation and continuity corrections
-- `c1a6690e9980430c380c7e13912da63b52313ce2` updated `PROJECT_STATE.md` after PLFS validation.
-- `dbc690b22de747a01520eb52cdc43cc1f77bdfd5` updated `NEXT_CHAT.md` as a documentation descendant.
-- `567a74db8ae8388e9b63275b360751787188d753` reconciled the five continuity records after PLFS validation.
-- `0d6b4d55c26d54b49ff0aef93ed69878cd7c4fd0` corrected `PROJECT_STATE.md` to the actual main HEAD at the time of correction.
-- `3f28b18ad1acccff200d1059b1f657bc98220f20` corrected `NEXT_CHAT.md` to the then-current main HEAD.
-- The current main HEAD must always be verified directly from GitHub. Documentation descendants do not inherit the CI result of the PLFS acquisition commit.
-- Exact current-HEAD CI must be recorded literally as `NO RUN / NOT VERIFIED` unless an actual workflow run exists for the exact SHA.
+- Current main HEAD after the acquisition and documentation updates is `71acf8cf93795fb335fbbfc2162ed0a61fe3a95a`.
+- Exact current-HEAD CI remains `NO RUN / NOT VERIFIED` because no workflow run exists for the exact current SHA.
+- Ancestor Database Validation #35 remains terminal `success` and is not inherited by the current documentation/data descendants.
+
