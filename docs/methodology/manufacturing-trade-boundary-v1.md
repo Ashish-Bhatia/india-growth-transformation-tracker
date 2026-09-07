@@ -124,9 +124,9 @@ A future domestic-origin manufacturing-export indicator requires a separate sour
 
 Mapped manufacturing-product imports are an approved descriptive trade measure.
 
-A manufacturing import-dependence ratio is not approved merely from the HS mapping. Its denominator must measure a compatible product universe, valuation basis and period. Manufacturing imports divided by manufacturing GVA is not treated as a valid import-dependence ratio because imports are gross product values while GVA is value added.
+A manufacturing import-dependence ratio requires a compatible product universe, valuation basis and period. Manufacturing imports divided by manufacturing GVA is not treated as a valid import-dependence ratio because imports are gross product values while GVA is value added.
 
-Until a compatible domestic-supply denominator is established, import dependence remains a research candidate rather than a registered score input.
+The project therefore registers `IND-MFG-TRADE-IMPORT-DEPENDENCE-001` as PROVISIONAL so the intended construct is fixed before data acquisition, but no observations or score contribution are permitted until a compatible domestic product-output denominator is established and validated.
 
 ## 10. Export and import indicator concepts
 
