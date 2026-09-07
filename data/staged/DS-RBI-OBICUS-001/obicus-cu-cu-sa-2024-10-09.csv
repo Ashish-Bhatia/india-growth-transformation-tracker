@@ -1,0 +1,6 @@
+period_label,period_start,period_end,responding_companies,cu_percent,cu_sa_percent,source_vintage,source_status
+Q1:2023-24,2023-04-01,2023-06-30,665,73.6,75.4,VNT-RBI-OBICUS-2024-10-09,observed
+Q2:2023-24,2023-07-01,2023-09-30,752,74.0,74.5,VNT-RBI-OBICUS-2024-10-09,observed
+Q3:2023-24,2023-10-01,2023-12-31,761,74.7,74.6,VNT-RBI-OBICUS-2024-10-09,observed
+Q4:2023-24,2024-01-01,2024-03-31,832,76.8,74.6,VNT-RBI-OBICUS-2024-10-09,observed
+Q1:2024-25,2024-04-01,2024-06-30,839,74.0,75.8,VNT-RBI-OBICUS-2024-10-09,observed
