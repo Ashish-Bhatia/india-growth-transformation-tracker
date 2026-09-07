@@ -177,6 +177,22 @@ No substantive policy or causal sector research has been verified as completed. 
 - Limitation: this is a CU-only historical tranche and does not complete the CU-SA backfill. Earlier quarters and release-state revisions remain open.
 - Last verified: 2026-09-07
 
+## Manufacturing trade methodology and acquisition record
+- Research ID: DATA-MFG-TRADE-001
+- Question: Can the approved `MFG-TRADE-MAP-1.0` methodology be operationalised against an authoritative DGCIS merchandise-trade source without bypassing access controls or inventing HS mappings/observations?
+- Sector: Manufacturing (`MFG`)
+- Indicators: `IND-MFG-TRADE-EXPORTS-001`, `IND-MFG-TRADE-IMPORTS-001`, `IND-MFG-TRADE-IMPORT-DEPENDENCE-001`.
+- Methodology decision: `MFG-TRADE-MAP-1.0`, effective 2026-09-07, is approved. The economic-activity boundary is NIC 2008 Section C, Divisions 10-33. The merchandise operational subset is HS product lines demonstrably representing manufacturing products. The classification stack is ITC (HS) 8-digit → HS 6-digit → CPC/UNSD correspondence → ISIC Rev. 4 → NIC 2008, with NPCMS as a validation/reference layer. Mapping statuses are `IN_SCOPE`, `OUT_OF_SCOPE`, `MIXED`, `UNRESOLVED`, and `SPECIAL_CASE`; MIXED and UNRESOLVED are excluded from core aggregates without proportional allocation. Mapping is versioned by HS edition. Recorded re-exports/re-imports remain included unless a reproducible exclusion field exists. The resulting measures are manufacturing-product trade measures, not domestic-origin manufacturing exports.
+- Official source route verification: Department of Commerce Trade Intelligence and Analytics (TIA) identifies DGCIS as the source, provides HS8 trade coverage from January 2016, and currently exposes data through June 2026. TIA's extraction mechanism provides HS2/HS4/HS6/HS8 levels and CSV/Excel download but requires captcha before final extraction.
+- Official alternate route verification: Department of Commerce FTSPCC/TradeStat provides commodity-wise merchandise trade from January 2010, including selectable 2014 and 2015 periods, and exposes commodity-wise and commodity x country annual/monthly routes. The public interface is a permitted official extraction route, but no HS8 bulk artifact or applicable code directory was acquired in this run.
+- DGCIS code-directory treatment: the official TradeStat help/source material identifies the ITC HS code directory as supplied by DGCIS Kolkata and notes that the unit is available at 8-digit level and that old HS codes may be dropped or reallocated. Re-imports/re-exports are included in the trade data treatment.
+- Acquisition status: authoritative source mechanisms are verified, but no raw HS8 bulk trade dataset, HS edition/code directory artifact, source snapshot hash, mapping table, or trade observation has been acquired or created. The TIA bulk extraction control must not be bypassed.
+- Blocker: public TIA bulk extraction requires captcha. Continue seeking a permitted official downloadable artifact or materially different official extraction mechanism through DGCIS/TIA or FTSPCC. Do not substitute secondary trade datasets while an official route remains available.
+- Issue: `ISSUE-MFG-GAP-003` is methodologically resolved but remains open as an acquisition dependency. GitHub issue #2, `MFG trade acquisition: preserve DGCIS HS8 source route and resolve extraction access`, records the verified source routes and current acquisition blocker.
+- Import dependence control: `IND-MFG-TRADE-IMPORT-DEPENDENCE-001` remains `PROVISIONAL`. No denominator is permitted until compatible domestic product-output data for the same mapped universe and valuation basis is established. Manufacturing GVA must not be used as the denominator.
+- Evidence status: source/acquisition evidence only. No trade observation, descriptive outcome, attribution, counterfactual, policy evaluation or scoring conclusion was introduced.
+- Last verified: 2026-09-07
+
 ## Documentation and continuity corrections
 - Current main HEAD has advanced beyond the previously documented `71acf8cf93795fb335fbbfc2162ed0a61fe3a95a` through the historical OBICUS acquisition and continuity commits.
 - Exact current-HEAD CI remains `NO RUN / NOT VERIFIED` unless a later exact-SHA check establishes otherwise.
