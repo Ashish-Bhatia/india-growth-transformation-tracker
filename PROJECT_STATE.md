@@ -3,14 +3,23 @@
 ## Current verified position
 
 - Repository: `Ashish-Bhatia/india-growth-transformation-tracker`
-- The repository's actual `main` HEAD is verified directly from GitHub at each continuation boundary. This document does not duplicate a mutable HEAD SHA.
-- Exact current-HEAD CI must be verified against the SHA returned by GitHub. A successful run on an ancestor does not establish CI for a documentation descendant.
+- The repository's actual `main` HEAD is verified directly from GitHub at each continuation boundary.
+- Exact current-HEAD CI must be verified against the SHA returned by GitHub. A successful run on an ancestor does not establish CI for a descendant.
 - Latest verified dataset CI: Database Validation #35, run `34066759564`, terminal `success`, tested SHA `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`.
-- The latest research commit is the Manufacturing indicator-gap review; exact HEAD and CI for that commit must be reverified before relying on it at the next continuation boundary.
+- Current HEAD `663b14a0bbb4a35c49838fd3734dee0eb4b58d80` has no exact-SHA workflow run; CI status is `NO RUN / NOT VERIFIED`.
 
 ## Project phase
 
-Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and dataset-ingestion validation are closed. The baseline indicator-gap review is now complete at the research-identification stage. The next stage is formal indicator-registration review for priority candidates, before any new data acquisition.
+Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and dataset-ingestion validation are closed. The baseline indicator-gap review is complete. Formal registration review for priority candidates is now completed for RBI OBICUS seasonally adjusted capacity utilisation and ASI GVA per person engaged, and both indicators are registered. No observations have yet been acquired for these newly registered indicators.
+
+## Completed registration work
+
+- Registered authoritative RBI OBICUS source `SRC-RBI-OBICUS`.
+- Registered OBICUS dataset `DS-RBI-OBICUS-001` with quarterly frequency, source-defined capacity-utilisation methodology, CU/CU-SA treatment and provenance controls.
+- Registered `IND-MFG-OBICUS-CU-SA-001` as a contextual Manufacturing capacity indicator. Raw CU remains a companion diagnostic and is not silently replaced by CU-SA.
+- Registered `IND-MFG-ASI-GVA-PPE-001` as a Manufacturing productivity diagnostic. It is explicitly nominal and limited to ASI registered organised manufacturing coverage.
+- Verified official ASI historical availability for the preferred 2013-14 baseline. The official ASI 2013-14 release publishes GVA per person engaged directly.
+- No new observations were acquired from these registrations.
 
 ## Verified dataset boundaries
 
@@ -18,12 +27,13 @@ Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and datas
 - ASI 2023-24: acquired vintage with registered organised-manufacturing coverage limitation. ASI measures must not be presented as total manufacturing measures.
 - NAS 2026: acquired 2022-23-base vintage. The methodology boundary from the superseded 2011-12 series remains an open comparability control. Revised/provisional status is preserved.
 - PLFS 2025: acquired vintage `VNT-MOSPI-PLFS-2025`; binary artifact not preserved, `file_hash=null`; sampling methodology and survey-cycle break remains an explicit comparability control.
+- OBICUS: source and dataset registered; no OBICUS observation vintage acquired yet.
 
 ## Current analytical boundary
 
-Existing observations and the indicator-gap review are descriptive research only. No causal, attribution, policy-effectiveness, counterfactual or scoring conclusion has been introduced.
+Existing observations and registered indicators remain descriptive research only. No causal, attribution, policy-effectiveness, counterfactual or scoring conclusion has been introduced.
 
-The Manufacturing indicator-gap review classified each unresolved baseline dimension as covered, genuine gap, derived gap, deferred or methodology-incompatible and identified candidate authoritative source families. No new indicator was registered and no new data was acquired from the review.
+ASI GVA per person engaged is a nominal registered-organised-manufacturing productivity diagnostic, not a total-manufacturing or real productivity measure. OBICUS CU-SA is a capacity diagnostic and is contextual rather than automatically score-eligible.
 
 ## Baseline scope
 
@@ -34,17 +44,20 @@ The governing frameworks require examination of output, growth, productivity, in
 - Preserve indicator definitions, units, frequency, geography, methodology, directionality and source mappings.
 - Preserve source vintages and revisions.
 - Do not splice incompatible IIP, NAS or PLFS methodologies.
+- Preserve ASI registered-organised-manufacturing coverage and nominal-price limitation for GVA/person engaged.
+- Preserve OBICUS raw CU and seasonally adjusted CU as distinct source measures.
 - Observed change must precede attribution.
 - Attribution, counterfactual analysis, policy evaluation and scoring remain downstream.
 - Final scoring weights, normalization and composite formulas remain unresolved.
 - Domain seed and international peer-basket methodology remain unresolved.
 - Trade candidates require an approved HS-to-Manufacturing mapping before registration.
 - ASI, ASUSE and PLFS population/methodology boundaries must remain explicit.
-- Candidate sources do not imply indicator approval.
+- Candidate sources do not imply indicator approval; registered indicators require validated observations before analytical use.
 
 ## Open dependencies
 
-- Formal registration of priority Manufacturing gap candidates.
+- Acquisition and validation of OBICUS historical observations.
+- Acquisition and validation of ASI GVA/person engaged historical observations.
 - PLFS 2025 comparability treatment.
 - IIP methodology/base-year break.
 - NAS methodology boundary.
@@ -59,6 +72,7 @@ The governing frameworks require examination of output, growth, productivity, in
 - Manufacturing investment private/public classification.
 - Manufacturing technology/R&D construct.
 - Manufacturing quality construct.
+- Broader total-manufacturing real productivity indicator remains unresolved.
 
 ## Required analytical sequence
 
