@@ -1,49 +1,37 @@
 # Next Chat
 
 ## Current position
-Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and validation is CLOSED at the dataset-ingestion boundary. The Manufacturing baseline indicator-gap review is complete. Formal registration review for the priority candidates is complete for RBI OBICUS seasonally adjusted capacity utilisation and ASI GVA per person engaged. Both indicators are registered. No observations have been acquired for these new indicators.
+Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and validation is CLOSED at the dataset-ingestion boundary. The Manufacturing baseline indicator-gap review and formal registration review are complete. Historical descriptive acquisition is now complete for the registered ASI GVA per person engaged diagnostic for 2013-14 through 2023-24 and for five historical RBI OBICUS CU-SA quarters from Q1:2023-24 through Q1:2024-25. Complete OBICUS historical backfill remains open.
 
-## Repository and CI verification rule
-- Verify the actual `main` HEAD directly from GitHub at the start of the next chat.
-- Do not treat a SHA written in a prior continuity document as the current branch tip.
-- Verify CI against the exact current SHA.
-- Latest verified dataset CI: Database Validation #35, run `34066759564`, terminal `success`, tested SHA `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`.
-- The current descendants require their own exact-SHA CI verification. Do not inherit the ancestor CI result.
+## Repository and CI verification
+- Actual `main` HEAD must be verified directly from GitHub at the start of the next chat.
+- Current HEAD at handoff: `71acf8cf93795fb335fbbfc2162ed0a61fe3a95a` before this continuity-document commit. The final branch tip after this document update must be reverified by the next chat.
+- Exact current-HEAD CI is `NO RUN / NOT VERIFIED` unless a later exact-SHA check establishes otherwise.
+- Latest verified dataset CI: Database Validation #35, run `34066759564`, terminal `success`, tested SHA `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`. Do not inherit this result to descendants.
 
-## Completed registration boundary
-- `SRC-RBI-OBICUS` registered in Source Registry.
-- `DS-RBI-OBICUS-001` registered in Dataset Registry. Latest observation/vintage remains unverified and is therefore null.
-- `IND-MFG-OBICUS-CU-SA-001` registered as a contextual capacity indicator. Raw CU remains a companion diagnostic.
-- `IND-MFG-ASI-GVA-PPE-001` registered as a nominal ASI registered-organised-manufacturing productivity diagnostic.
-- Official ASI 2013-14 release availability was verified. The release directly reports GVA per person engaged, and the preferred baseline is therefore source-supported.
-- No new observations were acquired from these registrations.
-
-## PLFS boundary
-- Dataset-ingestion validation boundary: CLOSED.
-- Vintage: `VNT-MOSPI-PLFS-2025`.
-- Snapshot: `SNP-MOSPI-PLFS-20260327-001`.
-- Acquisition manifest: `ACQ-MOSPI-PLFS-2025`.
-- Four canonical observations: 2022 11.2%, 2023 11.7%, 2024 11.6%, 2025 12.1%.
-- `file_hash=null` remains explicit because the binary publication artifact is not preserved.
-- PLFS 2025 methodology break remains explicitly flagged and unresolved for strict comparability.
-
-## Continuity status
-- `PROJECT_STATE.md`, `RESEARCH_LEDGER.md`, `DECISIONS_LOG.md`, `ISSUES_REGISTER.md` and `NEXT_CHAT.md` remain canonical continuity records.
-- Current research/documentation HEAD CI is `NO RUN / NOT VERIFIED` unless a later exact-SHA check establishes otherwise.
+## Completed acquisition boundary
+- `IND-MFG-ASI-GVA-PPE-001`: 11 All-India annual observations, 2013-14 through 2023-24.
+- Preferred ASI baseline: 2013-14 = ₹786,750 per person engaged.
+- ASI vintages preserved: `VNT-MOSPI-ASI-2017-18`, `VNT-MOSPI-ASI-2019-20`, `VNT-MOSPI-ASI-2023-24`.
+- ASI publication date for the 2019-20 source remains null because it was not independently established.
+- `IND-MFG-OBICUS-CU-SA-001`: five All-India quarterly observations, Q1:2023-24 through Q1:2024-25.
+- Raw OBICUS CU remains separately preserved in staged data. Canonical observation layer contains CU-SA only.
+- OBICUS methodology notes preserved, including X13-ARIMA-SEATS and Q1:2020-21 additive-outlier treatment.
+- Binary artifacts were not preserved for these acquisitions; `file_hash=null` is explicit.
+- Descriptive validation report added. No attribution, counterfactual, policy-effectiveness or scoring conclusion introduced.
 
 ## What not to repeat
-Do not repeat the Codespace infrastructure audit, NAS acquisition, IIP acquisition, ASI acquisition, PLFS dataset registration, `IND-MFG-PLFS-SHARE-001` registration, PLFS source discovery, PLFS ingestion validation, Manufacturing baseline specification, prior continuity reconciliation, completed Manufacturing indicator-gap review, OBICUS source registration, OBICUS dataset registration, or the completed preliminary registration reviews.
+Do not repeat the Codespace infrastructure audit, database foundation audit, NAS acquisition, IIP acquisition, ASI 2023-24 acquisition, PLFS dataset registration, PLFS source discovery, PLFS ingestion validation, Manufacturing baseline specification, prior continuity reconciliation, completed Manufacturing indicator-gap review, OBICUS source registration, OBICUS dataset registration, or the completed formal registration reviews.
 
 ## Exact next research action
 1. Verify the actual current `main` HEAD and exact CI state.
 2. Verify all five continuity records against the actual repository state.
-3. Re-read the governing Project Sources relevant to acquisition and indicator validation.
-4. Acquire the historical OBICUS observation vintage through the canonical source → dataset → vintage → snapshot → observation workflow, preserving CU and CU-SA separately and recording source-defined release state.
-5. Acquire the historical ASI GVA per person engaged observations, including the preferred 2013-14 baseline and subsequent comparable years, preserving source-defined release/vintage status.
-6. Validate both datasets and observations against schema, units, periods, geography, methodology, duplicates, anomalies and comparability controls.
-7. Perform descriptive validation only. Do not infer policy effects, attribution, counterfactuals or scores.
-8. Preserve ASI registered-organised coverage and nominal-price limitations, and preserve OBICUS survey-panel/CU-SA methodology notes.
-9. Keep ISSUE-MFG-GAP-002 through ISSUE-MFG-GAP-005 open until their respective methodological questions are resolved.
+3. Re-read the governing Project Sources relevant to acquisition and descriptive validation.
+4. Complete the historical OBICUS backfill from the authoritative RBI release archive where source data are directly verifiable, preserving CU and CU-SA separately and preserving each release-state vintage.
+5. Validate any additional OBICUS observations for schema, units, periods, geography, methodology, duplicates, anomalies and vintage lineage.
+6. Keep ASI GVA per person engaged descriptive and nominal. Do not deflate it or convert it into total-manufacturing productivity without a separately approved methodology.
+7. Perform descriptive trend checks only. Do not infer policy effects, attribution, counterfactuals or scores.
+8. Keep ISSUE-MFG-GAP-002 through ISSUE-MFG-GAP-005 open until their respective methodological questions are resolved.
 
 ## Required Project Sources
 Research Charter; Research Methodology; Evidence & Source Standard; Attribution Framework; Scoring Framework; Data Governance & Versioning; Indicator Framework; Master Indicator Registry; Master Research Taxonomy and Data Model; Master Database Schema & Entity Relationship Model; Source & Data Acquisition Architecture; Research Execution Protocol & Sector Onboarding Framework; Sector Research Blueprint; Policy Evaluation Framework; External Conditions & Counterfactual Framework; GitHub Repository Specification.
