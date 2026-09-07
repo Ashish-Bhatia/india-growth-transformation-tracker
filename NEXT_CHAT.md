@@ -1,14 +1,14 @@
 # Next Chat
 
 ## Current position
-Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and validation is CLOSED at the dataset-ingestion boundary. Historical ASI GVA/person-engaged and OBICUS descriptive acquisition are complete for their documented tranches. NAS 2026 Manufacturing GFCF acquisition is the current evidence task. The official eSankhyiki NAS route, indicator code `9`, 2022-23 current-series boundary, and required GFCF institutional/industry dimensions are verified, but live metadata/data retrieval is blocked because the connected MoSPI callable actions are not exposed in the current tool namespace and direct execution against `api.mospi.gov.in` was unavailable from the execution environment. No NAS GFCF observations have been created. Manufacturing trade boundary methodology remains approved as `MFG-TRADE-MAP-1.0`; trade indicators are registered but have no observations.
+Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and validation is CLOSED at the dataset-ingestion boundary. Historical ASI GVA/person-engaged and OBICUS descriptive acquisition are complete for their documented tranches. NAS 2026 Manufacturing GFCF acquisition is the current evidence task. The official eSankhyiki NAS route, indicator code `9`, 2022-23 current-series boundary, and required GFCF institutional/industry dimensions are verified, but live metadata/data retrieval is not yet available through an exposed permitted callable MoSPI execution route. The official eSankhyiki portal itself is currently reachable and states that its Macro Indicators and Data Catalogue provide downloadable official data, but this web-accessible route has not exposed the required NAS metadata/API response for safe acquisition. No NAS GFCF observations have been created. Manufacturing trade boundary methodology remains approved as `MFG-TRADE-MAP-1.0`; trade indicators are registered but have no observations.
 
 ## Repository and CI verification
-- Actual `main` HEAD verified at continuation boundary: `9a042bbaf439d83ad8e49778301157be06c859ad`.
-- HEAD commit: `docs: record manufacturing NAS GFCF acquisition workflow`.
-- Exact HEAD combined CI status: `NO RUN / NOT VERIFIED`; the exact-SHA status lookup returned zero statuses. Do not inherit ancestor CI.
-- Latest verified dataset CI remains Database Validation #35, run `34066759564`, terminal `success`, tested SHA `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`. This is an ancestor and is not inherited by current descendants.
-- `PROJECT_STATE.md`, `RESEARCH_LEDGER.md`, `DECISIONS_LOG.md`, `ISSUES_REGISTER.md` and this file were checked against the repository at this continuation boundary. `NEXT_CHAT.md` was stale on the prior branch tip and is now aligned with the verified NAS state.
+- Actual `main` HEAD at this continuation boundary: `5c5a8afe52f193c0c069e19daa52c6122ce18134`.
+- HEAD commit: `docs: align NAS GFCF continuation state`.
+- Exact HEAD combined CI status: `NO RUN / NOT VERIFIED`; the exact-SHA combined-status lookup returned zero statuses. Do not inherit ancestor CI.
+- Prior verified dataset CI remains Database Validation #35, run `34066759564`, terminal `success`, tested SHA `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`. This is an ancestor and is not inherited by current descendants.
+- `PROJECT_STATE.md`, `RESEARCH_LEDGER.md`, `DECISIONS_LOG.md`, `ISSUES_REGISTER.md` and `NEXT_CHAT.md` were checked against the repository at this continuation boundary. `NEXT_CHAT.md` was stale on the previous branch tip and is now corrected at this commit.
 
 ## NAS acquisition boundary
 - NAS 2026 publication availability and the 2022-23-base Current-series route are verified.
@@ -23,13 +23,20 @@ Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and valid
 - `ISSUE-DATA-NAS-002` remains open for the 2022-23-base methodology boundary.
 - `ISSUE-DATA-NAS-003` remains open for revision/provisional status handling.
 
+## Current acquisition-access finding
+- The official eSankhyiki portal is reachable through the available web research route.
+- The portal states that its Macro Indicators and Data Catalogue provide official downloadable data without registration.
+- The accessible web representation does not expose the required NAS GFCF metadata/filter response or a verified direct execution path for the project parameters.
+- Do not infer hidden NAS routes, industry codes, institutional codes or API response values from unrelated eSankhyiki products.
+- Do not substitute secondary data while the required official NAS GFCF response remains unavailable.
+
 ## OBICUS and trade controls
-- Do not retry OBICUS 2014-15 during the next action. `ISSUE-DATA-OBICUS-001` remains parked as an operational limitation.
-- Do not retry NAS binary publication acquisition unless a genuinely new official source mechanism or materially different accessibility condition becomes available. The current task is API metadata/data acquisition, not another binary attempt.
+- Do not retry OBICUS 2014-15 during the next action. `ISSUE-DATA-OBICUS-001` remains an operational limitation.
+- Do not retry NAS binary publication acquisition unless a genuinely new official source mechanism or materially different accessibility condition becomes available. The current task is API/metadata acquisition, not another binary attempt.
 - Manufacturing trade methodology `MFG-TRADE-MAP-1.0` remains approved. `IND-MFG-TRADE-EXPORTS-001` and `IND-MFG-TRADE-IMPORTS-001` remain registered without observations. `IND-MFG-TRADE-IMPORT-DEPENDENCE-001` remains provisional and requires compatible domestic manufacturing-product output.
 
 ## Exact next research action
-1. Use an exposed, permitted official MoSPI/eSankhyiki execution route.
+1. Use an exposed, permitted official MoSPI/eSankhyiki execution route when available.
 2. Discover NAS indicators.
 3. Retrieve metadata/filter values for `indicator_code=9`, `base_year=2022-23`, `series=Current`, annual frequency.
 4. Preserve the complete metadata response before transformation.
@@ -58,7 +65,7 @@ Do not repeat database foundation work, Manufacturing baseline resolution, compl
 - Preserve the raw metadata response and raw observation response before transformation.
 - Preserve Source → Dataset → Vintage → Snapshot → Observation lineage.
 - Do not create an observation unless the official eSankhyiki response is acquired and validated.
-- Do not use secondary data as a substitute for the blocked official NAS GFCF response.
+- Do not use secondary data as a substitute for the unavailable official NAS GFCF response.
 - No causal or policy conclusion before the descriptive evidence chain is complete.
 
 ## Completion criteria
