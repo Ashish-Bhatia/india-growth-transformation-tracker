@@ -1,6 +1,6 @@
 # Research Ledger
 
-No substantive policy or causal sector research has been verified as completed. The Manufacturing pilot contains repository-verified IIP, ASI, NAS, PLFS and newly acquired descriptive OBICUS/ASI productivity data. Dataset-specific ingestion validation is executed by Database Validation CI.
+No substantive policy or causal sector research has been verified as completed. The Manufacturing pilot contains repository-verified IIP, ASI, NAS, PLFS and descriptive OBICUS/ASI productivity data. Dataset-specific ingestion validation is executed by Database Validation CI.
 
 ## Initialization record
 - Research ID: INIT-001
@@ -161,8 +161,23 @@ No substantive policy or causal sector research has been verified as completed. 
 - Evidence status: descriptive data evidence only.
 - Last verified: 2026-09-07
 
-## Documentation and continuity corrections
-- Current main HEAD after the acquisition and documentation updates is `71acf8cf93795fb335fbbfc2162ed0a61fe3a95a`.
-- Exact current-HEAD CI remains `NO RUN / NOT VERIFIED` because no workflow run exists for the exact current SHA.
-- Ancestor Database Validation #35 remains terminal `success` and is not inherited by the current documentation/data descendants.
+## Historical OBICUS CU tranche record
+- Research ID: DATA-MFG-OBICUS-002
+- Question: Can historical RBI OBICUS CU observations before Q1:2023-24 be preserved through an authoritative source compilation without substituting CU for the registered CU-SA indicator?
+- Sector: Manufacturing (`MFG`)
+- Indicator: `IND-MFG-OBICUS-CU-SA-001` as contextual series; raw CU is preserved separately and is not loaded into the canonical CU-SA observation layer.
+- Dataset: `DS-RBI-OBICUS-001`
+- Vintage: `VNT-RBI-OBICUS-2018-12-14`
+- Snapshot: `SNP-RBI-OBICUS-20181214-001`
+- Acquisition manifest: `ACQ-RBI-OBICUS-2018-12-14`.
+- Source: official Lok Sabha Unstarred Question No. 775, Annexure-II, which states that the capacity-utilisation estimates are based on RBI OBICUS and reports rounds 30-42 covering Q1:2015-16 through Q1:2018-19.
+- Observation layer: 13 staged All-India CU observations with respondent counts for Q1:2015-16 through Q1:2018-19.
+- Validation: period alignment, numeric values, respondent counts and source-table extraction were checked. The source explicitly states that survey coverage varies by round and the estimates are indicative; CU-SA is not present in this source artifact.
+- Evidence status: descriptive data evidence only. No CU-SA value was inferred from the CU series.
+- Limitation: this is a CU-only historical tranche and does not complete the CU-SA backfill. Earlier quarters and release-state revisions remain open.
+- Last verified: 2026-09-07
 
+## Documentation and continuity corrections
+- Current main HEAD has advanced beyond the previously documented `71acf8cf93795fb335fbbfc2162ed0a61fe3a95a` through the historical OBICUS acquisition and continuity commits.
+- Exact current-HEAD CI remains `NO RUN / NOT VERIFIED` unless a later exact-SHA check establishes otherwise.
+- Ancestor Database Validation #35 remains terminal `success` and is not inherited by current descendants.
