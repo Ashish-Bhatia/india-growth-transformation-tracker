@@ -15,7 +15,7 @@ Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and valid
 - `DS-RBI-OBICUS-001` registered in Dataset Registry. Latest observation/vintage remains unverified and is therefore null.
 - `IND-MFG-OBICUS-CU-SA-001` registered as a contextual capacity indicator. Raw CU remains a companion diagnostic.
 - `IND-MFG-ASI-GVA-PPE-001` registered as a nominal ASI registered-organised-manufacturing productivity diagnostic.
-- Official ASI 2013-14 release availability was verified. It directly reports GVA per person engaged of ₹7,86,750 for the all-India ASI aggregate.
+- Official ASI 2013-14 release availability was verified. The release directly reports GVA per person engaged, and the preferred baseline is therefore source-supported.
 - No new observations were acquired from these registrations.
 
 ## PLFS boundary
