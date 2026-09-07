@@ -3,48 +3,44 @@
 ## Current verified position
 
 - Repository: `Ashish-Bhatia/india-growth-transformation-tracker`
-- The repository's actual `main` HEAD is verified directly from GitHub at each continuation boundary.
-- Exact current-HEAD CI must be verified against the SHA returned by GitHub. A successful run on an ancestor does not establish CI for a descendant.
-- Latest verified dataset CI: Database Validation #35, run `34066759564`, terminal `success`, tested SHA `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`.
-- Current HEAD `663b14a0bbb4a35c49838fd3734dee0eb4b58d80` has no exact-SHA workflow run; CI status is `NO RUN / NOT VERIFIED`.
+- Actual `main` HEAD verified directly from GitHub: `71acf8cf93795fb335fbbfc2162ed0a61fe3a95a`.
+- Exact current-HEAD CI: `NO RUN / NOT VERIFIED`.
+- Latest verified dataset CI remains Database Validation #35, run `34066759564`, terminal `success`, tested SHA `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`. This is an ancestor and is not inherited by current descendants.
 
 ## Project phase
 
-Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and dataset-ingestion validation are closed. The baseline indicator-gap review is complete. Formal registration review for priority candidates is now completed for RBI OBICUS seasonally adjusted capacity utilisation and ASI GVA per person engaged, and both indicators are registered. No observations have yet been acquired for these newly registered indicators.
+Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and dataset-ingestion validation are closed. The baseline indicator-gap review and formal registration review for RBI OBICUS seasonally adjusted capacity utilisation and ASI GVA per person engaged are complete. Historical descriptive acquisition for both newly registered indicators has now been added.
 
-## Completed registration work
+## Completed acquisition work
 
-- Registered authoritative RBI OBICUS source `SRC-RBI-OBICUS`.
-- Registered OBICUS dataset `DS-RBI-OBICUS-001` with quarterly frequency, source-defined capacity-utilisation methodology, CU/CU-SA treatment and provenance controls.
-- Registered `IND-MFG-OBICUS-CU-SA-001` as a contextual Manufacturing capacity indicator. Raw CU remains a companion diagnostic and is not silently replaced by CU-SA.
-- Registered `IND-MFG-ASI-GVA-PPE-001` as a Manufacturing productivity diagnostic. It is explicitly nominal and limited to ASI registered organised manufacturing coverage.
-- Verified official ASI historical availability for the preferred 2013-14 baseline. The official ASI 2013-14 release publishes GVA per person engaged directly.
-- No new observations were acquired from these registrations.
+- `IND-MFG-ASI-GVA-PPE-001`: 11 All-India annual observations acquired for 2013-14 through 2023-24 from official ASI release states.
+- Preferred 2013-14 baseline: ₹786,750 per person engaged, directly published by ASI.
+- ASI release-state lineage preserved across `VNT-MOSPI-ASI-2017-18`, `VNT-MOSPI-ASI-2019-20` and `VNT-MOSPI-ASI-2023-24`.
+- `IND-MFG-OBICUS-CU-SA-001`: five quarterly All-India observations acquired for Q1:2023-24 through Q1:2024-25 from RBI OBICUS Table 1.
+- Raw OBICUS CU is preserved separately in staged data. CU-SA is the only canonical registered indicator loaded.
+- OBICUS CU-SA methodology note preserved: X13-ARIMA-SEATS with Q1:2020-21 treated as an additive outlier in the source release.
+- Binary source artifacts remain unpreserved for these acquisitions; `file_hash=null` is explicit.
+- Descriptive validation report added. No attribution, counterfactual, policy-effectiveness or scoring conclusion introduced.
 
 ## Verified dataset boundaries
 
 - IIP: two preserved 2022-23-base release-state vintages. The methodology/base-year break from the superseded 2011-12 series remains an open comparability control.
 - ASI 2023-24: acquired vintage with registered organised-manufacturing coverage limitation. ASI measures must not be presented as total manufacturing measures.
+- ASI GVA/person engaged: nominal, current-price, registered organised manufacturing only. It is a productivity diagnostic, not a real total-manufacturing productivity measure.
 - NAS 2026: acquired 2022-23-base vintage. The methodology boundary from the superseded 2011-12 series remains an open comparability control. Revised/provisional status is preserved.
 - PLFS 2025: acquired vintage `VNT-MOSPI-PLFS-2025`; binary artifact not preserved, `file_hash=null`; sampling methodology and survey-cycle break remains an explicit comparability control.
-- OBICUS: source and dataset registered; no OBICUS observation vintage acquired yet.
+- OBICUS: source and dataset registered; five historical CU-SA observations acquired. Complete historical OBICUS backfill remains open.
 
 ## Current analytical boundary
 
-Existing observations and registered indicators remain descriptive research only. No causal, attribution, policy-effectiveness, counterfactual or scoring conclusion has been introduced.
-
-ASI GVA per person engaged is a nominal registered-organised-manufacturing productivity diagnostic, not a total-manufacturing or real productivity measure. OBICUS CU-SA is a capacity diagnostic and is contextual rather than automatically score-eligible.
-
-## Baseline scope
-
-The governing frameworks require examination of output, growth, productivity, investment, employment, wages where available, exports, imports, market size, capacity, fiscal support, infrastructure, financial access, competitiveness, quality, inclusion, international position and resilience where material. The preferred immediate pre-policy benchmark is 2013-14, with longer historical context where reliable comparable data exists.
+Existing observations remain descriptive research only. ASI GVA/person engaged is nominal and registered-organised. OBICUS CU-SA is contextual rather than automatically score-eligible. No causal, attribution, policy-effectiveness, counterfactual or scoring conclusion has been introduced.
 
 ## Methodological controls
 
 - Preserve indicator definitions, units, frequency, geography, methodology, directionality and source mappings.
 - Preserve source vintages and revisions.
 - Do not splice incompatible IIP, NAS or PLFS methodologies.
-- Preserve ASI registered-organised-manufacturing coverage and nominal-price limitation for GVA/person engaged.
+- Preserve ASI registered-organised manufacturing coverage and nominal-price limitation for GVA/person engaged.
 - Preserve OBICUS raw CU and seasonally adjusted CU as distinct source measures.
 - Observed change must precede attribution.
 - Attribution, counterfactual analysis, policy evaluation and scoring remain downstream.
@@ -56,8 +52,7 @@ The governing frameworks require examination of output, growth, productivity, in
 
 ## Open dependencies
 
-- Acquisition and validation of OBICUS historical observations.
-- Acquisition and validation of ASI GVA/person engaged historical observations.
+- Complete historical OBICUS backfill, including earlier release states and the full available CU/CU-SA series.
 - PLFS 2025 comparability treatment.
 - IIP methodology/base-year break.
 - NAS methodology boundary.
