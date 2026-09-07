@@ -24,6 +24,16 @@ Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and datas
 - Historical OBICUS source-reference and acquisition manifest preserve the official source locator and explicit `file_hash=null` because the binary artifact is not preserved.
 - Descriptive validation remains the only analytical use. No attribution, counterfactual, policy-effectiveness or scoring conclusion introduced.
 
+## Latest historical OBICUS retrieval attempt
+
+- Date: 2026-09-07.
+- Target: authoritative RBI release tables for Q1:2014-15 through Q4:2014-15.
+- RBI archive existence remains confirmed.
+- Available RBI-hosted archive/release representations returned HTTP 502 or were otherwise inaccessible during the retry.
+- Direct Table 1 evidence for the four 2014-15 quarters was not acquired or verified.
+- No 2014-15 CU or CU-SA observation was added, inferred, promoted from secondary evidence, or substituted from another series.
+- The failed retrieval state is recorded in `ISSUES_REGISTER.md` as `ISSUE-DATA-OBICUS-001`.
+
 ## Verified dataset boundaries
 
 - IIP: two preserved 2022-23-base release-state vintages. The methodology/base-year break from the superseded 2011-12 series remains an open comparability control.
