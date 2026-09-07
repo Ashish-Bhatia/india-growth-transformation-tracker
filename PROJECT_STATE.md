@@ -3,13 +3,13 @@
 ## Current verified position
 
 - Repository: `Ashish-Bhatia/india-growth-transformation-tracker`
-- Current main HEAD after the latest verified acquisition/documentation commits must be rechecked at the next continuation boundary.
+- Current main HEAD after the latest methodology/registry commits must be rechecked at the next continuation boundary.
 - Exact current-HEAD CI: `NO RUN / NOT VERIFIED` unless a later exact-SHA check establishes otherwise.
 - Latest verified dataset CI remains Database Validation #35, run `34066759564`, terminal `success`, tested SHA `8a79fc7bcc3693d95d20ff8f51849685a7e1fe78`. This is an ancestor and is not inherited by current descendants.
 
 ## Project phase
 
-Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and dataset-ingestion validation are closed. The baseline indicator-gap review and formal registration review for RBI OBICUS seasonally adjusted capacity utilisation and ASI GVA per person engaged are complete. Historical descriptive acquisition has progressed for both indicators, but complete OBICUS historical backfill remains open.
+Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and dataset-ingestion validation are closed. Baseline indicator-gap review and formal registration reviews for RBI OBICUS seasonally adjusted capacity utilisation and ASI GVA per person engaged are complete. Historical descriptive acquisition has progressed for both indicators. NAS binary acquisition is parked after three primary-source attempts. Manufacturing trade classification methodology is now approved and the initial manufacturing-product trade indicators are registered without observations.
 
 ## Completed acquisition work
 
@@ -18,34 +18,39 @@ Manufacturing (`MFG`) remains the first pilot sector. PLFS acquisition and datas
 - ASI release-state lineage preserved across `VNT-MOSPI-ASI-2017-18`, `VNT-MOSPI-ASI-2019-20` and `VNT-MOSPI-ASI-2023-24`.
 - `IND-MFG-OBICUS-CU-SA-001`: five quarterly All-India observations acquired for Q1:2023-24 through Q1:2024-25 from RBI OBICUS Table 1.
 - Raw OBICUS CU remains separately preserved in staged data. CU-SA is the only canonical registered indicator loaded.
-- OBICUS methodology note preserved: X13-ARIMA-SEATS with Q1:2020-21 treated as an additive outlier in the 2024-10-09 source release.
-- Historical OBICUS CU tranche acquired for Q1:2015-16 through Q1:2018-19 from an official Lok Sabha Annexure-II compilation of RBI OBICUS observations. Thirteen CU observations and respondent counts are preserved in staged data under `VNT-RBI-OBICUS-2018-12-14`.
-- The 2018-12-14 parliamentary compilation reports CU only. CU-SA was not extracted from this artifact and no CU-SA value was invented or inferred.
-- Historical OBICUS source-reference and acquisition manifest preserve the official source locator and explicit `file_hash=null` because the binary artifact is not preserved.
+- Historical OBICUS CU tranche acquired for Q1:2015-16 through Q1:2018-19 from an official Lok Sabha Annexure-II compilation. Thirteen CU observations and respondent counts are preserved in staged data under `VNT-RBI-OBICUS-2018-12-14`.
 - Descriptive validation remains the only analytical use. No attribution, counterfactual, policy-effectiveness or scoring conclusion introduced.
 
-## Latest historical OBICUS retrieval attempt
+## NAS acquisition boundary
 
-- Date: 2026-09-07.
-- Target: authoritative RBI release tables for Q1:2014-15 through Q4:2014-15.
-- RBI archive existence remains confirmed.
-- Available RBI-hosted archive/release representations returned HTTP 502 or were otherwise inaccessible during the retry.
-- Direct Table 1 evidence for the four 2014-15 quarters was not acquired or verified.
-- No 2014-15 CU or CU-SA observation was added, inferred, promoted from secondary evidence, or substituted from another series.
-- The failed retrieval state is recorded in `ISSUES_REGISTER.md` as `ISSUE-DATA-OBICUS-001`.
+- NAS 2026 publication and Statements 27-34 were verified.
+- Three materially distinct primary-source binary-acquisition routes were exhausted without acquiring the original XLS/XLSX binary.
+- No NAS investment observations were created from unavailable binary content.
+- `ISSUE-DATA-NAS-001` remains parked after the three-attempt limit. Do not perform a fourth attempt unless a genuinely new official source mechanism or materially different accessibility condition becomes available.
+- `ISSUE-DATA-NAS-002` and `ISSUE-DATA-NAS-003` remain open controls for methodology and final/revised/provisional status.
 
-## Verified dataset boundaries
+## OBICUS retrieval boundary
 
-- IIP: two preserved 2022-23-base release-state vintages. The methodology/base-year break from the superseded 2011-12 series remains an open comparability control.
-- ASI 2023-24: acquired vintage with registered organised-manufacturing coverage limitation. ASI measures must not be presented as total manufacturing measures.
-- ASI GVA/person engaged: nominal, current-price, registered organised manufacturing only. It is a productivity diagnostic, not a real total-manufacturing productivity measure.
-- NAS 2026: acquired 2022-23-base vintage. The methodology boundary from the superseded 2011-12 series remains an open comparability control. Revised/provisional status is preserved.
-- PLFS 2025: acquired vintage `VNT-MOSPI-PLFS-2025`; binary artifact not preserved, `file_hash=null`; sampling methodology and survey-cycle break remains an explicit comparability control.
-- OBICUS: source and dataset registered; five historical CU-SA observations acquired for Q1:2023-24 through Q1:2024-25; an additional historical CU-only tranche covers Q1:2015-16 through Q1:2018-19. Complete historical CU/CU-SA backfill remains open.
+- Q1:2014-15 through Q4:2014-15 RBI primary release Table 1 evidence was not acquired after the documented retry.
+- `ISSUE-DATA-OBICUS-001` remains parked. Do not retry during the next action.
+- No 2014-15 CU or CU-SA observation was added, inferred or substituted.
+
+## Manufacturing trade methodology
+
+- `MFG-TRADE-MAP-1.0` is the approved versioned methodology in `docs/methodology/manufacturing-trade-boundary-v1.md`.
+- Economic-activity boundary: NIC 2008 Section C, Divisions 10-33.
+- Merchandise operational subset: HS product lines demonstrably representing manufacturing products. NIC Division 33 remains in the activity taxonomy but is not forced into merchandise mapping because repair/installation is an activity/service concept.
+- Classification stack: ITC (HS) 8-digit, HS 6-digit international anchor, CPC/UNSD correspondence, ISIC Rev. 4, NIC 2008. NPCMS is a validation/reference layer.
+- Mapping statuses: `IN_SCOPE`, `OUT_OF_SCOPE`, `MIXED`, `UNRESOLVED`, `SPECIAL_CASE`.
+- MIXED and UNRESOLVED lines are excluded from core aggregates. No proportional allocation is invented.
+- Mapping is versioned by HS edition. Historical observations must use the applicable HS nomenclature.
+- Recorded re-exports/re-imports remain included unless a reproducible source-level exclusion exists. The indicators are manufacturing-product trade measures, not domestic-origin manufacturing exports.
+- Manufacturing-product export and import indicators are registered. Manufacturing-product import dependence is registered as `PROVISIONAL` and has no observations until compatible domestic product-output evidence is established.
+- No trade observations have been acquired or loaded yet.
 
 ## Current analytical boundary
 
-Existing observations remain descriptive research only. ASI GVA/person engaged is nominal and registered-organised. OBICUS CU-SA is contextual rather than automatically score-eligible. Historical CU remains a companion diagnostic and has not been substituted for CU-SA. No causal, attribution, policy-effectiveness, counterfactual or scoring conclusion has been introduced.
+All current Manufacturing observations remain descriptive evidence. Trade indicators are definitions only until source acquisition and code-level mapping validation are completed. No causal, attribution, policy-effectiveness, counterfactual or scoring conclusion has been introduced.
 
 ## Methodological controls
 
@@ -58,13 +63,13 @@ Existing observations remain descriptive research only. ASI GVA/person engaged i
 - Attribution, counterfactual analysis, policy evaluation and scoring remain downstream.
 - Final scoring weights, normalization and composite formulas remain unresolved.
 - Domain seed and international peer-basket methodology remain unresolved.
-- Trade candidates require an approved HS-to-Manufacturing mapping before registration.
+- Trade code-level mapping must be versioned and validated before observations are loaded.
 - ASI, ASUSE and PLFS population/methodology boundaries must remain explicit.
-- Candidate sources do not imply indicator approval; registered indicators require validated observations before analytical use.
+- Registered indicators do not imply acquired observations.
 
 ## Open dependencies
 
-- Complete historical OBICUS backfill, including earlier release states and the full available CU/CU-SA series.
+- Complete historical OBICUS backfill, within the parked retrieval control.
 - PLFS 2025 comparability treatment.
 - IIP methodology/base-year break.
 - NAS methodology boundary.
@@ -75,7 +80,8 @@ Existing observations remain descriptive research only. ASI GVA/person engaged i
 - Final scoring methodology.
 - Domain seed.
 - International peer-basket methodology.
-- Manufacturing trade classification mapping.
+- Manufacturing trade code-level mapping and acquisition.
+- Manufacturing-product domestic-output dataset required for import dependence.
 - Manufacturing investment private/public classification.
 - Manufacturing technology/R&D construct.
 - Manufacturing quality construct.
